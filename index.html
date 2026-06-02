@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Clarisa & Charles — Nuestra Boda</title>
+<title>Clarisa &  — Nuestra Boda</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -636,11 +636,11 @@ body {
 /* ── TIPS ── */
 .tip {
   display: flex; align-items: flex-start; gap: .8rem;
-  padding: .8rem 0;
-  border-bottom: 1px solid rgba(201,169,110,.12);
-  font-size: .82rem;
-  line-height: 1.65;
+  padding: .8rem 0; border-bottom: 1px solid rgba(201,169,110,.12);
+  font-size: .82rem; line-height: 1.65; transition: transform .2s, background .2s;
+  border-radius: 6px; padding-left: .3rem;
 }
+.tip:hover { transform: translateX(5px); background: rgba(201,169,110,.04); }
 .tip:last-child { border-bottom: none; }
 .tip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
 
@@ -759,7 +759,7 @@ footer {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Reveal con distintos tipos */
+/* Reveal con distintos tipos (se aplican SOLO cuando la tarjeta NO tiene la clase .visible) */
 .card[data-reveal="left"]  { transform: translateX(-40px); }
 .card[data-reveal="right"] { transform: translateX(40px); }
 .card[data-reveal="up"]    { transform: translateY(40px); }
@@ -830,6 +830,12 @@ footer {
       <h2 class="card-title">Detalles del Evento</h2>
     </div>
     <div class="detail-item">
+      
+      <div>
+      
+      </div>
+    </div>
+    <div class="detail-item">
       <div class="detail-icon">🥂</div>
       <div>
         <div class="detail-lbl">Recepción & Fiesta</div>
@@ -848,48 +854,21 @@ footer {
       <div>
         <div class="detail-lbl">Ubicación</div>
         <div class="detail-val">
-          <a href="https://maps.app.goo.gl/Bbak1kDy8J86Q2kH6" target="_blank">Ver en Google Maps ↗</a>
+          <a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a>
         </div>
       </div>
     </div>
     <div class="map-wrap">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.0!2d-77.1426!3d-11.8721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDUyJzE5LjYiUyA3N8KwMDgnMzMuNSJX!5e0!3m2!1ses!2spe!4v1234567890" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://maps.app.goo.gl/Bbak1kDy8J86Q2kH6"></iframe>
     </div>
   </div>
 
-  <!-- MENÚ -->
-  <div class="card" data-reveal="right">
-    <div class="card-header">
-      <div class="card-icon">🍽️</div>
-      <h2 class="card-title">Menú del Evento</h2>
-    </div>
-    <div class="menu-tabs">
-      <button class="menu-tab active" onclick="switchTab('entrada')">Entrada</button>
-      <button class="menu-tab" onclick="switchTab('principal')">Principal</button>
-      <button class="menu-tab" onclick="switchTab('postre')">Postre</button>
-    </div>
-    <div class="menu-panel active" id="tab-entrada">
-      <div class="menu-item"><span>Tabla de fiambres y quesos</span><span class="menu-tag">Para todos</span></div>
-      <div class="menu-item"><span>Croquetas de hongos</span><span class="menu-tag">Vegetariano</span></div>
-      <div class="menu-item"><span>Bruschetta de tomate</span><span class="menu-tag">Vegano</span></div>
-    </div>
-    <div class="menu-panel" id="tab-principal">
-      <div class="menu-item"><span>Lomo al chimichurri</span><span class="menu-tag">Sin TACC</span></div>
-      <div class="menu-item"><span>Pollo a la provenzal</span><span class="menu-tag">Sin TACC</span></div>
-      <div class="menu-item"><span>Risotto de hongos</span><span class="menu-tag">Vegetariano</span></div>
-    </div>
-    <div class="menu-panel" id="tab-postre">
-      <div class="menu-item"><span>Torta nupcial tres pisos</span><span class="menu-tag">Clásico</span></div>
-      <div class="menu-item"><span>Macaron tower</span><span class="menu-tag">Sin gluten</span></div>
-      <div class="menu-item"><span>Helado artesanal</span><span class="menu-tag">Vegano</span></div>
-    </div>
-  </div>
 
   <!-- DRESS CODE -->
   <div class="card" data-reveal="up">
     <div class="card-header">
       <div class="card-icon">👗</div>
-      <h2 class="card-title">Dress Code</h2>
+      <h2 class="card-title">Vestimenta</h2>
       <p class="card-sub">Temática elegante — Blanco y Dorado</p>
     </div>
     <div class="dress-grid">
@@ -934,11 +913,36 @@ footer {
       <h2 class="card-title">Agenda del Día</h2>
     </div>
     <div class="timeline">
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">17:30 hs</div><div class="tl-title">Recepción de invitados</div><div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">18:00 hs</div><div class="tl-title">Ceremonia Civil</div><div class="tl-desc">El momento más esperado — unión oficial ante la ley</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">19:30 hs</div><div class="tl-title">Sesión de fotos</div><div class="tl-desc">Fotos con los novios y familiares en los jardines</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">20:30 hs</div><div class="tl-title">Cena & Baile</div><div class="tl-desc">Ingreso al salón principal, cena y pista de baile</div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">00:30 hs</div><div class="tl-title">Torta & Brindis</div><div class="tl-desc">El corte de la torta y el brindis con todos</div></div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">17:30 hs</div>
+        <div class="tl-title">Recepción de invitados</div>
+        <div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+       
+      
+      
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">19:30 hs</div>
+        <div class="tl-title">Sesión de fotos</div>
+        <div class="tl-desc">Fotos con los novios y familiares en los jardines</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">20:30 hs</div>
+        <div class="tl-title">Cena & Baile</div>
+        <div class="tl-desc">Ingreso al salón principal, cena y pista de baile</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-time">00:30 hs</div>
+        <div class="tl-title">Torta & Brindis</div>
+        <div class="tl-desc">El corte de la torta y el brindis con todos</div>
+      </div>
     </div>
   </div>
 
@@ -955,7 +959,10 @@ footer {
         <div class="music-artist">Christina Perri</div>
       </div>
       <div class="equalizer" id="equalizer">
-        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
+        <div class="eq-bar"></div>
       </div>
       <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
     </div>
@@ -1009,9 +1016,30 @@ footer {
       <p class="card-sub">Tu presencia es el mejor regalo.<br>Si deseas obsequiarnos algo:</p>
     </div>
     <div class="gift-list">
-      <a class="gift-item" href="#" onclick="copyText('alias.pago.mp'); return false;"><div class="gift-ico">💳</div><div><div class="gift-lbl">Mercado Pago</div><div class="gift-val">alias.pago.mp · Toca para copiar</div></div><div class="gift-arr">→</div></a>
-      <a class="gift-item" href="#" onclick="copyText('0000003100123456789012'); return false;"><div class="gift-ico">🏦</div><div><div class="gift-lbl">Transferencia bancaria</div><div class="gift-val">CBU: 0000 0031 0012 3456</div></div><div class="gift-arr">→</div></a>
-      <a class="gift-item" href="https://www.amazon.com" target="_blank"><div class="gift-ico">🛍️</div><div><div class="gift-lbl">Lista de regalos</div><div class="gift-val">Ver lista en tienda ↗</div></div><div class="gift-arr">→</div></a>
+      <a class="gift-item" href="#" onclick="copyText('alias.pago.mp'); return false;">
+        <div class="gift-ico">💳</div>
+        <div>
+          <div class="gift-lbl">Mercado Pago</div>
+          <div class="gift-val">alias.pago.mp · Toca para copiar</div>
+        </div>
+        <div class="gift-arr">→</div>
+      </a>
+      <a class="gift-item" href="#" onclick="copyText('0000003100123456789012'); return false;">
+        <div class="gift-ico">🏦</div>
+        <div>
+          <div class="gift-lbl">Transferencia bancaria</div>
+          <div class="gift-val">CBU: 0000 0031 0012 3456</div>
+        </div>
+        <div class="gift-arr">→</div>
+      </a>
+      <a class="gift-item" href="https://www.amazon.com" target="_blank">
+        <div class="gift-ico">🛍️</div>
+        <div>
+          <div class="gift-lbl">Lista de regalos</div>
+          <div class="gift-val">Ver lista en tienda ↗</div>
+        </div>
+        <div class="gift-arr">→</div>
+      </a>
     </div>
   </div>
 
@@ -1035,19 +1063,18 @@ footer {
       <h2 class="card-title">Tips y Notas</h2>
     </div>
     <div class="tip"><div class="tip-dot"></div><div>¡Por favor ser <strong>puntuales</strong>!</div></div>
-    <div class="tip"><div class="tip-dot"></div><div>Es un evento <strong>solo para adultos</strong>.</div></div>
+    <div class="tip"><div class="tip-dot"></div><div>Es un evento <strong>solo para adultos </strong>.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Confirmá asistencia <strong>antes del 25 de Junio</strong>.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Llevar <strong>abrigo</strong> para los espacios exteriores.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Estacionamiento <strong>gratuito</strong> en el predio.</div></div>
-    <div class="tip"><div class="tip-dot"></div><div>¡Olvidarse de todo y a <strong>disfrutar</strong>! 🥂</div></div>
-  </div>
+   
 
 </div><!-- /page-wrap -->
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-names">Clarisa &amp; Charles</div>
-  <div class="footer-date">28 · 06 · 2026</div>
+  <div class="footer-date">31 · 06 · 2026</div>
   <button class="footer-admin" onclick="openAdmin()">⚙</button>
 </footer>
 
@@ -1067,12 +1094,26 @@ footer {
           <div class="radio-chip" id="chip-talvez" onclick="pickRSVP('talvez')">? Tal vez</div>
         </div>
       </div>
-      <div class="field" id="field-pax" style="display:none;"><label>¿Cuántas personas? *</label><select id="r-pax"><option value="">Seleccionar...</option><option value="1">Solo yo (1)</option><option value="2">Somos 2</option><option value="3">Somos 3</option><option value="4">Somos 4</option><option value="5+">5 o más</option></select></div>
+      <div class="field" id="field-pax" style="display:none;">
+        <label>¿Cuántas personas? *</label>
+        <select id="r-pax">
+          <option value="">Seleccionar...</option>
+          <option value="1">Solo yo (1)</option>
+          <option value="2">Somos 2</option>
+          <option value="3">Somos 3</option>
+          <option value="4">Somos 4</option>
+          <option value="5+">5 o más</option>
+        </select>
+      </div>
       <div class="field"><label>Restricción alimentaria</label><input type="text" id="r-comida" placeholder="Vegano, celíaco... (opcional)"></div>
       <div class="field"><label>Mensaje para los novios 💬</label><textarea id="r-mensaje" placeholder="Un deseo, palabras bonitas..."></textarea></div>
       <button class="btn btn-gold" id="btn-rsvp" onclick="enviarRSVP()" style="margin-top:.4rem;">Confirmar asistencia</button>
     </div>
-    <div class="success-screen" id="rsvp-ok"><div class="success-icon">🎉</div><h3>¡Gracias!</h3><p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p></div>
+    <div class="success-screen" id="rsvp-ok">
+      <div class="success-icon">🎉</div>
+      <h3>¡Gracias!</h3>
+      <p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p>
+    </div>
   </div>
 </div>
 
@@ -1088,7 +1129,11 @@ footer {
       <div class="field"><label>Link de YouTube (opcional)</label><input type="url" id="s-link" placeholder="https://youtube.com/..."></div>
       <button class="btn btn-gold" id="btn-song" onclick="enviarCancion()" style="margin-top:.4rem;">Sugerir Canción</button>
     </div>
-    <div class="success-screen" id="song-ok"><div class="success-icon">🎶</div><h3>¡Genial!</h3><p>Tu sugerencia fue enviada.<br>¡La sumamos a la playlist! 🎉</p></div>
+    <div class="success-screen" id="song-ok">
+      <div class="success-icon">🎶</div>
+      <h3>¡Genial!</h3>
+      <p>Tu sugerencia fue enviada.<br>¡La sumamos a la playlist! 🎉</p>
+    </div>
   </div>
 </div>
 
@@ -1098,11 +1143,18 @@ footer {
     <button class="modal-close" style="position:absolute;top:1.2rem;right:1.2rem;" onclick="closeAdmin()">✕</button>
     <h2 class="admin-title">⚙ Panel de Admin</h2>
     <div id="admin-login">
-      <div class="field"><label style="color:var(--gold-light);">Contraseña</label><input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()"></div>
+      <div class="field">
+        <label style="color:var(--gold-light);">Contraseña</label>
+        <input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()">
+      </div>
       <button class="btn btn-gold" onclick="checkAdmin()">Ingresar</button>
     </div>
     <div id="admin-dash" style="display:none;">
-      <div class="admin-stats"><div class="stat-box"><div class="stat-num" id="stat-total">0</div><div class="stat-lbl">Total</div></div><div class="stat-box"><div class="stat-num" id="stat-si">0</div><div class="stat-lbl">Confirmados</div></div><div class="stat-box"><div class="stat-num" id="stat-pax">0</div><div class="stat-lbl">Personas</div></div></div>
+      <div class="admin-stats">
+        <div class="stat-box"><div class="stat-num" id="stat-total">0</div><div class="stat-lbl">Total</div></div>
+        <div class="stat-box"><div class="stat-num" id="stat-si">0</div><div class="stat-lbl">Confirmados</div></div>
+        <div class="stat-box"><div class="stat-num" id="stat-pax">0</div><div class="stat-lbl">Personas</div></div>
+      </div>
       <div id="admin-list"></div>
       <button class="btn btn-outline" style="margin-top:1.2rem;color:var(--gold-light);border-color:rgba(201,169,110,.4);" onclick="exportCSV()">📥 Exportar CSV</button>
     </div>
@@ -1118,10 +1170,10 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJ
 const weddingDate = new Date("2026-06-28T16:00:00");
 const adminPass = "boda2025";
 const calEvento = {
-  titulo: "Boda de Clarisa & Charles",
+  titulo: "Boda de Clarisa & Nombre",
   ubicacion: "Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7",
-  inicio: "20260628T203000",
-  fin:    "20260629T040000",
+inicio: "20260628T203000",   // 28 de junio de 2026 a las 20:30:00
+fin:    "20260629T040000",   // 29 de junio de 2026 a las 04:00:00 (madrugada del día siguiente)
   descripcion: "¡Nos casamos! Ven a celebrar con nosotros."
 };
 
@@ -1210,26 +1262,33 @@ document.querySelectorAll('.card').forEach((card, i) => {
   if(!card.dataset.reveal) card.dataset.reveal = revealTypes[i % revealTypes.length];
 });
 
+// Observer para tarjetas: remueve la clase al salir, la vuelve a poner al entrar
 const cardObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      // Agregar clase visible (dispara la transición CSS)
       entry.target.classList.add('visible');
     } else {
+      // Al salir del viewport, quitamos la clase para que la próxima entrada vuelva a animarse
       entry.target.classList.remove('visible');
     }
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+}, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' }); // threshold un poco más alto para que no parpadee
 document.querySelectorAll('.card').forEach(c => cardObserver.observe(c));
 
+/* ── TIMELINE STAGGER con repetición también ── */
+// Cada timeline observer por separado
 const timelineObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const timeline = entry.target;
     if (entry.isIntersecting) {
+      // Al entrar, animamos cada hijo con stagger
       const items = timeline.querySelectorAll('.tl-item');
       items.forEach((item, idx) => {
         setTimeout(() => item.classList.add('tl-visible'), idx * 120);
       });
     } else {
+      // Al salir, removemos la clase de todos los hijos para que se reinicien
       const items = timeline.querySelectorAll('.tl-item');
       items.forEach(item => item.classList.remove('tl-visible'));
     }
@@ -1344,6 +1403,7 @@ function touchEnd(e){
   else if(touchDeltaX > 40) carouselPrev();
   touchDeltaX = 0;
 }
+
 setInterval(carouselNext, 4000);
 
 /* ── CLIPBOARD ── */
@@ -1367,24 +1427,11 @@ function pickRSVP(v){
 }
 function saveLocal(data){ const s=JSON.parse(localStorage.getItem('rsvp_list')||'[]'); s.push(data); localStorage.setItem('rsvp_list',JSON.stringify(s)); }
 function loadLocal(){ return JSON.parse(localStorage.getItem('rsvp_list')||'[]'); }
-
-// ✅ CORREGIDA: función postData con Content-Type text/plain y sin mode:no-cors
 async function postData(data){
   saveLocal(data);
-  try {
-    const response = await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-      body: JSON.stringify(data)
-    });
-    if(response.ok) console.log('✅ Datos enviados correctamente');
-    else console.warn('⚠️ El servidor respondió con estado:', response.status);
-  } catch(error) {
-    console.error('❌ Error de red:', error);
-    showToast('Error de conexión, pero tus datos se guardaron localmente.');
-  }
+  if(APPS_SCRIPT_URL==='https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec') return;
+  await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
 }
-
 async function enviarRSVP(){
   const nombre = document.getElementById('r-nombre').value.trim();
   if(!nombre){ showToast('Por favor ingresá tu nombre'); return; }
@@ -1443,6 +1490,8 @@ function exportCSV(){
   const csv=rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n');
   const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); a.download='invitados-boda.csv'; a.click();
 }
+
+/* ── TOAST ── */
 function showToast(msg){
   const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),3000);
