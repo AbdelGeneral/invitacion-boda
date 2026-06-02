@@ -27,7 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── CANVAS DE PARTÍCULAS ── */
 #particles-canvas {
   position: fixed;
   inset: 0;
@@ -35,7 +34,6 @@ body {
   pointer-events: none;
 }
 
-/* ── FONDO FIJO ── */
 .page-bg {
   position: fixed;
   inset: 0;
@@ -51,7 +49,6 @@ body {
   background: rgba(15, 9, 4, 0.52);
 }
 
-/* ── WRAPPER ── */
 .page-wrap {
   position: relative;
   z-index: 1;
@@ -62,7 +59,6 @@ body {
   gap: 1.5rem;
 }
 
-/* ── HERO ── */
 .hero {
   width: 100%;
   min-height: 100svh;
@@ -75,7 +71,6 @@ body {
   position: relative;
 }
 
-/* Pétalos */
 .petals-container {
   position: absolute;
   inset: 0;
@@ -167,7 +162,6 @@ body {
   position: relative; z-index: 1;
 }
 
-/* Brillo giratorio detrás del titulo */
 .hero-glow {
   position: absolute;
   width: 340px; height: 340px;
@@ -213,7 +207,6 @@ body {
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
-/* ── DIVISOR PARALLAX ── */
 .parallax-divider {
   width: 100%;
   height: 120px;
@@ -250,7 +243,6 @@ body {
 }
 .para-quote span { color: var(--gold-light); }
 
-/* ── TARJETAS ── */
 .card {
   width: 100%;
   max-width: 480px;
@@ -274,7 +266,6 @@ body {
     0 14px 55px rgba(0,0,0,.4),
     0 1px 0 rgba(255,255,255,.5) inset,
     0 0 0 1px rgba(201,169,110,.2);
-  transition: box-shadow .4s ease;
 }
 
 .card-header { text-align: center; margin-bottom: 1.8rem; }
@@ -305,7 +296,6 @@ body {
   letter-spacing: 1.5px; margin-top: .4rem; line-height: 1.6;
 }
 
-/* ── COUNTDOWN con flip ── */
 .cd-grid {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -366,7 +356,6 @@ body {
 }
 .btn-cal:hover { border-color: var(--gold); color: var(--gold-dark); background: rgba(201,169,110,.06); }
 
-/* ── DETALLES ── */
 .detail-item {
   display: flex; align-items: flex-start; gap: .9rem;
   padding: .9rem 0;
@@ -378,7 +367,8 @@ body {
 .detail-item:hover { transform: translateX(5px); background: rgba(201,169,110,.04); }
 .detail-item:last-of-type { border-bottom: none; }
 .detail-icon {
-  width: 38px; height: 38px; border-radius: 50%;
+  width: 38px; height: 38px;
+  border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   display: flex; align-items: center; justify-content: center;
   font-size: .95rem; flex-shrink: 0;
@@ -395,7 +385,6 @@ body {
 }
 .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
 
-/* ── DRESS CODE ── */
 .dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-bottom: 1.2rem; }
 .dress-card {
   border-radius: 14px; border: 1px solid rgba(201,169,110,.2);
@@ -418,7 +407,6 @@ body {
   font-size: .78rem; color: var(--text); line-height: 1.6;
 }
 
-/* ── AGENDA ── */
 .timeline { position: relative; padding-left: 1.8rem; }
 .timeline::before {
   content: ''; position: absolute;
@@ -431,7 +419,6 @@ body {
   transition: opacity .5s ease, transform .5s ease;
 }
 .tl-item.tl-visible { opacity: 1; transform: translateX(0); }
-.tl-item:hover { cursor: default; }
 .tl-item:last-child { margin-bottom: 0; }
 .tl-dot {
   position: absolute; left: -1.8rem; top: 4px;
@@ -445,11 +432,10 @@ body {
 .tl-title { font-size: .9rem; font-weight: 500; color: var(--dark); margin-bottom: .15rem; }
 .tl-desc { font-size: .75rem; color: #888; line-height: 1.5; }
 
-/* ── MÚSICA ── */
 .music-bar {
   display: flex; align-items: center; gap: .9rem;
   padding: 1rem 1.1rem; border-radius: 14px; background: var(--dark);
-  margin-bottom: 1.2rem; transition: transform .3s, box-shadow .3s;
+  margin-bottom: 1.2rem;
 }
 .music-bar:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
 .music-disc {
@@ -491,7 +477,6 @@ body {
 }
 .music-btn:hover { transform: scale(1.15); box-shadow: 0 0 20px rgba(201,169,110,.6); }
 
-/* ── CARRUSEL DE FOTOS (1×1, desliza lateral) ── */
 .carousel-wrap {
   position: relative; overflow: hidden; border-radius: 18px;
   touch-action: pan-y;
@@ -547,7 +532,6 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* ── REGALOS ── */
 .gift-list { display: grid; gap: .8rem; }
 .gift-item {
   display: flex; align-items: center; gap: .9rem;
@@ -561,7 +545,8 @@ body {
   width: 44px; height: 44px; border-radius: 11px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; flex-shrink: 0; transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+  font-size: 1.3rem; flex-shrink: 0;
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
 }
 .gift-item:hover .gift-ico { transform: scale(1.15) rotate(-8deg); }
 .gift-lbl { font-size: .6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .18rem; }
@@ -569,7 +554,6 @@ body {
 .gift-arr { margin-left: auto; color: var(--gold-light); font-size: 1rem; transition: transform .3s; }
 .gift-item:hover .gift-arr { transform: translateX(5px); }
 
-/* ── RSVP ── */
 .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
 .btn {
   display: flex; align-items: center; justify-content: center;
@@ -601,18 +585,16 @@ body {
 }
 .btn-outline:hover { background: rgba(201,169,110,.07); transform: translateY(-3px); }
 
-/* ── TIPS ── */
 .tip {
   display: flex; align-items: flex-start; gap: .8rem;
   padding: .8rem 0; border-bottom: 1px solid rgba(201,169,110,.12);
-  font-size: .82rem; line-height: 1.65; transition: transform .2s, background .2s;
+  font-size: .82rem; line-height: 1.65;
   border-radius: 6px; padding-left: .3rem;
 }
 .tip:hover { transform: translateX(5px); background: rgba(201,169,110,.04); }
 .tip:last-child { border-bottom: none; }
 .tip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
 
-/* ── MODALS ── */
 .modal-overlay {
   position: fixed; inset: 0; z-index: 100;
   background: rgba(0,0,0,.7);
@@ -660,9 +642,6 @@ body {
   font-size: .85rem; color: var(--dark); outline: none; transition: border-color .2s;
 }
 .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--gold); }
-.field input::placeholder, .field textarea::placeholder { color: #ccc; }
-.field select { appearance: none; cursor: pointer; }
-.field textarea { resize: none; min-height: 65px; }
 .radio-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .35rem; }
 .radio-chip {
   flex: 1; min-width: 76px; border: 1px solid rgba(201,169,110,.3);
@@ -676,10 +655,8 @@ body {
 .success-icon { font-size: 3rem; margin-bottom: .8rem; animation: popIn .5s cubic-bezier(.34,1.56,.64,1) forwards; }
 @keyframes popIn { from{transform:scale(0) rotate(-20deg)} to{transform:scale(1) rotate(0)} }
 .success-screen h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--gold-dark); margin-bottom: .4rem; }
-.success-screen p { font-size: .82rem; color: #888; line-height: 1.8; }
 .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: .35rem; }
 
-/* ── ADMIN ── */
 .admin-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,.88); display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .admin-overlay.open { opacity: 1; pointer-events: all; }
 .admin-panel { background: var(--dark); color: #fff; border-radius: 20px; width: 100%; max-width: 480px; max-height: 90svh; overflow-y: auto; padding: 2rem 1.4rem; transform: scale(.9) translateY(30px); transition: transform .4s cubic-bezier(.34,1.56,.64,1); position: relative; }
@@ -697,7 +674,6 @@ body {
 .e-no { background: rgba(180,80,80,.15); color: #c96d6d; }
 .e-talvez { background: rgba(201,169,110,.15); color: var(--gold-light); }
 
-/* ── TOAST ── */
 .toast {
   position: fixed; bottom: 2rem; left: 50%;
   transform: translateX(-50%) translateY(100px);
@@ -711,7 +687,6 @@ body {
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 
-/* ── FOOTER ── */
 footer {
   width: 100%; text-align: center; padding: 3rem 1.5rem 2rem;
   position: relative; z-index: 1;
@@ -721,13 +696,11 @@ footer {
 .footer-admin { font-size: .6rem; color: rgba(255,255,255,.12); cursor: pointer; letter-spacing: 1px; background: none; border: none; transition: color .3s; }
 .footer-admin:hover { color: rgba(255,255,255,.35); }
 
-/* ── ANIMACIONES GLOBALES ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Reveal con distintos tipos (se aplican SOLO cuando la tarjeta NO tiene la clase .visible) */
 .card[data-reveal="left"]  { transform: translateX(-40px); }
 .card[data-reveal="right"] { transform: translateX(40px); }
 .card[data-reveal="up"]    { transform: translateY(40px); }
@@ -879,8 +852,8 @@ footer {
       <div class="tl-item">
         <div class="tl-dot"></div>
         <div class="tl-time">20:30 hs</div>
-        <div class="tl-title">Cena</div>
-        <div class="tl-desc">Ingreso al salón principal, cena </div>
+        <div class="tl-title">Cena & Baile</div>
+        <div class="tl-desc">Ingreso al salón principal, cena y pista de baile</div>
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
@@ -899,16 +872,18 @@ footer {
     <div class="music-bar">
       <div class="music-disc" id="disc">🎵</div>
       <div class="music-info">
-        <div class="music-title">A Thousand Years</div>
-        <div class="music-artist">Christina Perri</div>
+        <div class="music-title">Canción especial</div>
+        <div class="music-artist">Para vos</div>
       </div>
       <div class="equalizer" id="equalizer">
         <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
       </div>
       <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
     </div>
-    <audio id="bg-audio" loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <!-- IMPORTANTE: Cambia "musica.mp3" por el nombre real de tu archivo MP3 -->
+    <audio id="bg-audio" loop preload="auto">
+      <source src="musica.mp3" type="audio/mpeg">
+      Tu navegador no soporta audio.
     </audio>
     <button class="btn btn-outline" style="margin-top:.6rem;" onclick="openModal('song')">🎶 Sugerir una canción</button>
   </div>
@@ -1093,53 +1068,73 @@ footer {
 <div class="toast" id="toast"></div>
 
 <script>
+// ======================== CONFIGURACIÓN ========================
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec";
 const weddingDate = new Date("2026-06-28T16:00:00");
 const adminPass = "boda2025";
-const calEvento = { titulo: "Boda de Clarisa & Charles", ubicacion: "Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7", inicio: "20260628T203000", fin: "20260629T040000", descripcion: "¡Nos casamos! Ven a celebrar con nosotros." };
+const calEvento = {
+  titulo: "Boda de Clarisa & Charles",
+  ubicacion: "Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7",
+  inicio: "20260628T203000",
+  fin: "20260629T040000",
+  descripcion: "¡Nos casamos! Ven a celebrar con nosotros."
+};
 
-(function(){
+// ======================== PARTÍCULAS Y PÉTALOS ========================
+(function() {
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
   let particles = [];
-  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
   resize(); window.addEventListener('resize', resize);
-  function randomBetween(a,b){ return a + Math.random()*(b-a); }
-  function spawnParticle(){
+  function randomBetween(a, b) { return a + Math.random() * (b - a); }
+  function spawnParticle() {
     const type = Math.random() < 0.6 ? 'star' : 'heart';
-    return { x: randomBetween(0, canvas.width), y: randomBetween(-20, canvas.height), size: randomBetween(2, 5), opacity: randomBetween(0.2, 0.7), speed: randomBetween(0.15, 0.5), dx: randomBetween(-0.3, 0.3), drift: randomBetween(-0.002, 0.002), type, life: 0, maxLife: randomBetween(200, 500) };
+    return {
+      x: randomBetween(0, canvas.width),
+      y: randomBetween(-20, canvas.height),
+      size: randomBetween(2, 5),
+      opacity: randomBetween(0.2, 0.7),
+      speed: randomBetween(0.15, 0.5),
+      dx: randomBetween(-0.3, 0.3),
+      drift: randomBetween(-0.002, 0.002),
+      type, life: 0, maxLife: randomBetween(200, 500)
+    };
   }
-  for(let i=0; i<60; i++) particles.push(spawnParticle());
-  function drawHeart(ctx, x, y, s){
+  for (let i = 0; i < 60; i++) particles.push(spawnParticle());
+  function drawHeart(ctx, x, y, s) {
     ctx.beginPath();
     ctx.moveTo(x, y);
-    ctx.bezierCurveTo(x, y-s/2, x-s, y-s/2, x-s, y);
-    ctx.bezierCurveTo(x-s, y+s*.6, x, y+s*1.1, x, y+s*1.1);
-    ctx.bezierCurveTo(x, y+s*1.1, x+s, y+s*.6, x+s, y);
-    ctx.bezierCurveTo(x+s, y-s/2, x, y-s/2, x, y);
+    ctx.bezierCurveTo(x, y - s / 2, x - s, y - s / 2, x - s, y);
+    ctx.bezierCurveTo(x - s, y + s * 0.6, x, y + s * 1.1, x, y + s * 1.1);
+    ctx.bezierCurveTo(x, y + s * 1.1, x + s, y + s * 0.6, x + s, y);
+    ctx.bezierCurveTo(x + s, y - s / 2, x, y - s / 2, x, y);
     ctx.closePath();
   }
-  function animate(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach((p,i) => {
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach((p, i) => {
       p.y -= p.speed;
-      p.x += p.dx + Math.sin(p.life*p.drift)*0.5;
+      p.x += p.dx + Math.sin(p.life * p.drift) * 0.5;
       p.life++;
       const lifeRatio = p.life / p.maxLife;
-      const fade = lifeRatio < 0.1 ? lifeRatio/0.1 : lifeRatio > 0.8 ? (1-lifeRatio)/0.2 : 1;
+      const fade = lifeRatio < 0.1 ? lifeRatio / 0.1 : lifeRatio > 0.8 ? (1 - lifeRatio) / 0.2 : 1;
       ctx.globalAlpha = p.opacity * fade;
       ctx.fillStyle = '#c9a96e';
-      if(p.type === 'star'){
+      if (p.type === 'star') {
         ctx.beginPath();
-        for(let j=0;j<5;j++){
-          const angle = (j*4*Math.PI/5) - Math.PI/2;
-          const r = j%2===0 ? p.size : p.size/2.5;
-          if(j===0) ctx.moveTo(p.x+r*Math.cos(angle), p.y+r*Math.sin(angle));
-          else ctx.lineTo(p.x+r*Math.cos(angle), p.y+r*Math.sin(angle));
+        for (let j = 0; j < 5; j++) {
+          const angle = (j * 4 * Math.PI / 5) - Math.PI / 2;
+          const r = j % 2 === 0 ? p.size : p.size / 2.5;
+          if (j === 0) ctx.moveTo(p.x + r * Math.cos(angle), p.y + r * Math.sin(angle));
+          else ctx.lineTo(p.x + r * Math.cos(angle), p.y + r * Math.sin(angle));
         }
         ctx.closePath(); ctx.fill();
-      } else { drawHeart(ctx, p.x, p.y, p.size/1.8); ctx.fill(); }
-      if(p.life >= p.maxLife || p.y < -30) particles[i] = spawnParticle();
+      } else {
+        drawHeart(ctx, p.x, p.y, p.size / 1.8);
+        ctx.fill();
+      }
+      if (p.life >= p.maxLife || p.y < -30) particles[i] = spawnParticle();
     });
     ctx.globalAlpha = 1;
     requestAnimationFrame(animate);
@@ -1147,27 +1142,29 @@ const calEvento = { titulo: "Boda de Clarisa & Charles", ubicacion: "Ventanilla-
   animate();
 })();
 
-(function(){
+(function() {
   const container = document.getElementById('petals');
-  const petals = ['🌸','🌼','✨','💛','🤍','🌺'];
-  for(let i=0; i<12; i++){
+  const petals = ['🌸', '🌼', '✨', '💛', '🤍', '🌺'];
+  for (let i = 0; i < 12; i++) {
     const el = document.createElement('div');
     el.className = 'petal';
-    el.textContent = petals[Math.floor(Math.random()*petals.length)];
-    el.style.left = Math.random()*100+'%';
-    el.style.animationDuration = (6+Math.random()*8)+'s';
-    el.style.animationDelay = (Math.random()*10)+'s';
-    el.style.fontSize = (.8+Math.random()*.8)+'rem';
+    el.textContent = petals[Math.floor(Math.random() * petals.length)];
+    el.style.left = Math.random() * 100 + '%';
+    el.style.animationDuration = (6 + Math.random() * 8) + 's';
+    el.style.animationDelay = (Math.random() * 10) + 's';
+    el.style.fontSize = (.8 + Math.random() * .8) + 'rem';
     container.appendChild(el);
   }
 })();
 
-const revealTypes = ['up','left','right','scale'];
-document.querySelectorAll('.card').forEach((card, i) => { if(!card.dataset.reveal) card.dataset.reveal = revealTypes[i % revealTypes.length]; });
-
+// ======================== REVEAL CARDS ========================
+const revealTypes = ['up', 'left', 'right', 'scale'];
+document.querySelectorAll('.card').forEach((card, i) => {
+  if (!card.dataset.reveal) card.dataset.reveal = revealTypes[i % revealTypes.length];
+});
 const cardObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if(entry.isIntersecting) entry.target.classList.add('visible');
+    if (entry.isIntersecting) entry.target.classList.add('visible');
     else entry.target.classList.remove('visible');
   });
 }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
@@ -1176,9 +1173,11 @@ document.querySelectorAll('.card').forEach(c => cardObserver.observe(c));
 const timelineObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const timeline = entry.target;
-    if(entry.isIntersecting){
+    if (entry.isIntersecting) {
       const items = timeline.querySelectorAll('.tl-item');
-      items.forEach((item, idx) => { setTimeout(() => item.classList.add('tl-visible'), idx * 120); });
+      items.forEach((item, idx) => {
+        setTimeout(() => item.classList.add('tl-visible'), idx * 120);
+      });
     } else {
       const items = timeline.querySelectorAll('.tl-item');
       items.forEach(item => item.classList.remove('tl-visible'));
@@ -1187,31 +1186,48 @@ const timelineObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.timeline').forEach(t => timelineObserver.observe(t));
 
-function updateParallax(){
+// ======================== PARALLAX ========================
+function updateParallax() {
   document.querySelectorAll('.parallax-divider').forEach(div => {
     const rect = div.getBoundingClientRect();
     const speed = parseFloat(div.dataset.speed || 0.4);
-    const offset = (rect.top - window.innerHeight/2) * speed;
+    const offset = (rect.top - window.innerHeight / 2) * speed;
     const bg = div.querySelector('.para-bg');
-    if(bg) bg.style.transform = `translateY(${offset}px)`;
+    if (bg) bg.style.transform = `translateY(${offset}px)`;
   });
 }
 window.addEventListener('scroll', updateParallax, { passive: true });
 updateParallax();
 
-function updateCD(){
+// ======================== COUNTDOWN ========================
+function updateCD() {
   const diff = weddingDate - new Date();
-  if(diff <= 0){ ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '0'); return; }
-  const vals = { 'cd-d': Math.floor(diff/86400000), 'cd-h': Math.floor((diff%86400000)/3600000), 'cd-m': Math.floor((diff%3600000)/60000), 'cd-s': Math.floor((diff%60000)/1000) };
+  if (diff <= 0) {
+    ['cd-d', 'cd-h', 'cd-m', 'cd-s'].forEach(id => document.getElementById(id).textContent = '0');
+    return;
+  }
+  const vals = {
+    'cd-d': Math.floor(diff / 86400000),
+    'cd-h': Math.floor((diff % 86400000) / 3600000),
+    'cd-m': Math.floor((diff % 3600000) / 60000),
+    'cd-s': Math.floor((diff % 60000) / 1000)
+  };
   Object.entries(vals).forEach(([id, v]) => {
     const el = document.getElementById(id);
-    const nv = String(v).padStart(2,'0');
-    if(el.textContent !== nv){ el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip'); el.textContent = nv; }
+    const nv = String(v).padStart(2, '0');
+    if (el.textContent !== nv) {
+      el.classList.remove('flip');
+      void el.offsetWidth;
+      el.classList.add('flip');
+      el.textContent = nv;
+    }
   });
 }
-updateCD(); setInterval(updateCD, 1000);
+updateCD();
+setInterval(updateCD, 1000);
 
-(function(){
+// ======================== CALENDAR LINKS ========================
+(function() {
   const e = calEvento;
   const gcal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.titulo)}&dates=${e.inicio}/${e.fin}&location=${encodeURIComponent(e.ubicacion)}&details=${encodeURIComponent(e.descripcion)}`;
   document.getElementById('btn-gcal').href = gcal;
@@ -1219,89 +1235,249 @@ updateCD(); setInterval(updateCD, 1000);
   document.getElementById('btn-ical').href = 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
 })();
 
+// ======================== MÚSICA CON AUTOPLAY SILENCIOSO ========================
 let playing = false;
-function toggleMusic(){
+function toggleMusic() {
   const audio = document.getElementById('bg-audio');
   const btn = document.getElementById('music-btn');
   const disc = document.getElementById('disc');
   const eq = document.getElementById('equalizer');
-  if(playing){ audio.pause(); btn.textContent = '▶'; disc.classList.remove('spin'); eq.classList.remove('active'); }
-  else { audio.play().catch(() => showToast('Activa el sonido en tu dispositivo')); btn.textContent = '⏸'; disc.classList.add('spin'); eq.classList.add('active'); }
+  if (playing) {
+    audio.pause();
+    btn.textContent = '▶';
+    disc.classList.remove('spin');
+    eq.classList.remove('active');
+  } else {
+    audio.play().catch(e => showToast('Activa el sonido en tu dispositivo'));
+    btn.textContent = '⏸';
+    disc.classList.add('spin');
+    eq.classList.add('active');
+  }
   playing = !playing;
 }
 
+function showToast(msg, duration = 3000) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), duration);
+}
+
+// Autoplay silencioso + desmutear al primer clic
+(function autoPlayMusic() {
+  const audio = document.getElementById('bg-audio');
+  const musicBtn = document.getElementById('music-btn');
+  const disc = document.getElementById('disc');
+  const eq = document.getElementById('equalizer');
+  if (!audio) return;
+
+  audio.muted = true;
+  audio.play().then(() => {
+    playing = true;
+    musicBtn.textContent = '⏸';
+    disc.classList.add('spin');
+    eq.classList.add('active');
+    const unmuteHandler = () => {
+      audio.muted = false;
+      document.removeEventListener('click', unmuteHandler);
+      document.removeEventListener('touchstart', unmuteHandler);
+      showToast('🎵 Sonido activado - Disfruta la música', 2500);
+    };
+    document.addEventListener('click', unmuteHandler);
+    document.addEventListener('touchstart', unmuteHandler);
+  }).catch(() => {
+    audio.muted = false;
+    const playHandler = () => {
+      audio.play().then(() => {
+        playing = true;
+        musicBtn.textContent = '⏸';
+        disc.classList.add('spin');
+        eq.classList.add('active');
+        showToast('🎵 Música comenzada', 2000);
+      }).catch(e => console.log("Error al reproducir:", e));
+      document.removeEventListener('click', playHandler);
+      document.removeEventListener('touchstart', playHandler);
+    };
+    document.addEventListener('click', playHandler);
+    document.addEventListener('touchstart', playHandler);
+    showToast('🔊 Haz clic en cualquier lugar para activar la música', 4000);
+  });
+})();
+
+// ======================== CARRUSEL ========================
 let cCurrent = 0, cTotal = 6, touchStartX = 0, touchDeltaX = 0;
-function buildDots(){
+function buildDots() {
   const container = document.getElementById('c-dots');
   container.innerHTML = '';
-  for(let i=0; i<cTotal; i++){ const d = document.createElement('div'); d.className = 'c-dot' + (i===0?' active':''); d.onclick = () => goToSlide(i); container.appendChild(d); }
+  for (let i = 0; i < cTotal; i++) {
+    const d = document.createElement('div');
+    d.className = 'c-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goToSlide(i);
+    container.appendChild(d);
+  }
 }
 buildDots();
-function goToSlide(n){ cCurrent = (n + cTotal) % cTotal; document.getElementById('ctrack').style.transform = `translateX(-${cCurrent*100}%)`; document.getElementById('c-counter').textContent = `${cCurrent+1} / ${cTotal}`; document.querySelectorAll('.c-dot').forEach((d,i) => d.classList.toggle('active', i===cCurrent)); }
-function carouselNext(){ goToSlide(cCurrent+1); }
-function carouselPrev(){ goToSlide(cCurrent-1); }
-function touchStart(e){ touchStartX = e.touches[0].clientX; }
-function touchMove(e){ touchDeltaX = e.touches[0].clientX - touchStartX; }
-function touchEnd(e){ if(touchDeltaX < -40) carouselNext(); else if(touchDeltaX > 40) carouselPrev(); touchDeltaX = 0; }
+function goToSlide(n) {
+  cCurrent = (n + cTotal) % cTotal;
+  document.getElementById('ctrack').style.transform = `translateX(-${cCurrent * 100}%)`;
+  document.getElementById('c-counter').textContent = `${cCurrent + 1} / ${cTotal}`;
+  document.querySelectorAll('.c-dot').forEach((d, i) => d.classList.toggle('active', i === cCurrent));
+}
+function carouselNext() { goToSlide(cCurrent + 1); }
+function carouselPrev() { goToSlide(cCurrent - 1); }
+function touchStart(e) { touchStartX = e.touches[0].clientX; }
+function touchMove(e) { touchDeltaX = e.touches[0].clientX - touchStartX; }
+function touchEnd(e) {
+  if (touchDeltaX < -40) carouselNext();
+  else if (touchDeltaX > 40) carouselPrev();
+  touchDeltaX = 0;
+}
 setInterval(carouselNext, 4000);
 
-function copyText(txt){ navigator.clipboard.writeText(txt).then(() => showToast('✓ Copiado: ' + txt)); }
-function openModal(id){ document.getElementById('modal-'+id).classList.add('open'); document.body.style.overflow = 'hidden'; }
-function closeModal(id){ document.getElementById('modal-'+id).classList.remove('open'); document.body.style.overflow = ''; }
-document.querySelectorAll('.modal-overlay').forEach(el => { el.addEventListener('click', e => { if(e.target === el) closeModal(el.id.replace('modal-','')); }); });
-
-let rsvpChoice = '';
-function pickRSVP(v){ rsvpChoice = v; ['si','no','talvez'].forEach(x => document.getElementById('chip-'+x).classList.toggle('sel', x===v)); document.getElementById('field-pax').style.display = v==='si' ? 'block' : 'none'; }
-function saveLocal(data){ const s=JSON.parse(localStorage.getItem('rsvp_list')||'[]'); s.push(data); localStorage.setItem('rsvp_list',JSON.stringify(s)); }
-function loadLocal(){ return JSON.parse(localStorage.getItem('rsvp_list')||'[]'); }
-async function postData(data){ saveLocal(data); if(APPS_SCRIPT_URL==='https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec') return; await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); }
-async function enviarRSVP(){
-  const nombre = document.getElementById('r-nombre').value.trim();
-  if(!nombre){ showToast('Por favor ingresá tu nombre'); return; }
-  if(!rsvpChoice){ showToast('¿Vas a asistir?'); return; }
-  if(rsvpChoice==='si' && !document.getElementById('r-pax').value){ showToast('¿Cuántas personas serán?'); return; }
-  const btn = document.getElementById('btn-rsvp');
-  btn.innerHTML = '<span class="spinner"></span> Enviando...'; btn.disabled = true;
-  const data = { tipo:'rsvp', nombre, asistencia: rsvpChoice, personas: document.getElementById('r-pax').value||'-', comida: document.getElementById('r-comida').value||'-', mensaje: document.getElementById('r-mensaje').value||'-', fecha: new Date().toLocaleString('es-AR') };
-  try { await postData(data); document.getElementById('rsvp-form').style.display = 'none'; document.getElementById('rsvp-ok').style.display = 'block'; } catch(e){ showToast('Error al enviar. Intentá de nuevo.'); btn.innerHTML='Confirmar asistencia'; btn.disabled=false; }
+// ======================== COPIAR TEXTO ========================
+function copyText(txt) {
+  navigator.clipboard.writeText(txt).then(() => showToast('✓ Copiado: ' + txt));
 }
-async function enviarCancion(){
+
+// ======================== MODALES ========================
+function openModal(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(el => {
+  el.addEventListener('click', e => {
+    if (e.target === el) closeModal(el.id.replace('modal-', ''));
+  });
+});
+
+// ======================== RSVP Y CANCIONES ========================
+let rsvpChoice = '';
+function pickRSVP(v) {
+  rsvpChoice = v;
+  ['si', 'no', 'talvez'].forEach(x => document.getElementById('chip-' + x).classList.toggle('sel', x === v));
+  document.getElementById('field-pax').style.display = v === 'si' ? 'block' : 'none';
+}
+function saveLocal(data) {
+  const s = JSON.parse(localStorage.getItem('rsvp_list') || '[]');
+  s.push(data);
+  localStorage.setItem('rsvp_list', JSON.stringify(s));
+}
+function loadLocal() {
+  return JSON.parse(localStorage.getItem('rsvp_list') || '[]');
+}
+async function postData(data) {
+  saveLocal(data);
+  if (APPS_SCRIPT_URL === 'https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec') return;
+  await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+}
+async function enviarRSVP() {
+  const nombre = document.getElementById('r-nombre').value.trim();
+  if (!nombre) { showToast('Por favor ingresá tu nombre'); return; }
+  if (!rsvpChoice) { showToast('¿Vas a asistir?'); return; }
+  if (rsvpChoice === 'si' && !document.getElementById('r-pax').value) { showToast('¿Cuántas personas serán?'); return; }
+  const btn = document.getElementById('btn-rsvp');
+  btn.innerHTML = '<span class="spinner"></span> Enviando...';
+  btn.disabled = true;
+  const data = {
+    tipo: 'rsvp',
+    nombre,
+    asistencia: rsvpChoice,
+    personas: document.getElementById('r-pax').value || '-',
+    comida: document.getElementById('r-comida').value || '-',
+    mensaje: document.getElementById('r-mensaje').value || '-',
+    fecha: new Date().toLocaleString('es-AR')
+  };
+  try {
+    await postData(data);
+    document.getElementById('rsvp-form').style.display = 'none';
+    document.getElementById('rsvp-ok').style.display = 'block';
+  } catch (e) {
+    showToast('Error al enviar. Intentá de nuevo.');
+    btn.innerHTML = 'Confirmar asistencia';
+    btn.disabled = false;
+  }
+}
+async function enviarCancion() {
   const nombre = document.getElementById('s-nombre').value.trim();
   const cancion = document.getElementById('s-cancion').value.trim();
-  if(!nombre){ showToast('Por favor ingresá tu nombre'); return; }
-  if(!cancion){ showToast('¿Qué canción sugerís?'); return; }
+  if (!nombre) { showToast('Por favor ingresá tu nombre'); return; }
+  if (!cancion) { showToast('¿Qué canción sugerís?'); return; }
   const btn = document.getElementById('btn-song');
-  btn.innerHTML = '<span class="spinner"></span> Enviando...'; btn.disabled = true;
-  const data = { tipo:'cancion', nombre, cancion, link: document.getElementById('s-link').value||'-', fecha: new Date().toLocaleString('es-AR') };
-  try { await postData(data); document.getElementById('song-form').style.display = 'none'; document.getElementById('song-ok').style.display = 'block'; } catch(e){ showToast('Error al enviar. Intentá de nuevo.'); btn.innerHTML='Sugerir Canción'; btn.disabled=false; }
+  btn.innerHTML = '<span class="spinner"></span> Enviando...';
+  btn.disabled = true;
+  const data = {
+    tipo: 'cancion',
+    nombre,
+    cancion,
+    link: document.getElementById('s-link').value || '-',
+    fecha: new Date().toLocaleString('es-AR')
+  };
+  try {
+    await postData(data);
+    document.getElementById('song-form').style.display = 'none';
+    document.getElementById('song-ok').style.display = 'block';
+  } catch (e) {
+    showToast('Error al enviar. Intentá de nuevo.');
+    btn.innerHTML = 'Sugerir Canción';
+    btn.disabled = false;
+  }
 }
 
-function openAdmin(){ document.getElementById('admin-overlay').classList.add('open'); document.body.style.overflow='hidden'; }
-function closeAdmin(){ document.getElementById('admin-overlay').classList.remove('open'); document.body.style.overflow=''; }
-function checkAdmin(){
-  if(document.getElementById('admin-pass').value === adminPass){ document.getElementById('admin-login').style.display='none'; document.getElementById('admin-dash').style.display='block'; renderDashboard(); }
-  else { showToast('Contraseña incorrecta'); }
+// ======================== ADMIN ========================
+function openAdmin() {
+  document.getElementById('admin-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function renderDashboard(){
-  const list=loadLocal(); const rsvps=list.filter(x=>x.tipo==='rsvp');
-  const confirmados=rsvps.filter(x=>x.asistencia==='si');
-  const totalPax=confirmados.reduce((a,b)=>a+(parseInt(b.personas)||1),0);
-  document.getElementById('stat-total').textContent=rsvps.length;
-  document.getElementById('stat-si').textContent=confirmados.length;
-  document.getElementById('stat-pax').textContent=totalPax;
-  const container=document.getElementById('admin-list');
-  if(!rsvps.length){ container.innerHTML='<p style="color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;">Sin confirmaciones aún</p>'; return; }
-  container.innerHTML=rsvps.map(r=>`<div class="admin-entry"><div class="e-name">👤 ${r.nombre}</div><div class="e-detail">${r.fecha} · ${r.personas} persona(s)</div>${r.comida!=='-'?`<div class="e-detail">🍽 ${r.comida}</div>`:''}<span class="e-badge e-${r.asistencia}">${r.asistencia==='si'?'✓ Confirmado':r.asistencia==='no'?'✗ No asiste':'? Tal vez'}</span></div>`).join('');
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
-function exportCSV(){
-  const list=loadLocal().filter(x=>x.tipo==='rsvp');
-  if(!list.length){ showToast('Sin datos para exportar'); return; }
-  const rows=[['Nombre','Asistencia','Personas','Comida','Mensaje','Fecha']];
-  list.forEach(r=>rows.push([r.nombre,r.asistencia,r.personas,r.comida,r.mensaje,r.fecha]));
-  const csv=rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n');
-  const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); a.download='invitados-boda.csv'; a.click();
+function checkAdmin() {
+  if (document.getElementById('admin-pass').value === adminPass) {
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-dash').style.display = 'block';
+    renderDashboard();
+  } else {
+    showToast('Contraseña incorrecta');
+  }
 }
-function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3000); }
+function renderDashboard() {
+  const list = loadLocal();
+  const rsvps = list.filter(x => x.tipo === 'rsvp');
+  const confirmados = rsvps.filter(x => x.asistencia === 'si');
+  const totalPax = confirmados.reduce((a, b) => a + (parseInt(b.personas) || 1), 0);
+  document.getElementById('stat-total').textContent = rsvps.length;
+  document.getElementById('stat-si').textContent = confirmados.length;
+  document.getElementById('stat-pax').textContent = totalPax;
+  const container = document.getElementById('admin-list');
+  if (!rsvps.length) {
+    container.innerHTML = '<p style="color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;">Sin confirmaciones aún</p>';
+    return;
+  }
+  container.innerHTML = rsvps.map(r => `
+    <div class="admin-entry">
+      <div class="e-name">👤 ${r.nombre}</div>
+      <div class="e-detail">${r.fecha} · ${r.personas} persona(s)</div>
+      ${r.comida !== '-' ? `<div class="e-detail">🍽 ${r.comida}</div>` : ''}
+      <span class="e-badge e-${r.asistencia}">${r.asistencia === 'si' ? '✓ Confirmado' : r.asistencia === 'no' ? '✗ No asiste' : '? Tal vez'}</span>
+    </div>
+  `).join('');
+}
+function exportCSV() {
+  const list = loadLocal().filter(x => x.tipo === 'rsvp');
+  if (!list.length) { showToast('Sin datos para exportar'); return; }
+  const rows = [['Nombre', 'Asistencia', 'Personas', 'Comida', 'Mensaje', 'Fecha']];
+  list.forEach(r => rows.push([r.nombre, r.asistencia, r.personas, r.comida, r.mensaje, r.fecha]));
+  const csv = rows.map(r => r.map(c => `"${c}"`).join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = 'data:text/csv;charset=utf-8,' + encodeURIComponent(csv);
+  a.download = 'invitados-boda.csv';
+  a.click();
+}
 </script>
 </body>
 </html>
