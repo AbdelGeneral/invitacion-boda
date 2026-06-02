@@ -7,58 +7,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --gold:       #c9a96e;
+  --gold: #c9a96e;
   --gold-light: #e2c99a;
-  --gold-dark:  #9a7a48;
-  --cream:      #faf6ef;
-  --dark:       #1a130a;
-  --text:       #3a2d20;
-  --card-bg:    rgba(250, 246, 239, 0.96);
-  --card-border:rgba(201, 169, 110, 0.25);
+  --gold-dark: #9a7a48;
+  --cream: #faf6ef;
+  --dark: #1a130a;
+  --text: #3a2d20;
+  --card-bg: rgba(250, 246, 239, 0.96);
+  --card-border: rgba(201, 169, 110, 0.25);
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'Montserrat', sans-serif;
   background: var(--dark);
   color: var(--text);
   overflow-x: hidden;
 }
-
-#particles-canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
+#particles-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .page-bg {
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   background-image: url('fondo.jpeg');
-  background-size: cover;
-  background-position: center;
+  background-size: cover; background-position: center;
   z-index: -1;
 }
-.page-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 9, 4, 0.52);
-}
-
+.page-bg::after { content: ''; position: absolute; inset: 0; background: rgba(15, 9, 4, 0.52); }
 .page-wrap {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1rem 4rem;
-  gap: 1.5rem;
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0 1rem 4rem; gap: 1.5rem;
 }
-
 .hero {
   width: 100%;
   min-height: 100svh;
@@ -70,7 +48,6 @@ body {
   padding: 3rem 1.5rem 5rem;
   position: relative;
 }
-
 .petals-container {
   position: absolute;
   inset: 0;
@@ -92,7 +69,6 @@ body {
   90%  { opacity: .4; }
   100% { opacity: 0; transform: translateY(110vh) rotate(720deg) translateX(60px); }
 }
-
 .hero-ornament {
   display: flex;
   align-items: center;
@@ -104,7 +80,6 @@ body {
 }
 .orn-line { width: 48px; height: 1px; background: var(--gold-light); opacity: .6; }
 .orn-diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
-
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 300;
@@ -161,7 +136,6 @@ body {
   animation: fadeUp .8s .8s forwards;
   position: relative; z-index: 1;
 }
-
 .hero-glow {
   position: absolute;
   width: 340px; height: 340px;
@@ -176,7 +150,6 @@ body {
   0%,100% { opacity: .5; transform: translate(-50%,-55%) scale(1); }
   50% { opacity: 1; transform: translate(-50%,-55%) scale(1.2); }
 }
-
 .hero-scroll {
   position: absolute;
   bottom: 2.5rem;
@@ -206,7 +179,6 @@ body {
   51% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
-
 .parallax-divider {
   width: 100%;
   height: 120px;
@@ -242,7 +214,6 @@ body {
   letter-spacing: 1px;
 }
 .para-quote span { color: var(--gold-light); }
-
 .card {
   width: 100%;
   max-width: 480px;
@@ -252,22 +223,12 @@ body {
   padding: 2.2rem 1.8rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow:
-    0 8px 40px rgba(0,0,0,.35),
-    0 1px 0 rgba(255,255,255,.5) inset;
+  box-shadow: 0 8px 40px rgba(0,0,0,.35), 0 1px 0 rgba(255,255,255,.5) inset;
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity .7s cubic-bezier(.22,1,.36,1),
-              transform .7s cubic-bezier(.22,1,.36,1);
+  transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1);
 }
 .card.visible { opacity: 1; transform: translateY(0); }
-.card:hover {
-  box-shadow:
-    0 14px 55px rgba(0,0,0,.4),
-    0 1px 0 rgba(255,255,255,.5) inset,
-    0 0 0 1px rgba(201,169,110,.2);
-}
-
 .card-header { text-align: center; margin-bottom: 1.8rem; }
 .card-icon {
   width: 52px; height: 52px;
@@ -295,7 +256,6 @@ body {
   font-size: .7rem; font-weight: 300; color: #aaa;
   letter-spacing: 1.5px; margin-top: .4rem; line-height: 1.6;
 }
-
 .cd-grid {
   display: grid;
   grid-template-columns: repeat(4,1fr);
@@ -355,7 +315,6 @@ body {
   text-decoration: none; cursor: pointer; transition: all .25s;
 }
 .btn-cal:hover { border-color: var(--gold); color: var(--gold-dark); background: rgba(201,169,110,.06); }
-
 .detail-item {
   display: flex; align-items: flex-start; gap: .9rem;
   padding: .9rem 0;
@@ -365,7 +324,6 @@ body {
   padding-left: .3rem;
 }
 .detail-item:hover { transform: translateX(5px); background: rgba(201,169,110,.04); }
-.detail-item:last-of-type { border-bottom: none; }
 .detail-icon {
   width: 38px; height: 38px;
   border-radius: 50%;
@@ -375,7 +333,7 @@ body {
   box-shadow: 0 3px 10px rgba(201,169,110,.3);
   transition: transform .3s, box-shadow .3s;
 }
-.detail-item:hover .detail-icon { transform: rotate(10deg) scale(1.1); box-shadow: 0 5px 18px rgba(201,169,110,.45); }
+.detail-item:hover .detail-icon { transform: rotate(10deg) scale(1.1); }
 .detail-lbl { font-size: .58rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .25rem; }
 .detail-val { font-size: .85rem; line-height: 1.55; color: var(--dark); }
 .detail-val a { color: var(--gold-dark); text-decoration: none; font-weight: 500; }
@@ -384,7 +342,6 @@ body {
   border: 1px solid rgba(201,169,110,.2); height: 200px; margin-top: 1.2rem;
 }
 .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
-
 .dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-bottom: 1.2rem; }
 .dress-card {
   border-radius: 14px; border: 1px solid rgba(201,169,110,.2);
@@ -406,7 +363,6 @@ body {
   border-radius: 12px; border-left: 3px solid var(--gold);
   font-size: .78rem; color: var(--text); line-height: 1.6;
 }
-
 .timeline { position: relative; padding-left: 1.8rem; }
 .timeline::before {
   content: ''; position: absolute;
@@ -419,7 +375,6 @@ body {
   transition: opacity .5s ease, transform .5s ease;
 }
 .tl-item.tl-visible { opacity: 1; transform: translateX(0); }
-.tl-item:last-child { margin-bottom: 0; }
 .tl-dot {
   position: absolute; left: -1.8rem; top: 4px;
   width: 14px; height: 14px; border-radius: 50%;
@@ -431,7 +386,6 @@ body {
 .tl-time { font-size: .58rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .25rem; }
 .tl-title { font-size: .9rem; font-weight: 500; color: var(--dark); margin-bottom: .15rem; }
 .tl-desc { font-size: .75rem; color: #888; line-height: 1.5; }
-
 .music-bar {
   display: flex; align-items: center; gap: .9rem;
   padding: 1rem 1.1rem; border-radius: 14px; background: var(--dark);
@@ -476,7 +430,6 @@ body {
   cursor: pointer; transition: transform .3s, box-shadow .3s;
 }
 .music-btn:hover { transform: scale(1.15); box-shadow: 0 0 20px rgba(201,169,110,.6); }
-
 .carousel-wrap {
   position: relative; overflow: hidden; border-radius: 18px;
   touch-action: pan-y;
@@ -531,7 +484,6 @@ body {
   padding: .2rem .55rem; border-radius: 50px;
   backdrop-filter: blur(4px);
 }
-
 .gift-list { display: grid; gap: .8rem; }
 .gift-item {
   display: flex; align-items: center; gap: .9rem;
@@ -553,7 +505,6 @@ body {
 .gift-val { font-size: .83rem; color: var(--dark); }
 .gift-arr { margin-left: auto; color: var(--gold-light); font-size: 1rem; transition: transform .3s; }
 .gift-item:hover .gift-arr { transform: translateX(5px); }
-
 .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
 .btn {
   display: flex; align-items: center; justify-content: center;
@@ -584,7 +535,6 @@ body {
   border: 1px solid var(--gold);
 }
 .btn-outline:hover { background: rgba(201,169,110,.07); transform: translateY(-3px); }
-
 .tip {
   display: flex; align-items: flex-start; gap: .8rem;
   padding: .8rem 0; border-bottom: 1px solid rgba(201,169,110,.12);
@@ -594,7 +544,6 @@ body {
 .tip:hover { transform: translateX(5px); background: rgba(201,169,110,.04); }
 .tip:last-child { border-bottom: none; }
 .tip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
-
 .modal-overlay {
   position: fixed; inset: 0; z-index: 100;
   background: rgba(0,0,0,.7);
@@ -654,9 +603,7 @@ body {
 .success-screen { text-align: center; padding: 1.5rem .5rem; display: none; }
 .success-icon { font-size: 3rem; margin-bottom: .8rem; animation: popIn .5s cubic-bezier(.34,1.56,.64,1) forwards; }
 @keyframes popIn { from{transform:scale(0) rotate(-20deg)} to{transform:scale(1) rotate(0)} }
-.success-screen h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 400; color: var(--gold-dark); margin-bottom: .4rem; }
 .spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,.3); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: .35rem; }
-
 .admin-overlay { position: fixed; inset: 0; z-index: 300; background: rgba(0,0,0,.88); display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
 .admin-overlay.open { opacity: 1; pointer-events: all; }
 .admin-panel { background: var(--dark); color: #fff; border-radius: 20px; width: 100%; max-width: 480px; max-height: 90svh; overflow-y: auto; padding: 2rem 1.4rem; transform: scale(.9) translateY(30px); transition: transform .4s cubic-bezier(.34,1.56,.64,1); position: relative; }
@@ -673,7 +620,6 @@ body {
 .e-si { background: rgba(80,180,80,.15); color: #6dc96d; }
 .e-no { background: rgba(180,80,80,.15); color: #c96d6d; }
 .e-talvez { background: rgba(201,169,110,.15); color: var(--gold-light); }
-
 .toast {
   position: fixed; bottom: 2rem; left: 50%;
   transform: translateX(-50%) translateY(100px);
@@ -686,7 +632,6 @@ body {
   border: 1px solid rgba(201,169,110,.25);
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
-
 footer {
   width: 100%; text-align: center; padding: 3rem 1.5rem 2rem;
   position: relative; z-index: 1;
@@ -695,12 +640,10 @@ footer {
 .footer-date { font-size: .62rem; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.3); margin: .4rem 0 1.5rem; }
 .footer-admin { font-size: .6rem; color: rgba(255,255,255,.12); cursor: pointer; letter-spacing: 1px; background: none; border: none; transition: color .3s; }
 .footer-admin:hover { color: rgba(255,255,255,.35); }
-
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
 .card[data-reveal="left"]  { transform: translateX(-40px); }
 .card[data-reveal="right"] { transform: translateX(40px); }
 .card[data-reveal="up"]    { transform: translateY(40px); }
@@ -720,24 +663,14 @@ footer {
     <div class="hero-ornament">
       <div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div>
     </div>
-    <h1>
-      <span class="n1">Clarisa</span>
-      <span class="amp">&amp;</span>
-      <span class="n2">Charles</span>
-    </h1>
+    <h1><span class="n1">Clarisa</span><span class="amp">&amp;</span><span class="n2">Charles</span></h1>
     <p class="hero-event">¡Nuestra Boda!</p>
     <p class="hero-sub">Te elijo hoy y por el resto de mi vida</p>
-    <a href="#countdown" class="hero-scroll">
-      <div class="scroll-bar"></div>
-      <span>Ver más</span>
-    </a>
+    <a href="#countdown" class="hero-scroll"><div class="scroll-bar"></div><span>Ver más</span></a>
   </section>
 
   <div class="card" id="countdown" data-reveal="scale">
-    <div class="card-header">
-      <div class="card-icon">📅</div>
-      <h2 class="card-title">Faltan para el gran día</h2>
-    </div>
+    <div class="card-header"><div class="card-icon">📅</div><h2 class="card-title">Faltan para el gran día</h2></div>
     <div class="cd-grid">
       <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">Días</span></div>
       <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">Horas</span></div>
@@ -745,142 +678,54 @@ footer {
       <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">Seg</span></div>
     </div>
     <p class="cd-date">Domingo, 28 de Junio de 2026</p>
-    <div class="cal-row">
-      <a class="btn-cal" id="btn-gcal" href="#" target="_blank">📅 Google Cal</a>
-      <a class="btn-cal" id="btn-ical" href="#" download="boda.ics">🍎 Apple Cal</a>
-    </div>
+    <div class="cal-row"><a class="btn-cal" id="btn-gcal" href="#" target="_blank">📅 Google Cal</a><a class="btn-cal" id="btn-ical" href="#" download="boda.ics">🍎 Apple Cal</a></div>
   </div>
 
-  <div class="parallax-divider" data-speed="0.4">
-    <div class="para-bg"></div>
-    <div class="para-overlay">
-      <p class="para-quote">"El amor no se ve con los ojos, sino con el <span>corazón</span>"</p>
-    </div>
-  </div>
+  <div class="parallax-divider" data-speed="0.4"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"El amor no se ve con los ojos, sino con el <span>corazón</span>"</p></div></div>
 
   <div class="card" data-reveal="left">
-    <div class="card-header">
-      <div class="card-icon">✉️</div>
-      <h2 class="card-title">Detalles del Evento</h2>
-    </div>
-    <div class="detail-item">
-      <div class="detail-icon">🥂</div>
-      <div>
-        <div class="detail-lbl">Recepción & Fiesta</div>
-        <div class="detail-val">16:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7</div>
-      </div>
-    </div>
-    <div class="detail-item">
-      <div class="detail-icon">📅</div>
-      <div>
-        <div class="detail-lbl">Fecha</div>
-        <div class="detail-val">Domingo, 28 de Junio de 2026</div>
-      </div>
-    </div>
-    <div class="detail-item">
-      <div class="detail-icon">📍</div>
-      <div>
-        <div class="detail-lbl">Ubicación</div>
-        <div class="detail-val">
-          <a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="map-wrap">
-      <iframe src="https://maps.app.goo.gl/Bbak1kDy8J86Q2kH6"></iframe>
-    </div>
+    <div class="card-header"><div class="card-icon">✉️</div><h2 class="card-title">Detalles del Evento</h2></div>
+    <div class="detail-item"><div class="detail-icon">🥂</div><div><div class="detail-lbl">Recepción & Fiesta</div><div class="detail-val">16:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7</div></div></div>
+    <div class="detail-item"><div class="detail-icon">📅</div><div><div class="detail-lbl">Fecha</div><div class="detail-val">Domingo, 28 de Junio de 2026</div></div></div>
+    <div class="detail-item"><div class="detail-icon">📍</div><div><div class="detail-lbl">Ubicación</div><div class="detail-val"><a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a></div></div></div>
+    <div class="map-wrap"><iframe src="https://maps.app.goo.gl/Bbak1kDy8J86Q2kH6"></iframe></div>
   </div>
 
   <div class="card" data-reveal="up">
-    <div class="card-header">
-      <div class="card-icon">👗</div>
-      <h2 class="card-title">Vestimenta</h2>
-      <p class="card-sub">Temática elegante — Blanco y Dorado</p>
-    </div>
+    <div class="card-header"><div class="card-icon">👗</div><h2 class="card-title">Vestimenta</h2><p class="card-sub">Temática elegante — Blanco y Dorado</p></div>
     <div class="dress-grid">
-      <div class="dress-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#f5f0e8,#fff);border:2px solid #ddd;"></div>
-        <div class="dress-name">Blanco Marfil</div>
-        <div class="dress-desc">Tonos blancos, crema e ivory para las damas</div>
-      </div>
-      <div class="dress-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#c9a96e,#e2c99a);"></div>
-        <div class="dress-name">Dorado</div>
-        <div class="dress-desc">Accesorios y detalles dorados bienvenidos</div>
-      </div>
-      <div class="dress-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#1a130a,#2e1e0e);"></div>
-        <div class="dress-name">Negro Elegante</div>
-        <div class="dress-desc">Trajes y smokings oscuros para ellos</div>
-      </div>
-      <div class="dress-card">
-        <div class="swatch" style="background:linear-gradient(135deg,#cfc0a8,#e0d0bc);"></div>
-        <div class="dress-name">Champagne</div>
-        <div class="dress-desc">Tonos nude y champagne son bienvenidos</div>
-      </div>
+      <div class="dress-card"><div class="swatch" style="background:linear-gradient(135deg,#f5f0e8,#fff);border:2px solid #ddd;"></div><div class="dress-name">Blanco Marfil</div><div class="dress-desc">Tonos blancos, crema e ivory para las damas</div></div>
+      <div class="dress-card"><div class="swatch" style="background:linear-gradient(135deg,#c9a96e,#e2c99a);"></div><div class="dress-name">Dorado</div><div class="dress-desc">Accesorios y detalles dorados bienvenidos</div></div>
+      <div class="dress-card"><div class="swatch" style="background:linear-gradient(135deg,#1a130a,#2e1e0e);"></div><div class="dress-name">Negro Elegante</div><div class="dress-desc">Trajes y smokings oscuros para ellos</div></div>
+      <div class="dress-card"><div class="swatch" style="background:linear-gradient(135deg,#cfc0a8,#e0d0bc);"></div><div class="dress-name">Champagne</div><div class="dress-desc">Tonos nude y champagne son bienvenidos</div></div>
     </div>
-    <div class="dress-note">
-      🚫 Por favor evitar el color <strong>rojo</strong> y colores muy vibrantes. Queremos mantener la armonía visual del evento. ¡Gracias!
-    </div>
+    <div class="dress-note">🚫 Por favor evitar el color <strong>rojo</strong> y colores muy vibrantes. Queremos mantener la armonía visual del evento. ¡Gracias!</div>
   </div>
 
-  <div class="parallax-divider" data-speed="0.3">
-    <div class="para-bg"></div>
-    <div class="para-overlay">
-      <p class="para-quote">"Dos almas que laten como <span>una sola</span>"</p>
-    </div>
-  </div>
+  <div class="parallax-divider" data-speed="0.3"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Dos almas que laten como <span>una sola</span>"</p></div></div>
 
   <div class="card" data-reveal="left">
-    <div class="card-header">
-      <div class="card-icon">🗓️</div>
-      <h2 class="card-title">Agenda del Día</h2>
-    </div>
+    <div class="card-header"><div class="card-icon">🗓️</div><h2 class="card-title">Agenda del Día</h2></div>
     <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">17:30 hs</div>
-        <div class="tl-title">Recepción de invitados</div>
-        <div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">19:30 hs</div>
-        <div class="tl-title">Sesión de fotos</div>
-        <div class="tl-desc">Fotos con los novios y familiares en los jardines</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">20:30 hs</div>
-        <div class="tl-title">Cena & Baile</div>
-        <div class="tl-desc">Ingreso al salón principal, cena y pista de baile</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-        <div class="tl-time">00:30 hs</div>
-        <div class="tl-title">Torta & Brindis</div>
-        <div class="tl-desc">El corte de la torta y el brindis con todos</div>
-      </div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">17:30 hs</div><div class="tl-title">Recepción de invitados</div><div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">19:30 hs</div><div class="tl-title">Sesión de fotos</div><div class="tl-desc">Fotos con los novios y familiares en los jardines</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">20:30 hs</div><div class="tl-title">Cena & Baile</div><div class="tl-desc">Ingreso al salón principal, cena y pista de baile</div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">00:30 hs</div><div class="tl-title">Torta & Brindis</div><div class="tl-desc">El corte de la torta y el brindis con todos</div></div>
     </div>
   </div>
 
   <div class="card" data-reveal="right">
-    <div class="card-header">
-      <div class="card-icon">🎵</div>
-      <h2 class="card-title">Música</h2>
-    </div>
+    <div class="card-header"><div class="card-icon">🎵</div><h2 class="card-title">Música</h2></div>
     <div class="music-bar">
       <div class="music-disc" id="disc">🎵</div>
       <div class="music-info">
         <div class="music-title">Canción especial</div>
         <div class="music-artist">Para vos</div>
       </div>
-      <div class="equalizer" id="equalizer">
-        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
-      </div>
+      <div class="equalizer" id="equalizer"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
       <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
     </div>
-    <!-- IMPORTANTE: Cambia "musica.mp3" por el nombre exacto de tu archivo MP3 -->
+    <!-- Cambia "musica.mp3" por el nombre exacto de tu archivo MP3 -->
     <audio id="bg-audio" loop preload="auto">
       <source src="musica.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
@@ -889,15 +734,8 @@ footer {
   </div>
 
   <div class="card" data-reveal="scale">
-    <div class="card-header">
-      <div class="card-icon">📸</div>
-      <h2 class="card-title">Nuestra Historia</h2>
-      <p class="card-sub">Un recorrido de amor en imágenes</p>
-    </div>
-    <div class="carousel-wrap" id="carousel"
-         ontouchstart="touchStart(event)"
-         ontouchmove="touchMove(event)"
-         ontouchend="touchEnd(event)">
+    <div class="card-header"><div class="card-icon">📸</div><h2 class="card-title">Nuestra Historia</h2><p class="card-sub">Un recorrido de amor en imágenes</p></div>
+    <div class="carousel-wrap" id="carousel" ontouchstart="touchStart(event)" ontouchmove="touchMove(event)" ontouchend="touchEnd(event)">
       <div class="carousel-track" id="ctrack">
         <div class="carousel-slide"><img src="foto1.jpeg" alt="Foto 1" loading="lazy"><div class="slide-overlay"></div></div>
         <div class="carousel-slide"><img src="foto2.jpeg" alt="Foto 2" loading="lazy"><div class="slide-overlay"></div></div>
@@ -906,73 +744,30 @@ footer {
         <div class="carousel-slide"><img src="foto5.jpeg" alt="Foto 5" loading="lazy"><div class="slide-overlay"></div></div>
         <div class="carousel-slide"><img src="foto6.jpeg" alt="Foto 6" loading="lazy"><div class="slide-overlay"></div></div>
       </div>
-      <div class="carousel-nav">
-        <button class="c-btn" onclick="carouselPrev()">‹</button>
-        <button class="c-btn" onclick="carouselNext()">›</button>
-      </div>
+      <div class="carousel-nav"><button class="c-btn" onclick="carouselPrev()">‹</button><button class="c-btn" onclick="carouselNext()">›</button></div>
       <div class="carousel-counter" id="c-counter">1 / 6</div>
     </div>
     <div class="carousel-dots" id="c-dots"></div>
   </div>
 
-  <div class="parallax-divider" data-speed="0.5">
-    <div class="para-bg"></div>
-    <div class="para-overlay">
-      <p class="para-quote">"Y en ese instante supe que era <span>para siempre</span>"</p>
-    </div>
-  </div>
+  <div class="parallax-divider" data-speed="0.5"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Y en ese instante supe que era <span>para siempre</span>"</p></div></div>
 
   <div class="card" data-reveal="up">
-    <div class="card-header">
-      <div class="card-icon">🎁</div>
-      <h2 class="card-title">Regalos</h2>
-      <p class="card-sub">Tu presencia es el mejor regalo.<br>Si deseas obsequiarnos algo:</p>
-    </div>
+    <div class="card-header"><div class="card-icon">🎁</div><h2 class="card-title">Regalos</h2><p class="card-sub">Tu presencia es el mejor regalo.<br>Si deseas obsequiarnos algo:</p></div>
     <div class="gift-list">
-      <a class="gift-item" href="#" onclick="copyText('alias.pago.mp'); return false;">
-        <div class="gift-ico">💳</div>
-        <div>
-          <div class="gift-lbl">Mercado Pago</div>
-          <div class="gift-val">alias.pago.mp · Toca para copiar</div>
-        </div>
-        <div class="gift-arr">→</div>
-      </a>
-      <a class="gift-item" href="#" onclick="copyText('0000003100123456789012'); return false;">
-        <div class="gift-ico">🏦</div>
-        <div>
-          <div class="gift-lbl">Transferencia bancaria</div>
-          <div class="gift-val">CBU: 0000 0031 0012 3456</div>
-        </div>
-        <div class="gift-arr">→</div>
-      </a>
-      <a class="gift-item" href="https://www.amazon.com" target="_blank">
-        <div class="gift-ico">🛍️</div>
-        <div>
-          <div class="gift-lbl">Lista de regalos</div>
-          <div class="gift-val">Ver lista en tienda ↗</div>
-        </div>
-        <div class="gift-arr">→</div>
-      </a>
+      <a class="gift-item" href="#" onclick="copyText('alias.pago.mp'); return false;"><div class="gift-ico">💳</div><div><div class="gift-lbl">Mercado Pago</div><div class="gift-val">alias.pago.mp · Toca para copiar</div></div><div class="gift-arr">→</div></a>
+      <a class="gift-item" href="#" onclick="copyText('0000003100123456789012'); return false;"><div class="gift-ico">🏦</div><div><div class="gift-lbl">Transferencia bancaria</div><div class="gift-val">CBU: 0000 0031 0012 3456</div></div><div class="gift-arr">→</div></a>
+      <a class="gift-item" href="https://www.amazon.com" target="_blank"><div class="gift-ico">🛍️</div><div><div class="gift-lbl">Lista de regalos</div><div class="gift-val">Ver lista en tienda ↗</div></div><div class="gift-arr">→</div></a>
     </div>
   </div>
 
   <div class="card" data-reveal="scale">
-    <div class="card-header">
-      <div class="card-icon">💌</div>
-      <h2 class="card-title">¿Nos acompañas?</h2>
-      <p class="card-sub">Confirmá antes del <strong style="color:var(--gold-dark)">25 de Junio 2026</strong></p>
-    </div>
-    <div class="btn-row">
-      <button class="btn btn-gold" onclick="openModal('rsvp')">✓ Confirmar</button>
-      <button class="btn btn-outline" onclick="openModal('song')">🎵 Canción</button>
-    </div>
+    <div class="card-header"><div class="card-icon">💌</div><h2 class="card-title">¿Nos acompañas?</h2><p class="card-sub">Confirmá antes del <strong style="color:var(--gold-dark)">25 de Junio 2026</strong></p></div>
+    <div class="btn-row"><button class="btn btn-gold" onclick="openModal('rsvp')">✓ Confirmar</button><button class="btn btn-outline" onclick="openModal('song')">🎵 Canción</button></div>
   </div>
 
   <div class="card" data-reveal="up">
-    <div class="card-header">
-      <div class="card-icon">📋</div>
-      <h2 class="card-title">Tips y Notas</h2>
-    </div>
+    <div class="card-header"><div class="card-icon">📋</div><h2 class="card-title">Tips y Notas</h2></div>
     <div class="tip"><div class="tip-dot"></div><div>¡Por favor ser <strong>puntuales</strong>!</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Es un evento <strong>solo para adultos</strong>.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Confirmá asistencia <strong>antes del 25 de Junio</strong>.</div></div>
@@ -982,89 +777,14 @@ footer {
 
 </div>
 
-<footer>
-  <div class="footer-names">Clarisa &amp; Charles</div>
-  <div class="footer-date">31 · 06 · 2026</div>
-  <button class="footer-admin" onclick="openAdmin()">⚙</button>
-</footer>
+<footer><div class="footer-names">Clarisa &amp; Charles</div><div class="footer-date">31 · 06 · 2026</div><button class="footer-admin" onclick="openAdmin()">⚙</button></footer>
 
-<!-- MODALES (RSVP y CANCIÓN) -->
-<div class="modal-overlay" id="modal-rsvp">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('rsvp')">✕</button>
-    <div class="modal-badge">💌</div>
-    <h2>Confirmar Asistencia</h2>
-    <div id="rsvp-form">
-      <div class="field"><label>Nombre completo *</label><input type="text" id="r-nombre" placeholder="Tu nombre y apellido"></div>
-      <div class="field">
-        <label>¿Asistirás? *</label>
-        <div class="radio-row">
-          <div class="radio-chip" id="chip-si" onclick="pickRSVP('si')">✓ Sí, voy</div>
-          <div class="radio-chip" id="chip-no" onclick="pickRSVP('no')">✗ No puedo</div>
-          <div class="radio-chip" id="chip-talvez" onclick="pickRSVP('talvez')">? Tal vez</div>
-        </div>
-      </div>
-      <div class="field" id="field-pax" style="display:none;">
-        <label>¿Cuántas personas? *</label>
-        <select id="r-pax">
-          <option value="">Seleccionar...</option>
-          <option value="1">Solo yo (1)</option>
-          <option value="2">Somos 2</option>
-          <option value="3">Somos 3</option>
-          <option value="4">Somos 4</option>
-          <option value="5+">5 o más</option>
-        </select>
-      </div>
-      <div class="field"><label>Restricción alimentaria</label><input type="text" id="r-comida" placeholder="Vegano, celíaco... (opcional)"></div>
-      <div class="field"><label>Mensaje para los novios 💬</label><textarea id="r-mensaje" placeholder="Un deseo, palabras bonitas..."></textarea></div>
-      <button class="btn btn-gold" id="btn-rsvp" onclick="enviarRSVP()" style="margin-top:.4rem;">Confirmar asistencia</button>
-    </div>
-    <div class="success-screen" id="rsvp-ok">
-      <div class="success-icon">🎉</div>
-      <h3>¡Gracias!</h3>
-      <p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p>
-    </div>
-  </div>
-</div>
+<!-- MODALES -->
+<div class="modal-overlay" id="modal-rsvp"><div class="modal"><button class="modal-close" onclick="closeModal('rsvp')">✕</button><div class="modal-badge">💌</div><h2>Confirmar Asistencia</h2><div id="rsvp-form"><div class="field"><label>Nombre completo *</label><input type="text" id="r-nombre" placeholder="Tu nombre y apellido"></div><div class="field"><label>¿Asistirás? *</label><div class="radio-row"><div class="radio-chip" id="chip-si" onclick="pickRSVP('si')">✓ Sí, voy</div><div class="radio-chip" id="chip-no" onclick="pickRSVP('no')">✗ No puedo</div><div class="radio-chip" id="chip-talvez" onclick="pickRSVP('talvez')">? Tal vez</div></div></div><div class="field" id="field-pax" style="display:none;"><label>¿Cuántas personas? *</label><select id="r-pax"><option value="">Seleccionar...</option><option value="1">Solo yo (1)</option><option value="2">Somos 2</option><option value="3">Somos 3</option><option value="4">Somos 4</option><option value="5+">5 o más</option></select></div><div class="field"><label>Restricción alimentaria</label><input type="text" id="r-comida" placeholder="Vegano, celíaco... (opcional)"></div><div class="field"><label>Mensaje para los novios 💬</label><textarea id="r-mensaje" placeholder="Un deseo, palabras bonitas..."></textarea></div><button class="btn btn-gold" id="btn-rsvp" onclick="enviarRSVP()" style="margin-top:.4rem;">Confirmar asistencia</button></div><div class="success-screen" id="rsvp-ok"><div class="success-icon">🎉</div><h3>¡Gracias!</h3><p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p></div></div></div>
 
-<div class="modal-overlay" id="modal-song">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal('song')">✕</button>
-    <div class="modal-badge">🎵</div>
-    <h2>Sugerir Canción</h2>
-    <div id="song-form">
-      <div class="field"><label>Tu nombre *</label><input type="text" id="s-nombre" placeholder="Ingresá tu nombre"></div>
-      <div class="field"><label>Canción y artista *</label><input type="text" id="s-cancion" placeholder="Nombre de la canción y autor"></div>
-      <div class="field"><label>Link de YouTube (opcional)</label><input type="url" id="s-link" placeholder="https://youtube.com/..."></div>
-      <button class="btn btn-gold" id="btn-song" onclick="enviarCancion()" style="margin-top:.4rem;">Sugerir Canción</button>
-    </div>
-    <div class="success-screen" id="song-ok">
-      <div class="success-icon">🎶</div>
-      <h3>¡Genial!</h3>
-      <p>Tu sugerencia fue enviada.<br>¡La sumamos a la playlist! 🎉</p>
-    </div>
-  </div>
-</div>
+<div class="modal-overlay" id="modal-song"><div class="modal"><button class="modal-close" onclick="closeModal('song')">✕</button><div class="modal-badge">🎵</div><h2>Sugerir Canción</h2><div id="song-form"><div class="field"><label>Tu nombre *</label><input type="text" id="s-nombre" placeholder="Ingresá tu nombre"></div><div class="field"><label>Canción y artista *</label><input type="text" id="s-cancion" placeholder="Nombre de la canción y autor"></div><div class="field"><label>Link de YouTube (opcional)</label><input type="url" id="s-link" placeholder="https://youtube.com/..."></div><button class="btn btn-gold" id="btn-song" onclick="enviarCancion()" style="margin-top:.4rem;">Sugerir Canción</button></div><div class="success-screen" id="song-ok"><div class="success-icon">🎶</div><h3>¡Genial!</h3><p>Tu sugerencia fue enviada.<br>¡La sumamos a la playlist! 🎉</p></div></div></div>
 
-<div class="admin-overlay" id="admin-overlay">
-  <div class="admin-panel">
-    <button class="modal-close" style="position:absolute;top:1.2rem;right:1.2rem;" onclick="closeAdmin()">✕</button>
-    <h2 class="admin-title">⚙ Panel de Admin</h2>
-    <div id="admin-login">
-      <div class="field"><label style="color:var(--gold-light);">Contraseña</label><input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()"></div>
-      <button class="btn btn-gold" onclick="checkAdmin()">Ingresar</button>
-    </div>
-    <div id="admin-dash" style="display:none;">
-      <div class="admin-stats">
-        <div class="stat-box"><div class="stat-num" id="stat-total">0</div><div class="stat-lbl">Total</div></div>
-        <div class="stat-box"><div class="stat-num" id="stat-si">0</div><div class="stat-lbl">Confirmados</div></div>
-        <div class="stat-box"><div class="stat-num" id="stat-pax">0</div><div class="stat-lbl">Personas</div></div>
-      </div>
-      <div id="admin-list"></div>
-      <button class="btn btn-outline" style="margin-top:1.2rem;color:var(--gold-light);border-color:rgba(201,169,110,.4);" onclick="exportCSV()">📥 Exportar CSV</button>
-    </div>
-  </div>
-</div>
+<div class="admin-overlay" id="admin-overlay"><div class="admin-panel"><button class="modal-close" style="position:absolute;top:1.2rem;right:1.2rem;" onclick="closeAdmin()">✕</button><h2 class="admin-title">⚙ Panel de Admin</h2><div id="admin-login"><div class="field"><label style="color:var(--gold-light);">Contraseña</label><input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()"></div><button class="btn btn-gold" onclick="checkAdmin()">Ingresar</button></div><div id="admin-dash" style="display:none;"><div class="admin-stats"><div class="stat-box"><div class="stat-num" id="stat-total">0</div><div class="stat-lbl">Total</div></div><div class="stat-box"><div class="stat-num" id="stat-si">0</div><div class="stat-lbl">Confirmados</div></div><div class="stat-box"><div class="stat-num" id="stat-pax">0</div><div class="stat-lbl">Personas</div></div></div><div id="admin-list"></div><button class="btn btn-outline" style="margin-top:1.2rem;color:var(--gold-light);border-color:rgba(201,169,110,.4);" onclick="exportCSV()">📥 Exportar CSV</button></div></div></div>
 
 <div class="toast" id="toast"></div>
 
@@ -1081,7 +801,7 @@ const calEvento = {
   descripcion: "¡Nos casamos! Ven a celebrar con nosotros."
 };
 
-// ======================== PARTÍCULAS Y PÉTALOS ========================
+// ======================== PARTÍCULAS ========================
 (function() {
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
@@ -1091,16 +811,7 @@ const calEvento = {
   function randomBetween(a, b) { return a + Math.random() * (b - a); }
   function spawnParticle() {
     const type = Math.random() < 0.6 ? 'star' : 'heart';
-    return {
-      x: randomBetween(0, canvas.width),
-      y: randomBetween(-20, canvas.height),
-      size: randomBetween(2, 5),
-      opacity: randomBetween(0.2, 0.7),
-      speed: randomBetween(0.15, 0.5),
-      dx: randomBetween(-0.3, 0.3),
-      drift: randomBetween(-0.002, 0.002),
-      type, life: 0, maxLife: randomBetween(200, 500)
-    };
+    return { x: randomBetween(0, canvas.width), y: randomBetween(-20, canvas.height), size: randomBetween(2, 5), opacity: randomBetween(0.2, 0.7), speed: randomBetween(0.15, 0.5), dx: randomBetween(-0.3, 0.3), drift: randomBetween(-0.002, 0.002), type, life: 0, maxLife: randomBetween(200, 500) };
   }
   for (let i = 0; i < 60; i++) particles.push(spawnParticle());
   function drawHeart(ctx, x, y, s) {
@@ -1176,9 +887,7 @@ const timelineObserver = new IntersectionObserver(entries => {
     const timeline = entry.target;
     if (entry.isIntersecting) {
       const items = timeline.querySelectorAll('.tl-item');
-      items.forEach((item, idx) => {
-        setTimeout(() => item.classList.add('tl-visible'), idx * 120);
-      });
+      items.forEach((item, idx) => { setTimeout(() => item.classList.add('tl-visible'), idx * 120); });
     } else {
       const items = timeline.querySelectorAll('.tl-item');
       items.forEach(item => item.classList.remove('tl-visible'));
@@ -1236,25 +945,30 @@ setInterval(updateCD, 1000);
   document.getElementById('btn-ical').href = 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
 })();
 
-// ======================== MÚSICA (CORREGIDA para GitHub Pages) ========================
+// ======================== MÚSICA (VERSIÓN SIMPLE SIN AUTOPLAY) ========================
 let playing = false;
+const audio = document.getElementById('bg-audio');
+const musicBtn = document.getElementById('music-btn');
+const disc = document.getElementById('disc');
+const eq = document.getElementById('equalizer');
+
 function toggleMusic() {
-  const audio = document.getElementById('bg-audio');
-  const btn = document.getElementById('music-btn');
-  const disc = document.getElementById('disc');
-  const eq = document.getElementById('equalizer');
-  if (playing) {
+  if (!playing) {
+    audio.play()
+      .then(() => {
+        playing = true;
+        musicBtn.textContent = '⏸';
+        disc.classList.add('spin');
+        eq.classList.add('active');
+      })
+      .catch(() => showToast('🔊 Error al reproducir. Haz clic en el botón de música.'));
+  } else {
     audio.pause();
-    btn.textContent = '▶';
+    playing = false;
+    musicBtn.textContent = '▶';
     disc.classList.remove('spin');
     eq.classList.remove('active');
-  } else {
-    audio.play().catch(e => showToast('Activa el sonido en tu dispositivo'));
-    btn.textContent = '⏸';
-    disc.classList.add('spin');
-    eq.classList.add('active');
   }
-  playing = !playing;
 }
 
 function showToast(msg, duration = 3000) {
@@ -1263,62 +977,6 @@ function showToast(msg, duration = 3000) {
   t.classList.add('show');
   setTimeout(() => t.classList.remove('show'), duration);
 }
-
-// Inicio de música: espera el primer clic en cualquier parte
-(function initMusic() {
-  const audio = document.getElementById('bg-audio');
-  const musicBtn = document.getElementById('music-btn');
-  const disc = document.getElementById('disc');
-  const eq = document.getElementById('equalizer');
-  if (!audio) return;
-
-  let interactionHandled = false;
-
-  function startMusic() {
-    if (interactionHandled) return;
-    interactionHandled = true;
-    
-    audio.muted = false;
-    audio.play().then(() => {
-      playing = true;
-      musicBtn.textContent = '⏸';
-      disc.classList.add('spin');
-      eq.classList.add('active');
-      showToast('🎵 Música comenzada', 2000);
-    }).catch(err => {
-      console.warn('Error al reproducir:', err);
-      showToast('🔊 Haz clic en el botón de música', 3000);
-    });
-  }
-
-  // El primer clic en cualquier parte de la página iniciará la música
-  window.addEventListener('click', startMusic, { once: true });
-  window.addEventListener('touchstart', startMusic, { once: true });
-
-  // El botón de música también puede iniciar (si se usa antes del clic global)
-  musicBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (!interactionHandled) {
-      startMusic();
-    } else {
-      // Si ya está sonando, comportamiento normal de toggle (pausa/reproduce)
-      if (playing) {
-        audio.pause();
-        musicBtn.textContent = '▶';
-        disc.classList.remove('spin');
-        eq.classList.remove('active');
-        playing = false;
-      } else {
-        audio.play().then(() => {
-          playing = true;
-          musicBtn.textContent = '⏸';
-          disc.classList.add('spin');
-          eq.classList.add('active');
-        }).catch(err => console.warn(err));
-      }
-    }
-  });
-})();
 
 // ======================== CARRUSEL ========================
 let cCurrent = 0, cTotal = 6, touchStartX = 0, touchDeltaX = 0;
@@ -1343,11 +1001,7 @@ function carouselNext() { goToSlide(cCurrent + 1); }
 function carouselPrev() { goToSlide(cCurrent - 1); }
 function touchStart(e) { touchStartX = e.touches[0].clientX; }
 function touchMove(e) { touchDeltaX = e.touches[0].clientX - touchStartX; }
-function touchEnd(e) {
-  if (touchDeltaX < -40) carouselNext();
-  else if (touchDeltaX > 40) carouselPrev();
-  touchDeltaX = 0;
-}
+function touchEnd(e) { if (touchDeltaX < -40) carouselNext(); else if (touchDeltaX > 40) carouselPrev(); touchDeltaX = 0; }
 setInterval(carouselNext, 4000);
 
 // ======================== COPIAR TEXTO ========================
@@ -1365,9 +1019,7 @@ function closeModal(id) {
   document.body.style.overflow = '';
 }
 document.querySelectorAll('.modal-overlay').forEach(el => {
-  el.addEventListener('click', e => {
-    if (e.target === el) closeModal(el.id.replace('modal-', ''));
-  });
+  el.addEventListener('click', e => { if (e.target === el) closeModal(el.id.replace('modal-', '')); });
 });
 
 // ======================== RSVP Y CANCIONES ========================
@@ -1398,15 +1050,7 @@ async function enviarRSVP() {
   const btn = document.getElementById('btn-rsvp');
   btn.innerHTML = '<span class="spinner"></span> Enviando...';
   btn.disabled = true;
-  const data = {
-    tipo: 'rsvp',
-    nombre,
-    asistencia: rsvpChoice,
-    personas: document.getElementById('r-pax').value || '-',
-    comida: document.getElementById('r-comida').value || '-',
-    mensaje: document.getElementById('r-mensaje').value || '-',
-    fecha: new Date().toLocaleString('es-AR')
-  };
+  const data = { tipo: 'rsvp', nombre, asistencia: rsvpChoice, personas: document.getElementById('r-pax').value || '-', comida: document.getElementById('r-comida').value || '-', mensaje: document.getElementById('r-mensaje').value || '-', fecha: new Date().toLocaleString('es-AR') };
   try {
     await postData(data);
     document.getElementById('rsvp-form').style.display = 'none';
@@ -1425,13 +1069,7 @@ async function enviarCancion() {
   const btn = document.getElementById('btn-song');
   btn.innerHTML = '<span class="spinner"></span> Enviando...';
   btn.disabled = true;
-  const data = {
-    tipo: 'cancion',
-    nombre,
-    cancion,
-    link: document.getElementById('s-link').value || '-',
-    fecha: new Date().toLocaleString('es-AR')
-  };
+  const data = { tipo: 'cancion', nombre, cancion, link: document.getElementById('s-link').value || '-', fecha: new Date().toLocaleString('es-AR') };
   try {
     await postData(data);
     document.getElementById('song-form').style.display = 'none';
@@ -1474,14 +1112,7 @@ function renderDashboard() {
     container.innerHTML = '<p style="color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:.82rem;">Sin confirmaciones aún</p>';
     return;
   }
-  container.innerHTML = rsvps.map(r => `
-    <div class="admin-entry">
-      <div class="e-name">👤 ${r.nombre}</div>
-      <div class="e-detail">${r.fecha} · ${r.personas} persona(s)</div>
-      ${r.comida !== '-' ? `<div class="e-detail">🍽 ${r.comida}</div>` : ''}
-      <span class="e-badge e-${r.asistencia}">${r.asistencia === 'si' ? '✓ Confirmado' : r.asistencia === 'no' ? '✗ No asiste' : '? Tal vez'}</span>
-    </div>
-  `).join('');
+  container.innerHTML = rsvps.map(r => `<div class="admin-entry"><div class="e-name">👤 ${r.nombre}</div><div class="e-detail">${r.fecha} · ${r.personas} persona(s)</div>${r.comida !== '-' ? `<div class="e-detail">🍽 ${r.comida}</div>` : ''}<span class="e-badge e-${r.asistencia}">${r.asistencia === 'si' ? '✓ Confirmado' : r.asistencia === 'no' ? '✗ No asiste' : '? Tal vez'}</span></div>`).join('');
 }
 function exportCSV() {
   const list = loadLocal().filter(x => x.tipo === 'rsvp');
