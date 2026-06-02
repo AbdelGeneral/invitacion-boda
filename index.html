@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Clarisa &  — Nuestra Boda</title>
+<title>Clarisa & Charles — Nuestra Boda</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -395,37 +395,6 @@ body {
 }
 .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
 
-/* ── MENÚ ── */
-.menu-tabs {
-  display: flex; gap: .4rem;
-  background: rgba(201,169,110,.08); border-radius: 50px;
-  padding: .25rem; margin-bottom: 1.2rem;
-}
-.menu-tab {
-  flex: 1; padding: .55rem .4rem; text-align: center;
-  font-size: .68rem; letter-spacing: 1.5px; text-transform: uppercase;
-  font-weight: 500; border-radius: 50px; cursor: pointer;
-  border: none; background: transparent; color: #aaa;
-  font-family: 'Montserrat', sans-serif; transition: all .3s;
-}
-.menu-tab.active { background: var(--gold); color: #fff; box-shadow: 0 3px 10px rgba(201,169,110,.35); }
-.menu-panel { display: none; }
-.menu-panel.active { display: block; animation: panelIn .35s ease; }
-@keyframes panelIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
-.menu-item {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: .75rem 0; border-bottom: 1px dashed rgba(201,169,110,.2);
-  font-size: .83rem; transition: transform .2s, background .2s;
-  border-radius: 6px; padding-left: .3rem;
-}
-.menu-item:hover { transform: translateX(4px); background: rgba(201,169,110,.04); }
-.menu-item:last-child { border-bottom: none; }
-.menu-tag {
-  font-size: .58rem; letter-spacing: 1px; text-transform: uppercase;
-  padding: .18rem .55rem; border-radius: 50px;
-  background: rgba(201,169,110,.12); color: var(--gold-dark);
-}
-
 /* ── DRESS CODE ── */
 .dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-bottom: 1.2rem; }
 .dress-card {
@@ -492,7 +461,6 @@ body {
 }
 .music-disc.spin { animation: spin 4s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
-/* Ecualizador animado */
 .equalizer {
   display: flex; align-items: flex-end; gap: 3px;
   height: 20px; margin-left: auto; margin-right: .5rem;
@@ -769,14 +737,10 @@ footer {
 </head>
 <body>
 
-<!-- Canvas partículas -->
 <canvas id="particles-canvas"></canvas>
-
 <div class="page-bg"></div>
-
 <div class="page-wrap">
 
-  <!-- HERO -->
   <section class="hero">
     <div class="petals-container" id="petals"></div>
     <div class="hero-glow"></div>
@@ -796,7 +760,6 @@ footer {
     </a>
   </section>
 
-  <!-- CUENTA REGRESIVA -->
   <div class="card" id="countdown" data-reveal="scale">
     <div class="card-header">
       <div class="card-icon">📅</div>
@@ -815,7 +778,6 @@ footer {
     </div>
   </div>
 
-  <!-- DIVISOR PARALLAX 1 -->
   <div class="parallax-divider" data-speed="0.4">
     <div class="para-bg"></div>
     <div class="para-overlay">
@@ -823,17 +785,10 @@ footer {
     </div>
   </div>
 
-  <!-- DETALLES -->
   <div class="card" data-reveal="left">
     <div class="card-header">
       <div class="card-icon">✉️</div>
       <h2 class="card-title">Detalles del Evento</h2>
-    </div>
-    <div class="detail-item">
-      
-      <div>
-      
-      </div>
     </div>
     <div class="detail-item">
       <div class="detail-icon">🥂</div>
@@ -863,8 +818,6 @@ footer {
     </div>
   </div>
 
-
-  <!-- DRESS CODE -->
   <div class="card" data-reveal="up">
     <div class="card-header">
       <div class="card-icon">👗</div>
@@ -898,7 +851,6 @@ footer {
     </div>
   </div>
 
-  <!-- DIVISOR PARALLAX 2 -->
   <div class="parallax-divider" data-speed="0.3">
     <div class="para-bg"></div>
     <div class="para-overlay">
@@ -906,7 +858,6 @@ footer {
     </div>
   </div>
 
-  <!-- AGENDA -->
   <div class="card" data-reveal="left">
     <div class="card-header">
       <div class="card-icon">🗓️</div>
@@ -918,12 +869,6 @@ footer {
         <div class="tl-time">17:30 hs</div>
         <div class="tl-title">Recepción de invitados</div>
         <div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot"></div>
-       
-      
-      
       </div>
       <div class="tl-item">
         <div class="tl-dot"></div>
@@ -946,7 +891,6 @@ footer {
     </div>
   </div>
 
-  <!-- MÚSICA -->
   <div class="card" data-reveal="right">
     <div class="card-header">
       <div class="card-icon">🎵</div>
@@ -959,10 +903,7 @@ footer {
         <div class="music-artist">Christina Perri</div>
       </div>
       <div class="equalizer" id="equalizer">
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
-        <div class="eq-bar"></div>
+        <div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div>
       </div>
       <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
     </div>
@@ -972,7 +913,6 @@ footer {
     <button class="btn btn-outline" style="margin-top:.6rem;" onclick="openModal('song')">🎶 Sugerir una canción</button>
   </div>
 
-  <!-- NUESTRA HISTORIA — CARRUSEL 1×1 -->
   <div class="card" data-reveal="scale">
     <div class="card-header">
       <div class="card-icon">📸</div>
@@ -1000,7 +940,6 @@ footer {
     <div class="carousel-dots" id="c-dots"></div>
   </div>
 
-  <!-- DIVISOR PARALLAX 3 -->
   <div class="parallax-divider" data-speed="0.5">
     <div class="para-bg"></div>
     <div class="para-overlay">
@@ -1008,7 +947,6 @@ footer {
     </div>
   </div>
 
-  <!-- REGALOS -->
   <div class="card" data-reveal="up">
     <div class="card-header">
       <div class="card-icon">🎁</div>
@@ -1043,7 +981,6 @@ footer {
     </div>
   </div>
 
-  <!-- RSVP -->
   <div class="card" data-reveal="scale">
     <div class="card-header">
       <div class="card-icon">💌</div>
@@ -1056,29 +993,26 @@ footer {
     </div>
   </div>
 
-  <!-- TIPS -->
   <div class="card" data-reveal="up">
     <div class="card-header">
       <div class="card-icon">📋</div>
       <h2 class="card-title">Tips y Notas</h2>
     </div>
     <div class="tip"><div class="tip-dot"></div><div>¡Por favor ser <strong>puntuales</strong>!</div></div>
-    <div class="tip"><div class="tip-dot"></div><div>Es un evento <strong>solo para adultos </strong>.</div></div>
+    <div class="tip"><div class="tip-dot"></div><div>Es un evento <strong>solo para adultos</strong>.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Confirmá asistencia <strong>antes del 25 de Junio</strong>.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Llevar <strong>abrigo</strong> para los espacios exteriores.</div></div>
     <div class="tip"><div class="tip-dot"></div><div>Estacionamiento <strong>gratuito</strong> en el predio.</div></div>
-   
+  </div>
 
-</div><!-- /page-wrap -->
+</div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-names">Clarisa &amp; Charles</div>
   <div class="footer-date">31 · 06 · 2026</div>
   <button class="footer-admin" onclick="openAdmin()">⚙</button>
 </footer>
 
-<!-- MODAL RSVP -->
 <div class="modal-overlay" id="modal-rsvp">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('rsvp')">✕</button>
@@ -1117,7 +1051,6 @@ footer {
   </div>
 </div>
 
-<!-- MODAL CANCIÓN -->
 <div class="modal-overlay" id="modal-song">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('song')">✕</button>
@@ -1137,16 +1070,12 @@ footer {
   </div>
 </div>
 
-<!-- ADMIN -->
 <div class="admin-overlay" id="admin-overlay">
   <div class="admin-panel">
     <button class="modal-close" style="position:absolute;top:1.2rem;right:1.2rem;" onclick="closeAdmin()">✕</button>
     <h2 class="admin-title">⚙ Panel de Admin</h2>
     <div id="admin-login">
-      <div class="field">
-        <label style="color:var(--gold-light);">Contraseña</label>
-        <input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()">
-      </div>
+      <div class="field"><label style="color:var(--gold-light);">Contraseña</label><input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()"></div>
       <button class="btn btn-gold" onclick="checkAdmin()">Ingresar</button>
     </div>
     <div id="admin-dash" style="display:none;">
@@ -1161,23 +1090,14 @@ footer {
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
 
 <script>
-/* ── CONFIG ── */
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec";
 const weddingDate = new Date("2026-06-28T16:00:00");
 const adminPass = "boda2025";
-const calEvento = {
-  titulo: "Boda de Clarisa & Nombre",
-  ubicacion: "Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7",
-inicio: "20260628T203000",   // 28 de junio de 2026 a las 20:30:00
-fin:    "20260629T040000",   // 29 de junio de 2026 a las 04:00:00 (madrugada del día siguiente)
-  descripcion: "¡Nos casamos! Ven a celebrar con nosotros."
-};
+const calEvento = { titulo: "Boda de Clarisa & Charles", ubicacion: "Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7", inicio: "20260628T203000", fin: "20260629T040000", descripcion: "¡Nos casamos! Ven a celebrar con nosotros." };
 
-/* ── PARTÍCULAS (corazones y destellos) ── */
 (function(){
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
@@ -1187,18 +1107,7 @@ fin:    "20260629T040000",   // 29 de junio de 2026 a las 04:00:00 (madrugada de
   function randomBetween(a,b){ return a + Math.random()*(b-a); }
   function spawnParticle(){
     const type = Math.random() < 0.6 ? 'star' : 'heart';
-    return {
-      x: randomBetween(0, canvas.width),
-      y: randomBetween(-20, canvas.height),
-      size: randomBetween(2, 5),
-      opacity: randomBetween(0.2, 0.7),
-      speed: randomBetween(0.15, 0.5),
-      dx: randomBetween(-0.3, 0.3),
-      drift: randomBetween(-0.002, 0.002),
-      type,
-      life: 0,
-      maxLife: randomBetween(200, 500)
-    };
+    return { x: randomBetween(0, canvas.width), y: randomBetween(-20, canvas.height), size: randomBetween(2, 5), opacity: randomBetween(0.2, 0.7), speed: randomBetween(0.15, 0.5), dx: randomBetween(-0.3, 0.3), drift: randomBetween(-0.002, 0.002), type, life: 0, maxLife: randomBetween(200, 500) };
   }
   for(let i=0; i<60; i++) particles.push(spawnParticle());
   function drawHeart(ctx, x, y, s){
@@ -1229,9 +1138,7 @@ fin:    "20260629T040000",   // 29 de junio de 2026 a las 04:00:00 (madrugada de
           else ctx.lineTo(p.x+r*Math.cos(angle), p.y+r*Math.sin(angle));
         }
         ctx.closePath(); ctx.fill();
-      } else {
-        drawHeart(ctx, p.x, p.y, p.size/1.8); ctx.fill();
-      }
+      } else { drawHeart(ctx, p.x, p.y, p.size/1.8); ctx.fill(); }
       if(p.life >= p.maxLife || p.y < -30) particles[i] = spawnParticle();
     });
     ctx.globalAlpha = 1;
@@ -1240,7 +1147,6 @@ fin:    "20260629T040000",   // 29 de junio de 2026 a las 04:00:00 (madrugada de
   animate();
 })();
 
-/* ── PÉTALOS EN HERO ── */
 (function(){
   const container = document.getElementById('petals');
   const petals = ['🌸','🌼','✨','💛','🤍','🌺'];
@@ -1256,39 +1162,24 @@ fin:    "20260629T040000",   // 29 de junio de 2026 a las 04:00:00 (madrugada de
   }
 })();
 
-/* ── CARD REVEAL con repetición al subir y bajar ── */
 const revealTypes = ['up','left','right','scale'];
-document.querySelectorAll('.card').forEach((card, i) => {
-  if(!card.dataset.reveal) card.dataset.reveal = revealTypes[i % revealTypes.length];
-});
+document.querySelectorAll('.card').forEach((card, i) => { if(!card.dataset.reveal) card.dataset.reveal = revealTypes[i % revealTypes.length]; });
 
-// Observer para tarjetas: remueve la clase al salir, la vuelve a poner al entrar
 const cardObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Agregar clase visible (dispara la transición CSS)
-      entry.target.classList.add('visible');
-    } else {
-      // Al salir del viewport, quitamos la clase para que la próxima entrada vuelva a animarse
-      entry.target.classList.remove('visible');
-    }
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+    else entry.target.classList.remove('visible');
   });
-}, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' }); // threshold un poco más alto para que no parpadee
+}, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 document.querySelectorAll('.card').forEach(c => cardObserver.observe(c));
 
-/* ── TIMELINE STAGGER con repetición también ── */
-// Cada timeline observer por separado
 const timelineObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const timeline = entry.target;
-    if (entry.isIntersecting) {
-      // Al entrar, animamos cada hijo con stagger
+    if(entry.isIntersecting){
       const items = timeline.querySelectorAll('.tl-item');
-      items.forEach((item, idx) => {
-        setTimeout(() => item.classList.add('tl-visible'), idx * 120);
-      });
+      items.forEach((item, idx) => { setTimeout(() => item.classList.add('tl-visible'), idx * 120); });
     } else {
-      // Al salir, removemos la clase de todos los hijos para que se reinicien
       const items = timeline.querySelectorAll('.tl-item');
       items.forEach(item => item.classList.remove('tl-visible'));
     }
@@ -1296,7 +1187,6 @@ const timelineObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.timeline').forEach(t => timelineObserver.observe(t));
 
-/* ── PARALLAX EN DIVISORES ── */
 function updateParallax(){
   document.querySelectorAll('.parallax-divider').forEach(div => {
     const rect = div.getBoundingClientRect();
@@ -1309,33 +1199,18 @@ function updateParallax(){
 window.addEventListener('scroll', updateParallax, { passive: true });
 updateParallax();
 
-/* ── COUNTDOWN con flip animado ── */
 function updateCD(){
   const diff = weddingDate - new Date();
-  if(diff <= 0){
-    ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '0');
-    return;
-  }
-  const vals = {
-    'cd-d': Math.floor(diff/86400000),
-    'cd-h': Math.floor((diff%86400000)/3600000),
-    'cd-m': Math.floor((diff%3600000)/60000),
-    'cd-s': Math.floor((diff%60000)/1000)
-  };
+  if(diff <= 0){ ['cd-d','cd-h','cd-m','cd-s'].forEach(id => document.getElementById(id).textContent = '0'); return; }
+  const vals = { 'cd-d': Math.floor(diff/86400000), 'cd-h': Math.floor((diff%86400000)/3600000), 'cd-m': Math.floor((diff%3600000)/60000), 'cd-s': Math.floor((diff%60000)/1000) };
   Object.entries(vals).forEach(([id, v]) => {
     const el = document.getElementById(id);
     const nv = String(v).padStart(2,'0');
-    if(el.textContent !== nv){
-      el.classList.remove('flip');
-      void el.offsetWidth;
-      el.classList.add('flip');
-      el.textContent = nv;
-    }
+    if(el.textContent !== nv){ el.classList.remove('flip'); void el.offsetWidth; el.classList.add('flip'); el.textContent = nv; }
   });
 }
 updateCD(); setInterval(updateCD, 1000);
 
-/* ── CALENDAR LINKS ── */
 (function(){
   const e = calEvento;
   const gcal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.titulo)}&dates=${e.inicio}/${e.fin}&location=${encodeURIComponent(e.ubicacion)}&details=${encodeURIComponent(e.descripcion)}`;
@@ -1344,94 +1219,42 @@ updateCD(); setInterval(updateCD, 1000);
   document.getElementById('btn-ical').href = 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
 })();
 
-/* ── MENU TABS ── */
-function switchTab(tab){
-  const ids = ['entrada','principal','postre'];
-  document.querySelectorAll('.menu-tab').forEach((t, i) => {
-    t.classList.toggle('active', ids[i] === tab);
-    document.getElementById('tab-'+ids[i]).classList.toggle('active', ids[i] === tab);
-  });
-}
-
-/* ── MUSIC con ecualizador ── */
 let playing = false;
 function toggleMusic(){
   const audio = document.getElementById('bg-audio');
   const btn = document.getElementById('music-btn');
   const disc = document.getElementById('disc');
   const eq = document.getElementById('equalizer');
-  if(playing){
-    audio.pause(); btn.textContent = '▶';
-    disc.classList.remove('spin'); eq.classList.remove('active');
-  } else {
-    audio.play().catch(() => showToast('Activa el sonido en tu dispositivo'));
-    btn.textContent = '⏸'; disc.classList.add('spin'); eq.classList.add('active');
-  }
+  if(playing){ audio.pause(); btn.textContent = '▶'; disc.classList.remove('spin'); eq.classList.remove('active'); }
+  else { audio.play().catch(() => showToast('Activa el sonido en tu dispositivo')); btn.textContent = '⏸'; disc.classList.add('spin'); eq.classList.add('active'); }
   playing = !playing;
 }
 
-/* ── CARRUSEL 1×1 ── */
-let cCurrent = 0;
-const cTotal = 6;
-let touchStartX = 0, touchDeltaX = 0;
-
+let cCurrent = 0, cTotal = 6, touchStartX = 0, touchDeltaX = 0;
 function buildDots(){
   const container = document.getElementById('c-dots');
   container.innerHTML = '';
-  for(let i=0; i<cTotal; i++){
-    const d = document.createElement('div');
-    d.className = 'c-dot' + (i===0?' active':'');
-    d.onclick = () => goToSlide(i);
-    container.appendChild(d);
-  }
+  for(let i=0; i<cTotal; i++){ const d = document.createElement('div'); d.className = 'c-dot' + (i===0?' active':''); d.onclick = () => goToSlide(i); container.appendChild(d); }
 }
 buildDots();
-
-function goToSlide(n){
-  cCurrent = (n + cTotal) % cTotal;
-  document.getElementById('ctrack').style.transform = `translateX(-${cCurrent*100}%)`;
-  document.getElementById('c-counter').textContent = `${cCurrent+1} / ${cTotal}`;
-  document.querySelectorAll('.c-dot').forEach((d,i) => d.classList.toggle('active', i===cCurrent));
-}
+function goToSlide(n){ cCurrent = (n + cTotal) % cTotal; document.getElementById('ctrack').style.transform = `translateX(-${cCurrent*100}%)`; document.getElementById('c-counter').textContent = `${cCurrent+1} / ${cTotal}`; document.querySelectorAll('.c-dot').forEach((d,i) => d.classList.toggle('active', i===cCurrent)); }
 function carouselNext(){ goToSlide(cCurrent+1); }
 function carouselPrev(){ goToSlide(cCurrent-1); }
-
 function touchStart(e){ touchStartX = e.touches[0].clientX; }
 function touchMove(e){ touchDeltaX = e.touches[0].clientX - touchStartX; }
-function touchEnd(e){
-  if(touchDeltaX < -40) carouselNext();
-  else if(touchDeltaX > 40) carouselPrev();
-  touchDeltaX = 0;
-}
-
+function touchEnd(e){ if(touchDeltaX < -40) carouselNext(); else if(touchDeltaX > 40) carouselPrev(); touchDeltaX = 0; }
 setInterval(carouselNext, 4000);
 
-/* ── CLIPBOARD ── */
-function copyText(txt){
-  navigator.clipboard.writeText(txt).then(() => showToast('✓ Copiado: ' + txt));
-}
-
-/* ── MODALS ── */
+function copyText(txt){ navigator.clipboard.writeText(txt).then(() => showToast('✓ Copiado: ' + txt)); }
 function openModal(id){ document.getElementById('modal-'+id).classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeModal(id){ document.getElementById('modal-'+id).classList.remove('open'); document.body.style.overflow = ''; }
-document.querySelectorAll('.modal-overlay').forEach(el => {
-  el.addEventListener('click', e => { if(e.target === el) closeModal(el.id.replace('modal-','')); });
-});
+document.querySelectorAll('.modal-overlay').forEach(el => { el.addEventListener('click', e => { if(e.target === el) closeModal(el.id.replace('modal-','')); }); });
 
-/* ── RSVP ── */
 let rsvpChoice = '';
-function pickRSVP(v){
-  rsvpChoice = v;
-  ['si','no','talvez'].forEach(x => document.getElementById('chip-'+x).classList.toggle('sel', x===v));
-  document.getElementById('field-pax').style.display = v==='si' ? 'block' : 'none';
-}
+function pickRSVP(v){ rsvpChoice = v; ['si','no','talvez'].forEach(x => document.getElementById('chip-'+x).classList.toggle('sel', x===v)); document.getElementById('field-pax').style.display = v==='si' ? 'block' : 'none'; }
 function saveLocal(data){ const s=JSON.parse(localStorage.getItem('rsvp_list')||'[]'); s.push(data); localStorage.setItem('rsvp_list',JSON.stringify(s)); }
 function loadLocal(){ return JSON.parse(localStorage.getItem('rsvp_list')||'[]'); }
-async function postData(data){
-  saveLocal(data);
-  if(APPS_SCRIPT_URL==='https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec') return;
-  await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
-}
+async function postData(data){ saveLocal(data); if(APPS_SCRIPT_URL==='https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJZ1wBJL7Q42SQr4HE3Sw5av-6W6l8uYOnGpgGQiMcNnv6l968xhpekw/exec') return; await fetch(APPS_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}); }
 async function enviarRSVP(){
   const nombre = document.getElementById('r-nombre').value.trim();
   if(!nombre){ showToast('Por favor ingresá tu nombre'); return; }
@@ -1440,11 +1263,7 @@ async function enviarRSVP(){
   const btn = document.getElementById('btn-rsvp');
   btn.innerHTML = '<span class="spinner"></span> Enviando...'; btn.disabled = true;
   const data = { tipo:'rsvp', nombre, asistencia: rsvpChoice, personas: document.getElementById('r-pax').value||'-', comida: document.getElementById('r-comida').value||'-', mensaje: document.getElementById('r-mensaje').value||'-', fecha: new Date().toLocaleString('es-AR') };
-  try {
-    await postData(data);
-    document.getElementById('rsvp-form').style.display = 'none';
-    document.getElementById('rsvp-ok').style.display = 'block';
-  } catch(e){ showToast('Error al enviar. Intentá de nuevo.'); btn.innerHTML='Confirmar asistencia'; btn.disabled=false; }
+  try { await postData(data); document.getElementById('rsvp-form').style.display = 'none'; document.getElementById('rsvp-ok').style.display = 'block'; } catch(e){ showToast('Error al enviar. Intentá de nuevo.'); btn.innerHTML='Confirmar asistencia'; btn.disabled=false; }
 }
 async function enviarCancion(){
   const nombre = document.getElementById('s-nombre').value.trim();
@@ -1454,22 +1273,14 @@ async function enviarCancion(){
   const btn = document.getElementById('btn-song');
   btn.innerHTML = '<span class="spinner"></span> Enviando...'; btn.disabled = true;
   const data = { tipo:'cancion', nombre, cancion, link: document.getElementById('s-link').value||'-', fecha: new Date().toLocaleString('es-AR') };
-  try {
-    await postData(data);
-    document.getElementById('song-form').style.display = 'none';
-    document.getElementById('song-ok').style.display = 'block';
-  } catch(e){ showToast('Error al enviar. Intentá de nuevo.'); btn.innerHTML='Sugerir Canción'; btn.disabled=false; }
+  try { await postData(data); document.getElementById('song-form').style.display = 'none'; document.getElementById('song-ok').style.display = 'block'; } catch(e){ showToast('Error al enviar. Intentá de nuevo.'); btn.innerHTML='Sugerir Canción'; btn.disabled=false; }
 }
 
-/* ── ADMIN ── */
 function openAdmin(){ document.getElementById('admin-overlay').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeAdmin(){ document.getElementById('admin-overlay').classList.remove('open'); document.body.style.overflow=''; }
 function checkAdmin(){
-  if(document.getElementById('admin-pass').value === adminPass){
-    document.getElementById('admin-login').style.display='none';
-    document.getElementById('admin-dash').style.display='block';
-    renderDashboard();
-  } else { showToast('Contraseña incorrecta'); }
+  if(document.getElementById('admin-pass').value === adminPass){ document.getElementById('admin-login').style.display='none'; document.getElementById('admin-dash').style.display='block'; renderDashboard(); }
+  else { showToast('Contraseña incorrecta'); }
 }
 function renderDashboard(){
   const list=loadLocal(); const rsvps=list.filter(x=>x.tipo==='rsvp');
@@ -1490,12 +1301,7 @@ function exportCSV(){
   const csv=rows.map(r=>r.map(c=>`"${c}"`).join(',')).join('\n');
   const a=document.createElement('a'); a.href='data:text/csv;charset=utf-8,'+encodeURIComponent(csv); a.download='invitados-boda.csv'; a.click();
 }
-
-/* ── TOAST ── */
-function showToast(msg){
-  const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
+function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3000); }
 </script>
 </body>
 </html>
