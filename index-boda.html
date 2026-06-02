@@ -880,7 +880,7 @@ footer {
       </div>
       <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
     </div>
-    <!-- IMPORTANTE: Cambia "musica.mp3" por el nombre real de tu archivo MP3 -->
+    <!-- IMPORTANTE: Cambia "musica.mp3" por el nombre exacto de tu archivo MP3 -->
     <audio id="bg-audio" loop preload="auto">
       <source src="musica.mp3" type="audio/mpeg">
       Tu navegador no soporta audio.
@@ -988,6 +988,7 @@ footer {
   <button class="footer-admin" onclick="openAdmin()">⚙</button>
 </footer>
 
+<!-- MODALES (RSVP y CANCIÓN) -->
 <div class="modal-overlay" id="modal-rsvp">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('rsvp')">✕</button>
@@ -1235,7 +1236,7 @@ setInterval(updateCD, 1000);
   document.getElementById('btn-ical').href = 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
 })();
 
-// ======================== MÚSICA CON AUTOPLAY SILENCIOSO ========================
+// ======================== MÚSICA (CORREGIDA para GitHub Pages) ========================
 let playing = false;
 function toggleMusic() {
   const audio = document.getElementById('bg-audio');
@@ -1263,44 +1264,59 @@ function showToast(msg, duration = 3000) {
   setTimeout(() => t.classList.remove('show'), duration);
 }
 
-// Autoplay silencioso + desmutear al primer clic
-(function autoPlayMusic() {
+// Inicio de música: espera el primer clic en cualquier parte
+(function initMusic() {
   const audio = document.getElementById('bg-audio');
   const musicBtn = document.getElementById('music-btn');
   const disc = document.getElementById('disc');
   const eq = document.getElementById('equalizer');
   if (!audio) return;
 
-  audio.muted = true;
-  audio.play().then(() => {
-    playing = true;
-    musicBtn.textContent = '⏸';
-    disc.classList.add('spin');
-    eq.classList.add('active');
-    const unmuteHandler = () => {
-      audio.muted = false;
-      document.removeEventListener('click', unmuteHandler);
-      document.removeEventListener('touchstart', unmuteHandler);
-      showToast('🎵 Sonido activado - Disfruta la música', 2500);
-    };
-    document.addEventListener('click', unmuteHandler);
-    document.addEventListener('touchstart', unmuteHandler);
-  }).catch(() => {
+  let interactionHandled = false;
+
+  function startMusic() {
+    if (interactionHandled) return;
+    interactionHandled = true;
+    
     audio.muted = false;
-    const playHandler = () => {
-      audio.play().then(() => {
-        playing = true;
-        musicBtn.textContent = '⏸';
-        disc.classList.add('spin');
-        eq.classList.add('active');
-        showToast('🎵 Música comenzada', 2000);
-      }).catch(e => console.log("Error al reproducir:", e));
-      document.removeEventListener('click', playHandler);
-      document.removeEventListener('touchstart', playHandler);
-    };
-    document.addEventListener('click', playHandler);
-    document.addEventListener('touchstart', playHandler);
-    showToast('🔊 Haz clic en cualquier lugar para activar la música', 4000);
+    audio.play().then(() => {
+      playing = true;
+      musicBtn.textContent = '⏸';
+      disc.classList.add('spin');
+      eq.classList.add('active');
+      showToast('🎵 Música comenzada', 2000);
+    }).catch(err => {
+      console.warn('Error al reproducir:', err);
+      showToast('🔊 Haz clic en el botón de música', 3000);
+    });
+  }
+
+  // El primer clic en cualquier parte de la página iniciará la música
+  window.addEventListener('click', startMusic, { once: true });
+  window.addEventListener('touchstart', startMusic, { once: true });
+
+  // El botón de música también puede iniciar (si se usa antes del clic global)
+  musicBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!interactionHandled) {
+      startMusic();
+    } else {
+      // Si ya está sonando, comportamiento normal de toggle (pausa/reproduce)
+      if (playing) {
+        audio.pause();
+        musicBtn.textContent = '▶';
+        disc.classList.remove('spin');
+        eq.classList.remove('active');
+        playing = false;
+      } else {
+        audio.play().then(() => {
+          playing = true;
+          musicBtn.textContent = '⏸';
+          disc.classList.add('spin');
+          eq.classList.add('active');
+        }).catch(err => console.warn(err));
+      }
+    }
   });
 })();
 
