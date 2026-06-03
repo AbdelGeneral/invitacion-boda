@@ -6,7 +6,7 @@
 <title>Charles & Clarisa — Nuestra Boda</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ========== ESTILOS COMPLETOS (sin cambios, solo se mantienen) ========== */
+/* ========== ESTILOS COMPLETOS (sin cambios) ========== */
 :root {
   --gold: #c9a96e;
   --gold-light: #e2c99a;
@@ -665,7 +665,7 @@ footer {
     <div class="hero-ornament">
       <div class="orn-line"></div><div class="orn-diamond"></div><div class="orn-line"></div>
     </div>
-    <h1><span class="n1">Clarisa</span><span class="amp">&amp;</span><span class="n2">Charles</span></h1>
+    <h1><span class="n1">Charles</span><span class="amp">&amp;</span><span class="n2">Clarisa</span></h1>
     <p class="hero-event">¡Nuestra Boda!</p>
     <p class="hero-sub">Te elijo hoy y por el resto de mi vida</p>
     <a href="#countdown" class="hero-scroll"><div class="scroll-bar"></div><span>Ver más</span></a>
@@ -760,7 +760,7 @@ footer {
     <div class="gift-list">
       <div class="gift-item" style="cursor: default; justify-content: center;">
         <div class="gift-ico" style="background: linear-gradient(135deg, var(--gold-light), var(--gold));">🎁</div>
-        <div class="gift-val" style="text-align: center;">Los regalos se recibirán en el local JATUN MAMA-HOTEL🎁</div>
+        <div class="gift-val" style="text-align: center;">Los regalos se recibirán en el local JATUN MAMA-HOTEL 🎁</div>
       </div>
     </div>
   </div>
@@ -781,7 +781,7 @@ footer {
 
 </div>
 
-<footer><div class="footer-names">Clarisa &amp; Charles</div><div class="footer-date">28 · 06 · 2026</div><button class="footer-admin" onclick="openAdmin()">⚙</button></footer>
+<footer><div class="footer-names">Charles &amp; Clarisa</div><div class="footer-date">28 · 06 · 2026</div><button class="footer-admin" onclick="openAdmin()">⚙</button></footer>
 
 <!-- MODALES (RSVP y CANCIÓN) -->
 <div class="modal-overlay" id="modal-rsvp"><div class="modal"><button class="modal-close" onclick="closeModal('rsvp')">✕</button><div class="modal-badge">💌</div><h2>Confirmar Asistencia</h2><div id="rsvp-form"><div class="field"><label>Nombre completo *</label><input type="text" id="r-nombre" placeholder="Tu nombre y apellido"></div><div class="field"><label>¿Asistirás? *</label><div class="radio-row"><div class="radio-chip" id="chip-si" onclick="pickRSVP('si')">✓ Sí, voy</div><div class="radio-chip" id="chip-no" onclick="pickRSVP('no')">✗ No puedo</div><div class="radio-chip" id="chip-talvez" onclick="pickRSVP('talvez')">? Tal vez</div></div></div><div class="field" id="field-pax" style="display:none;"><label>¿Cuántas personas? *</label><select id="r-pax"><option value="">Seleccionar...</option><option value="1">Solo yo (1)</option><option value="2">Somos 2</option><option value="3">Somos 3</option><option value="4">Somos 4</option><option value="5+">5 o más</option></select></div><div class="field"><label>Restricción alimentaria</label><input type="text" id="r-comida" placeholder="Vegano, celíaco... (opcional)"></div><div class="field"><label>Mensaje para los novios 💬</label><textarea id="r-mensaje" placeholder="Un deseo, palabras bonitas..."></textarea></div><button class="btn btn-gold" id="btn-rsvp" onclick="enviarRSVP()" style="margin-top:.4rem;">Confirmar asistencia</button></div><div class="success-screen" id="rsvp-ok"><div class="success-icon">🎉</div><h3>¡Gracias!</h3><p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p></div></div></div>
@@ -798,7 +798,7 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxoN6Awfb-nljMJ
 const weddingDate = new Date("2026-06-28T16:00:00");
 const adminPass = "boda2025";
 const calEvento = {
-  titulo: "Boda de Clarisa & Charles",
+  titulo: "Boda de Charles & Clarisa",
   ubicacion: "Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7",
   inicio: "20260628T203000",
   fin: "20260629T040000",
