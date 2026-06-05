@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>Charles & Clarisa — Nuestra Boda</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* ========== ESTILOS COMPLETOS ========== */
+/* ========== ESTILOS COMPLETOS (con letras más gruesas) ========== */
 :root {
   --gold: #c9a96e;
   --gold-light: #e2c99a;
@@ -24,9 +24,11 @@ body {
   background: var(--dark);
   color: var(--text);
   overflow-x: hidden;
+  font-weight: 500;
+  line-height: 1.5;
 }
-/* Overlay del video introductorio */
-#video-intro {
+/* Pantalla de introducción con dos imágenes */
+#intro-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -37,48 +39,56 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  transition: opacity 1s ease;
 }
-#intro-video {
+.intro-images {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
-.fecha-overlay {
+.intro-img {
   position: absolute;
-  bottom: 15%;
+  top: 0;
   left: 0;
-  right: 0;
-  text-align: center;
-  z-index: 2001;
-  font-family: 'Cormorant Garamond', serif;
-  color: var(--gold-light);
-  text-shadow: 0 4px 20px rgba(0,0,0,0.9);
-  letter-spacing: 2px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #000;
+  transition: opacity 1.5s ease-in-out;
+  opacity: 0;
+}
+.intro-img.active {
   opacity: 1;
-  transition: opacity 0.1s linear; /* para el fade-out */
 }
-.fecha-overlay .dia {
-  font-size: clamp(2rem, 8vw, 3.5rem);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-}
-.fecha-overlay .fecha {
-  font-size: clamp(3.5rem, 15vw, 7rem);
+.enter-btn {
+  background: rgba(201, 169, 110, 0.9);
+  border: none;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
   font-weight: 600;
-  line-height: 1.1;
-  margin: 0.2rem 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  z-index: 2001;
+  margin-top: 70vh;
 }
-.fecha-overlay .mes {
-  font-size: clamp(1.5rem, 6vw, 2.5rem);
-  font-weight: 300;
-  letter-spacing: 8px;
+.enter-btn:hover {
+  background: var(--gold);
+  transform: scale(1.05);
 }
 /* Contenido principal (inicialmente oculto) */
 #main-content {
   display: none;
 }
-/* El resto de tus estilos no se tocan */
 #particles-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
 .page-bg {
   position: fixed; inset: 0;
@@ -139,7 +149,7 @@ body {
 .orn-diamond { width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
 .hero h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
+  font-weight: 600;
   color: var(--cream);
   line-height: .88;
   letter-spacing: -1px;
@@ -161,6 +171,7 @@ body {
   color: var(--dark);
   margin: .5rem auto;
   font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
   animation: heartbeat 2.5s ease-in-out 1.5s infinite;
 }
 @keyframes heartbeat {
@@ -181,10 +192,11 @@ body {
   opacity: 0;
   animation: fadeUp .8s .6s forwards;
   position: relative; z-index: 1;
+  font-weight: 500;
 }
 .hero-sub {
-  font-size: .65rem;
-  font-weight: 300;
+  font-size: .7rem;
+  font-weight: 500;
   color: var(--cream);
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -217,13 +229,14 @@ body {
   align-items: center;
   gap: .4rem;
   color: var(--cream);
-  font-size: .58rem;
+  font-size: .65rem;
   letter-spacing: 3px;
   text-transform: uppercase;
   text-decoration: none;
   opacity: 0;
   animation: fadeUp .8s 1.2s forwards;
   z-index: 1;
+  font-weight: 500;
 }
 .scroll-bar {
   width: 1px; height: 36px;
@@ -269,6 +282,7 @@ body {
   text-align: center;
   padding: 0 1.5rem;
   letter-spacing: 1px;
+  font-weight: 500;
 }
 .para-quote span { color: var(--gold-light); }
 .card {
@@ -305,13 +319,17 @@ body {
 .card-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.7rem, 5vw, 2.2rem);
-  font-weight: 400;
+  font-weight: 600;
   color: var(--gold-dark);
   line-height: 1.1;
 }
 .card-sub {
-  font-size: .7rem; font-weight: 300; color: #aaa;
-  letter-spacing: 1.5px; margin-top: .4rem; line-height: 1.6;
+  font-size: .75rem;
+  font-weight: 500;
+  color: #777;
+  letter-spacing: 1.5px;
+  margin-top: .4rem;
+  line-height: 1.6;
 }
 .cd-grid {
   display: grid;
@@ -337,7 +355,7 @@ body {
 .cd-num {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(1.8rem, 7vw, 2.8rem);
-  font-weight: 300;
+  font-weight: 700;
   color: var(--cream);
   line-height: 1;
   display: block;
@@ -353,27 +371,43 @@ body {
   100% { transform: translateY(0); opacity: 1; }
 }
 .cd-lbl {
-  font-size: .52rem; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--gold-light);
-  margin-top: .3rem; display: block; opacity: .8;
+  font-size: .55rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-top: .3rem;
+  display: block;
+  opacity: .9;
+  font-weight: 500;
 }
 .cd-date {
   text-align: center;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem; color: var(--gold-dark); margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gold-dark);
+  margin-bottom: 1.2rem;
 }
 .cal-row { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
 .btn-cal {
   display: flex; align-items: center; justify-content: center; gap: .4rem;
   padding: .7rem .5rem; border-radius: 50px;
   border: 1px solid rgba(201,169,110,.4); background: transparent;
-  font-family: 'Montserrat', sans-serif; font-size: .65rem;
-  letter-spacing: 1.5px; text-transform: uppercase; color: var(--text);
-  text-decoration: none; cursor: pointer; transition: all .25s;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .25s;
+  font-weight: 600;
 }
 .btn-cal:hover { border-color: var(--gold); color: var(--gold-dark); background: rgba(201,169,110,.06); }
 .detail-item {
-  display: flex; align-items: flex-start; gap: .9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .9rem;
   padding: .9rem 0;
   border-bottom: 1px solid rgba(201,169,110,.15);
   transition: transform .2s, background .2s;
@@ -386,14 +420,27 @@ body {
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   display: flex; align-items: center; justify-content: center;
-  font-size: .95rem; flex-shrink: 0;
+  font-size: .95rem;
+  flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(201,169,110,.3);
   transition: transform .3s, box-shadow .3s;
 }
 .detail-item:hover .detail-icon { transform: rotate(10deg) scale(1.1); }
-.detail-lbl { font-size: .58rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .25rem; }
-.detail-val { font-size: .85rem; line-height: 1.55; color: var(--dark); }
-.detail-val a { color: var(--gold-dark); text-decoration: none; font-weight: 500; }
+.detail-lbl {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+.detail-val {
+  font-size: .9rem;
+  line-height: 1.55;
+  color: var(--dark);
+  font-weight: 500;
+}
+.detail-val a { color: var(--gold-dark); text-decoration: none; font-weight: 600; }
 .map-wrap {
   border-radius: 14px; overflow: hidden;
   border: 1px solid rgba(201,169,110,.2); height: 200px; margin-top: 1.2rem;
@@ -407,18 +454,33 @@ body {
 }
 .dress-card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 32px rgba(201,169,110,.22); }
 .swatch {
-  width: 42px; height: 42px; border-radius: 50%;
+  width: 42px; height: 42px;
+  border-radius: 50%;
   margin: 0 auto .8rem;
   box-shadow: 0 3px 12px rgba(0,0,0,.1);
   transition: transform .4s cubic-bezier(.34,1.56,.64,1);
 }
 .dress-card:hover .swatch { transform: scale(1.2) rotate(15deg); }
-.dress-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--dark); margin-bottom: .2rem; }
-.dress-desc { font-size: .68rem; color: #999; line-height: 1.5; }
+.dress-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: .2rem;
+}
+.dress-desc {
+  font-size: .72rem;
+  font-weight: 500;
+  color: #777;
+  line-height: 1.5;
+}
 .dress-note {
   padding: .9rem 1rem; background: rgba(201,169,110,.06);
   border-radius: 12px; border-left: 3px solid var(--gold);
-  font-size: .78rem; color: var(--text); line-height: 1.6;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--text);
+  line-height: 1.6;
 }
 .timeline { position: relative; padding-left: 1.8rem; }
 .timeline::before {
@@ -434,15 +496,34 @@ body {
 .tl-item.tl-visible { opacity: 1; transform: translateX(0); }
 .tl-dot {
   position: absolute; left: -1.8rem; top: 4px;
-  width: 14px; height: 14px; border-radius: 50%;
-  background: var(--gold); border: 3px solid var(--cream);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 3px solid var(--cream);
   box-shadow: 0 0 0 2px var(--gold);
   transition: transform .3s, box-shadow .3s;
 }
 .tl-item:hover .tl-dot { transform: scale(1.4); box-shadow: 0 0 0 4px rgba(201,169,110,.3); }
-.tl-time { font-size: .58rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .25rem; }
-.tl-title { font-size: .9rem; font-weight: 500; color: var(--dark); margin-bottom: .15rem; }
-.tl-desc { font-size: .75rem; color: #888; line-height: 1.5; }
+.tl-time {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: .25rem;
+  font-weight: 600;
+}
+.tl-title {
+  font-size: .95rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: .15rem;
+}
+.tl-desc {
+  font-size: .8rem;
+  font-weight: 500;
+  color: #888;
+  line-height: 1.5;
+}
 .music-bar {
   display: flex; align-items: center; gap: .9rem;
   padding: 1rem 1.1rem; border-radius: 14px; background: var(--dark);
@@ -479,17 +560,26 @@ body {
   50% { height: 18px; }
 }
 .music-info { flex: 1; }
-.music-title { color: var(--cream); font-size: .83rem; margin-bottom: .18rem; }
-.music-artist { color: rgba(255,255,255,.4); font-size: .7rem; }
+.music-title { color: var(--cream); font-size: .85rem; font-weight: 600; margin-bottom: .18rem; }
+.music-artist { color: rgba(255,255,255,.5); font-size: .7rem; font-weight: 400; }
 .music-btn {
-  width: 38px; height: 38px; border-radius: 50%;
-  background: var(--gold); border: none; color: var(--dark); font-size: .95rem;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; transition: transform .3s, box-shadow .3s;
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  color: var(--dark);
+  font-size: .95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .3s, box-shadow .3s;
 }
 .music-btn:hover { transform: scale(1.15); box-shadow: 0 0 20px rgba(201,169,110,.6); }
 .carousel-wrap {
-  position: relative; overflow: hidden; border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
   touch-action: pan-y;
 }
 .carousel-track {
@@ -498,86 +588,149 @@ body {
   will-change: transform;
 }
 .carousel-slide {
-  min-width: 100%; position: relative;
+  min-width: 100%;
+  position: relative;
 }
 .carousel-slide img {
-  width: 100%; aspect-ratio: 1/1;
-  object-fit: cover; display: block;
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
   border-radius: 18px;
 }
 .carousel-slide .slide-overlay {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: linear-gradient(to top, rgba(26,19,10,.6) 0%, transparent 50%);
   border-radius: 18px;
   pointer-events: none;
 }
 .carousel-nav {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  display: flex; justify-content: space-between;
-  width: 100%; padding: 0 .6rem; pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 .6rem;
+  pointer-events: none;
 }
 .c-btn {
-  width: 38px; height: 38px; border-radius: 50%;
-  background: rgba(26,19,10,.55); backdrop-filter: blur(6px);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(26,19,10,.55);
+  backdrop-filter: blur(6px);
   border: 1px solid rgba(201,169,110,.35);
-  color: var(--gold-light); font-size: 1rem;
-  display: flex; align-items: center; justify-content: center;
-  cursor: pointer; pointer-events: all;
+  color: var(--gold-light);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: all;
   transition: background .25s, transform .25s;
   user-select: none;
 }
 .c-btn:hover { background: rgba(201,169,110,.3); transform: scale(1.1); }
 .carousel-dots {
-  display: flex; justify-content: center; gap: .4rem; margin-top: .9rem;
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+  margin-top: .9rem;
 }
 .c-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: rgba(201,169,110,.3); transition: all .3s; cursor: pointer;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(201,169,110,.3);
+  transition: all .3s;
+  cursor: pointer;
 }
 .c-dot.active { background: var(--gold); transform: scale(1.4); }
 .carousel-counter {
-  position: absolute; bottom: .7rem; right: .9rem;
-  font-size: .6rem; letter-spacing: 2px;
-  color: var(--cream); background: rgba(0,0,0,.35);
-  padding: .2rem .55rem; border-radius: 50px;
+  position: absolute;
+  bottom: .7rem;
+  right: .9rem;
+  font-size: .65rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--cream);
+  background: rgba(0,0,0,.35);
+  padding: .2rem .55rem;
+  border-radius: 50px;
   backdrop-filter: blur(4px);
 }
 .gift-list { display: grid; gap: .8rem; }
 .gift-item {
-  display: flex; align-items: center; gap: .9rem;
-  padding: 1rem 1.1rem; border-radius: 14px;
-  border: 1px solid rgba(201,169,110,.2); background: #fff;
-  cursor: pointer; text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(201,169,110,.2);
+  background: #fff;
+  cursor: pointer;
+  text-decoration: none;
   transition: all .35s cubic-bezier(.34,1.56,.64,1);
 }
 .gift-item:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(201,169,110,.22); transform: translateY(-3px) translateX(2px); }
 .gift-ico {
-  width: 44px; height: 44px; border-radius: 11px;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
   transition: transform .35s cubic-bezier(.34,1.56,.64,1);
 }
 .gift-item:hover .gift-ico { transform: scale(1.15) rotate(-8deg); }
-.gift-lbl { font-size: .6rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .18rem; }
-.gift-val { font-size: .83rem; color: var(--dark); }
+.gift-lbl {
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: .18rem;
+  font-weight: 600;
+}
+.gift-val {
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--dark);
+}
 .gift-arr { margin-left: auto; color: var(--gold-light); font-size: 1rem; transition: transform .3s; }
 .gift-item:hover .gift-arr { transform: translateX(5px); }
 .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
 .btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 100%; padding: .9rem 1rem; border-radius: 50px;
-  font-family: 'Montserrat', sans-serif; font-size: .68rem;
-  font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
-  cursor: pointer; border: none; transition: all .35s cubic-bezier(.34,1.56,.64,1);
-  position: relative; overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: .9rem 1rem;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all .35s cubic-bezier(.34,1.56,.64,1);
+  position: relative;
+  overflow: hidden;
 }
 .btn::after {
   content: '';
   position: absolute;
-  width: 60px; height: 60px; border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   background: rgba(255,255,255,.2);
-  top: 50%; left: 50%;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%,-50%) scale(0);
   transition: transform .5s ease;
   pointer-events: none;
@@ -585,76 +738,135 @@ body {
 .btn:active::after { transform: translate(-50%,-50%) scale(3); opacity: 0; }
 .btn-gold {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  color: #fff; box-shadow: 0 6px 20px rgba(201,169,110,.35);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(201,169,110,.35);
 }
 .btn-gold:hover { box-shadow: 0 12px 32px rgba(201,169,110,.55); transform: translateY(-3px); }
 .btn-outline {
-  background: transparent; color: var(--gold-dark);
+  background: transparent;
+  color: var(--gold-dark);
   border: 1px solid var(--gold);
 }
 .btn-outline:hover { background: rgba(201,169,110,.07); transform: translateY(-3px); }
 .tip {
-  display: flex; align-items: flex-start; gap: .8rem;
-  padding: .8rem 0; border-bottom: 1px solid rgba(201,169,110,.12);
-  font-size: .82rem; line-height: 1.65;
-  border-radius: 6px; padding-left: .3rem;
+  display: flex;
+  align-items: flex-start;
+  gap: .8rem;
+  padding: .8rem 0;
+  border-bottom: 1px solid rgba(201,169,110,.12);
+  font-size: .85rem;
+  font-weight: 500;
+  line-height: 1.65;
+  border-radius: 6px;
+  padding-left: .3rem;
 }
 .tip:hover { transform: translateX(5px); background: rgba(201,169,110,.04); }
 .tip:last-child { border-bottom: none; }
 .tip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
 .modal-overlay {
-  position: fixed; inset: 0; z-index: 100;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
   background: rgba(0,0,0,.7);
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 1rem;
-  opacity: 0; pointer-events: none; transition: opacity .3s;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
 }
 .modal-overlay.open { opacity: 1; pointer-events: all; }
 .modal {
-  background: var(--cream); border-radius: 24px;
-  width: 100%; max-width: 420px;
+  background: var(--cream);
+  border-radius: 24px;
+  width: 100%;
+  max-width: 420px;
   padding: 2.2rem 1.6rem 1.8rem;
   position: relative;
   transform: translateY(30px) scale(.95);
   transition: transform .45s cubic-bezier(.34,1.56,.64,1);
-  max-height: 92svh; overflow-y: auto;
+  max-height: 92svh;
+  overflow-y: auto;
 }
 .modal-overlay.open .modal { transform: translateY(0) scale(1); }
 .modal-badge {
-  width: 64px; height: 64px; border-radius: 50%;
-  background: var(--cream); border: 1px solid rgba(201,169,110,.3);
-  display: flex; align-items: center; justify-content: center; font-size: 1.6rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--cream);
+  border: 1px solid rgba(201,169,110,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
   margin: -55px auto 1.3rem;
   box-shadow: 0 5px 18px rgba(201,169,110,.2);
 }
 .modal h2 {
-  font-family: 'Cormorant Garamond', serif; font-size: 1.7rem;
-  font-weight: 400; text-align: center; color: var(--gold-dark); margin-bottom: 1.3rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--gold-dark);
+  margin-bottom: 1.3rem;
 }
 .modal-close {
-  position: absolute; top: .8rem; right: .9rem;
-  width: 30px; height: 30px; border-radius: 50%;
-  background: var(--gold); border: none; cursor: pointer;
-  color: #fff; font-size: .85rem;
-  display: flex; align-items: center; justify-content: center;
+  position: absolute;
+  top: .8rem;
+  right: .9rem;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform .3s;
 }
 .modal-close:hover { transform: scale(1.15) rotate(90deg); }
 .field { margin-bottom: 1.1rem; }
-.field label { display: block; font-size: .58rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold-dark); margin-bottom: .35rem; }
+.field label {
+  display: block;
+  font-size: .65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold-dark);
+  margin-bottom: .35rem;
+  font-weight: 600;
+}
 .field input, .field select, .field textarea {
-  width: 100%; background: transparent; border: none;
+  width: 100%;
+  background: transparent;
+  border: none;
   border-bottom: 1.5px solid rgba(201,169,110,.35);
-  padding: .6rem .15rem; font-family: 'Montserrat', sans-serif;
-  font-size: .85rem; color: var(--dark); outline: none; transition: border-color .2s;
+  padding: .6rem .15rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--dark);
+  outline: none;
+  transition: border-color .2s;
 }
 .field input:focus, .field select:focus, .field textarea:focus { border-bottom-color: var(--gold); }
 .radio-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .35rem; }
 .radio-chip {
-  flex: 1; min-width: 76px; border: 1px solid rgba(201,169,110,.3);
-  border-radius: 12px; padding: .65rem .4rem; text-align: center;
-  cursor: pointer; font-size: .72rem; font-weight: 500; color: var(--text);
-  transition: all .3s; user-select: none;
+  flex: 1;
+  min-width: 76px;
+  border: 1px solid rgba(201,169,110,.3);
+  border-radius: 12px;
+  padding: .65rem .4rem;
+  text-align: center;
+  cursor: pointer;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all .3s;
+  user-select: none;
 }
 .radio-chip:hover { border-color: var(--gold); }
 .radio-chip.sel { background: var(--gold); border-color: var(--gold); color: #fff; }
@@ -666,37 +878,47 @@ body {
 .admin-overlay.open { opacity: 1; pointer-events: all; }
 .admin-panel { background: var(--dark); color: #fff; border-radius: 20px; width: 100%; max-width: 480px; max-height: 90svh; overflow-y: auto; padding: 2rem 1.4rem; transform: scale(.9) translateY(30px); transition: transform .4s cubic-bezier(.34,1.56,.64,1); position: relative; }
 .admin-overlay.open .admin-panel { transform: scale(1) translateY(0); }
-.admin-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 400; color: var(--gold); text-align: center; margin-bottom: 1.3rem; }
+.admin-title { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--gold); text-align: center; margin-bottom: 1.3rem; }
 .admin-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: .65rem; margin-bottom: 1.3rem; }
 .stat-box { background: rgba(201,169,110,.1); border-radius: 12px; padding: .8rem; text-align: center; }
-.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); line-height: 1; }
-.stat-lbl { font-size: .55rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.35); margin-top: .2rem; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.stat-lbl { font-size: .6rem; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,.35); margin-top: .2rem; font-weight: 500; }
 .admin-entry { background: rgba(255,255,255,.05); border-radius: 12px; padding: .8rem .9rem; margin-bottom: .5rem; border-left: 3px solid var(--gold); }
-.e-name { font-weight: 500; font-size: .88rem; margin-bottom: .25rem; }
-.e-detail { font-size: .72rem; color: rgba(255,255,255,.45); }
-.e-badge { font-size: .62rem; text-transform: uppercase; letter-spacing: 1.5px; padding: .18rem .55rem; border-radius: 50px; display: inline-block; margin-top: .3rem; }
+.e-name { font-weight: 600; font-size: .9rem; margin-bottom: .25rem; }
+.e-detail { font-size: .75rem; font-weight: 400; color: rgba(255,255,255,.45); }
+.e-badge { font-size: .65rem; text-transform: uppercase; letter-spacing: 1.5px; padding: .18rem .55rem; border-radius: 50px; display: inline-block; margin-top: .3rem; font-weight: 500; }
 .e-si { background: rgba(80,180,80,.15); color: #6dc96d; }
 .e-no { background: rgba(180,80,80,.15); color: #c96d6d; }
 .e-talvez { background: rgba(201,169,110,.15); color: var(--gold-light); }
 .toast {
-  position: fixed; bottom: 2rem; left: 50%;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
   transform: translateX(-50%) translateY(100px);
-  background: var(--dark); color: #fff;
-  padding: .75rem 1.4rem; border-radius: 50px;
-  font-size: .75rem; letter-spacing: .5px;
+  background: var(--dark);
+  color: #fff;
+  padding: .75rem 1.4rem;
+  border-radius: 50px;
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .5px;
   transition: transform .45s cubic-bezier(.34,1.56,.64,1);
-  z-index: 500; white-space: nowrap;
+  z-index: 500;
+  white-space: nowrap;
   box-shadow: 0 8px 28px rgba(0,0,0,.4);
   border: 1px solid rgba(201,169,110,.25);
 }
 .toast.show { transform: translateX(-50%) translateY(0); }
 footer {
-  width: 100%; text-align: center; padding: 3rem 1.5rem 2rem;
-  position: relative; z-index: 1;
+  width: 100%;
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  position: relative;
+  z-index: 1;
 }
-.footer-names { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold-light); }
-.footer-date { font-size: .62rem; letter-spacing: 4px; text-transform: uppercase; color: var(--cream); margin: .4rem 0 1.5rem; }
-.footer-admin { font-size: .6rem; color: rgba(255,255,255,.12); cursor: pointer; letter-spacing: 1px; background: none; border: none; transition: color .3s; }
+.footer-names { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--gold-light); }
+.footer-date { font-size: .7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--cream); margin: .4rem 0 1.5rem; font-weight: 500; }
+.footer-admin { font-size: .7rem; color: rgba(255,255,255,.12); cursor: pointer; letter-spacing: 1px; background: none; border: none; transition: color .3s; font-weight: 400; }
 .footer-admin:hover { color: rgba(255,255,255,.35); }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -711,17 +933,13 @@ footer {
 </head>
 <body>
 
-<!-- VIDEO INTRO (sin botón de salto, con fecha superpuesta y fade-out automático) -->
-<div id="video-intro">
-  <video id="intro-video" autoplay muted playsinline>
-    <source src="intro.mp4" type="video/mp4">
-    Tu navegador no soporta video.
-  </video>
-  <div id="fechaOverlay" class="fecha-overlay">
-    <div class="dia">DOMINGO</div>
-    <div class="fecha">28 · 06 · 2026</div>
-    <div class="mes">JUNIO</div>
+<!-- PANTALLA DE INTRODUCCIÓN CON DOS IMÁGENES Y TRANSICIÓN -->
+<div id="intro-screen">
+  <div class="intro-images">
+    <img id="img1" class="intro-img active" src="intro1.jpg" alt="Bienvenida 1">
+    <img id="img2" class="intro-img" src="intro2.jpg" alt="Bienvenida 2">
   </div>
+  <button class="enter-btn" id="enterBtn">Descubrir invitación</button>
 </div>
 
 <!-- CONTENIDO PRINCIPAL (INVITACIÓN) -->
@@ -729,7 +947,6 @@ footer {
   <canvas id="particles-canvas"></canvas>
   <div class="page-bg"></div>
   <div class="page-wrap">
-
     <section class="hero">
       <div class="petals-container" id="petals"></div>
       <div class="hero-glow"></div>
@@ -741,7 +958,6 @@ footer {
       <p class="hero-sub">Te elijo hoy y por el resto de mi vida</p>
       <a href="#countdown" class="hero-scroll"><div class="scroll-bar"></div><span>Ver más</span></a>
     </section>
-
     <div class="card" id="countdown" data-reveal="scale">
       <div class="card-header"><div class="card-icon">📅</div><h2 class="card-title">Faltan para el gran día</h2></div>
       <div class="cd-grid">
@@ -753,9 +969,7 @@ footer {
       <p class="cd-date">Domingo, 28 de Junio de 2026</p>
       <div class="cal-row"><a class="btn-cal" id="btn-gcal" href="#" target="_blank">📅 Google Cal</a><a class="btn-cal" id="btn-ical" href="#" download="boda.ics">🍎 Apple Cal</a></div>
     </div>
-
     <div class="parallax-divider" data-speed="0.4"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"El amor no se ve con los ojos, sino con el <span>corazón</span>"</p></div></div>
-
     <div class="card" data-reveal="left">
       <div class="card-header"><div class="card-icon">✉️</div><h2 class="card-title">Detalles del Evento</h2></div>
       <div class="detail-item"><div class="detail-icon">🥂</div><div><div class="detail-lbl">Recepción & Fiesta</div><div class="detail-val">16:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7--Jatun mama hotel</div></div></div>
@@ -763,17 +977,13 @@ footer {
       <div class="detail-item"><div class="detail-icon">📍</div><div><div class="detail-lbl">Ubicación</div><div class="detail-val"><a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a></div></div></div>
       <div class="map-wrap"><iframe src="https://maps.app.goo.gl/Bbak1kDy8J86Q2kH6"></iframe></div>
     </div>
-
-    <!-- VESTIMENTA: SOLO TEXT "TEMÁTICA ELEGANTE" -->
     <div class="card" data-reveal="up">
       <div class="card-header"><div class="card-icon">👗</div><h2 class="card-title">Vestimenta</h2></div>
       <div style="text-align: center; padding: 1rem 0 0.8rem;">
-        <p style="font-size: 1.1rem; font-family: 'Cormorant Garamond', serif; color: var(--gold-dark); letter-spacing: 2px;">✨ Temática elegante ✨</p>
+        <p style="font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--gold-dark); letter-spacing: 2px; font-weight: 600;">✨ Temática elegante ✨</p>
       </div>
     </div>
-
     <div class="parallax-divider" data-speed="0.3"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Dos almas que laten como <span>una sola</span>"</p></div></div>
-
     <div class="card" data-reveal="left">
       <div class="card-header"><div class="card-icon">🗓️</div><h2 class="card-title">Agenda del Día</h2></div>
       <div class="timeline">
@@ -783,7 +993,6 @@ footer {
         <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">00:30 hs</div><div class="tl-title">Torta & Brindis</div><div class="tl-desc">El corte de la torta y el brindis con todos</div></div>
       </div>
     </div>
-
     <div class="card" data-reveal="right">
       <div class="card-header"><div class="card-icon">🎵</div><h2 class="card-title">Música</h2></div>
       <div class="music-bar">
@@ -801,7 +1010,6 @@ footer {
       </audio>
       <button class="btn btn-outline" style="margin-top:.6rem;" onclick="openModal('song')">🎶 Sugerir una canción</button>
     </div>
-
     <div class="card" data-reveal="scale">
       <div class="card-header"><div class="card-icon">📸</div><h2 class="card-title">Nuestra Historia</h2><p class="card-sub">Un recorrido de amor en imágenes</p></div>
       <div class="carousel-wrap" id="carousel" ontouchstart="touchStart(event)" ontouchmove="touchMove(event)" ontouchend="touchEnd(event)">
@@ -818,21 +1026,7 @@ footer {
       </div>
       <div class="carousel-dots" id="c-dots"></div>
     </div>
-
-    <div class="parallax-divider" data-speed="0.5"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Y en ese instante supe que era <span>para siempre</span>"</p></div></div>
-
-    <!-- REGALOS -->
-    <div class="card" data-reveal="up">
-      <div class="card-header"><div class="card-icon">🎁</div><h2 class="card-title">Regalos</h2><p class="card-sub">Tu presencia es el mejor regalo.</p></div>
-      <div class="gift-list">
-        <div class="gift-item" style="cursor: default; justify-content: center;">
-          <div class="gift-ico" style="background: linear-gradient(135deg, var(--gold-light), var(--gold));">🎁</div>
-          <div class="gift-val" style="text-align: center;">Jatun mama -Hotel y bumgalos</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECCIÓN PADRINOS -->
+    <!-- Padrinos -->
     <div class="card" data-reveal="right">
       <div class="card-header">
         <div class="card-icon">🌟</div>
@@ -840,14 +1034,12 @@ footer {
         <p class="card-sub">Gracias por ser parte de este sueño</p>
       </div>
       <div class="dress-grid" style="grid-template-columns: repeat(2,1fr);">
-        <!-- Padres del novio (descansan en paz) -->
         <div class="dress-card">
           <div class="swatch" style="background: linear-gradient(135deg, #c9a96e, #e2c99a); border-radius: 50%; width: 50px; height: 50px; margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👰‍♂️🤵‍♀️</div>
           <div class="dress-name">Máximo Yupanqui & Angélica Maldonado</div>
           <div class="dress-desc">Padres del novio</div>
-          <div class="dress-desc" style="color: var(--gold); font-size: 0.7rem;">🕊️ Descansan en paz</div>
+          <div class="dress-desc" style="color: var(--gold); font-size: 0.75rem; font-weight: 500;">🕊️ Descansan en paz</div>
         </div>
-        <!-- Padres de la novia -->
         <div class="dress-card">
           <div class="swatch" style="background: linear-gradient(135deg, #9a7a48, #c9a96e); border-radius: 50%; width: 50px; height: 50px; margin: 0 auto 0.8rem; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">👰🤵‍♂️</div>
           <div class="dress-name">Abraham Romero & Felicita Cardenas</div>
@@ -861,12 +1053,20 @@ footer {
         💛 "Su ejemplo de amor nos inspira cada día"
       </div>
     </div>
-
+    <div class="parallax-divider" data-speed="0.5"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Y en ese instante supe que era <span>para siempre</span>"</p></div></div>
+    <div class="card" data-reveal="up">
+      <div class="card-header"><div class="card-icon">🎁</div><h2 class="card-title">Regalos</h2><p class="card-sub">Tu presencia es el mejor regalo.</p></div>
+      <div class="gift-list">
+        <div class="gift-item" style="cursor: default; justify-content: center;">
+          <div class="gift-ico" style="background: linear-gradient(135deg, var(--gold-light), var(--gold));">🎁</div>
+          <div class="gift-val" style="text-align: center;">Jatun mama -Hotel y bumgalos</div>
+        </div>
+      </div>
+    </div>
     <div class="card" data-reveal="scale">
       <div class="card-header"><div class="card-icon">💌</div><h2 class="card-title">¿Nos acompañas?</h2><p class="card-sub">Confirmá antes del <strong style="color:var(--gold-dark)">25 de Junio 2026</strong></p></div>
       <div class="btn-row"><button class="btn btn-gold" onclick="openModal('rsvp')">✓ Confirmar</button><button class="btn btn-outline" onclick="openModal('song')">🎵 Canción</button></div>
     </div>
-
     <div class="card" data-reveal="up">
       <div class="card-header"><div class="card-icon">📋</div><h2 class="card-title">Tips y Notas</h2></div>
       <div class="tip"><div class="tip-dot"></div><div>¡Por favor ser <strong>puntuales</strong>!</div></div>
@@ -875,18 +1075,12 @@ footer {
       <div class="tip"><div class="tip-dot"></div><div>Llevar <strong>abrigo</strong> para los espacios exteriores.</div></div>
       <div class="tip"><div class="tip-dot"></div><div>Estacionamiento <strong>gratuito</strong> en el predio.</div></div>
     </div>
-
   </div>
-
   <footer><div class="footer-names">Charles &amp; Clarisa</div><div class="footer-date">28 · 06 · 2026</div><button class="footer-admin" onclick="openAdmin()">⚙</button></footer>
-
   <!-- MODALES (RSVP y CANCIÓN) -->
   <div class="modal-overlay" id="modal-rsvp"><div class="modal"><button class="modal-close" onclick="closeModal('rsvp')">✕</button><div class="modal-badge">💌</div><h2>Confirmar Asistencia</h2><div id="rsvp-form"><div class="field"><label>Nombre completo *</label><input type="text" id="r-nombre" placeholder="Tu nombre y apellido"></div><div class="field"><label>¿Asistirás? *</label><div class="radio-row"><div class="radio-chip" id="chip-si" onclick="pickRSVP('si')">✓ Sí, voy</div><div class="radio-chip" id="chip-no" onclick="pickRSVP('no')">✗ No puedo</div><div class="radio-chip" id="chip-talvez" onclick="pickRSVP('talvez')">? Tal vez</div></div></div><div class="field" id="field-pax" style="display:none;"><label>¿Cuántas personas? *</label><select id="r-pax"><option value="">Seleccionar...</option><option value="1">Solo yo (1)</option><option value="2">Somos 2</option><option value="3">Somos 3</option><option value="4">Somos 4</option><option value="5+">5 o más</option></select></div><div class="field"><label>Restricción alimentaria</label><input type="text" id="r-comida" placeholder="Vegano, celíaco... (opcional)"></div><div class="field"><label>Mensaje para los novios 💬</label><textarea id="r-mensaje" placeholder="Un deseo, palabras bonitas..."></textarea></div><button class="btn btn-gold" id="btn-rsvp" onclick="enviarRSVP()" style="margin-top:.4rem;">Confirmar asistencia</button></div><div class="success-screen" id="rsvp-ok"><div class="success-icon">🎉</div><h3>¡Gracias!</h3><p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p></div></div></div>
-
   <div class="modal-overlay" id="modal-song"><div class="modal"><button class="modal-close" onclick="closeModal('song')">✕</button><div class="modal-badge">🎵</div><h2>Sugerir Canción</h2><div id="song-form"><div class="field"><label>Tu nombre *</label><input type="text" id="s-nombre" placeholder="Ingresá tu nombre"></div><div class="field"><label>Canción y artista *</label><input type="text" id="s-cancion" placeholder="Nombre de la canción y autor"></div><div class="field"><label>Link de YouTube (opcional)</label><input type="url" id="s-link" placeholder="https://youtube.com/..."></div><button class="btn btn-gold" id="btn-song" onclick="enviarCancion()" style="margin-top:.4rem;">Sugerir Canción</button></div><div class="success-screen" id="song-ok"><div class="success-icon">🎶</div><h3>¡Genial!</h3><p>Tu sugerencia fue enviada.<br>¡La sumamos a la playlist! 🎉</p></div></div></div>
-
   <div class="admin-overlay" id="admin-overlay"><div class="admin-panel"><button class="modal-close" style="position:absolute;top:1.2rem;right:1.2rem;" onclick="closeAdmin()">✕</button><h2 class="admin-title">⚙ Panel de Admin</h2><div id="admin-login"><div class="field"><label style="color:var(--gold-light);">Contraseña</label><input type="password" id="admin-pass" placeholder="Ingresá la contraseña" style="color:#fff;border-bottom-color:rgba(201,169,110,.4);" onkeydown="if(event.key==='Enter') checkAdmin()"></div><button class="btn btn-gold" onclick="checkAdmin()">Ingresar</button></div><div id="admin-dash" style="display:none;"><div class="admin-stats"><div class="stat-box"><div class="stat-num" id="stat-total">0</div><div class="stat-lbl">Total</div></div><div class="stat-box"><div class="stat-num" id="stat-si">0</div><div class="stat-lbl">Confirmados</div></div><div class="stat-box"><div class="stat-num" id="stat-pax">0</div><div class="stat-lbl">Personas</div></div></div><div id="admin-list"></div><button class="btn btn-outline" style="margin-top:1.2rem;color:var(--gold-light);border-color:rgba(201,169,110,.4);" onclick="exportCSV()">📥 Exportar CSV</button></div></div></div>
-
   <div class="toast" id="toast"></div>
 </div>
 
@@ -903,67 +1097,45 @@ const calEvento = {
   descripcion: "¡Nos casamos! Ven a celebrar con nosotros."
 };
 
-// ======================== FUNCIONES PARA EL VIDEO INTRO Y FADE-OUT ========================
+// ======================== FUNCIONES PARA INTRO CON DOS IMÁGENES ========================
+let currentImage = 1; // 1 o 2
+let timeoutId = null;
 function showMainContent() {
-  document.getElementById('video-intro').style.display = 'none';
-  document.getElementById('main-content').style.display = 'block';
+  if (timeoutId) clearTimeout(timeoutId);
+  const intro = document.getElementById('intro-screen');
+  intro.style.opacity = '0';
   setTimeout(() => {
+    intro.style.display = 'none';
+    document.getElementById('main-content').style.display = 'block';
     window.dispatchEvent(new Event('scroll'));
-    updateParallax();
-  }, 100);
+    if (typeof updateParallax === 'function') updateParallax();
+  }, 1000);
 }
-
-// Efecto de desvanecimiento (fade out) de la fecha durante los últimos segundos del video
-function initVideoFade() {
-  const video = document.getElementById('intro-video');
-  const fechaDiv = document.getElementById('fechaOverlay');
-  if (!video || !fechaDiv) return;
-
-  // Esperar a que el video tenga duración
-  video.addEventListener('loadedmetadata', () => {
-    const duration = video.duration;
-    // Empezar a desvanecer cuando falten 3 segundos para terminar
-    const fadeStart = Math.max(0, duration - 3);
-    let fadeInterval = null;
-
-    const updateFade = () => {
-      const current = video.currentTime;
-      if (current >= fadeStart) {
-        // Calcular opacidad: 1 al inicio del fade, 0 al final
-        let progress = (current - fadeStart) / 3; // 3 segundos de duración del fade
-        progress = Math.min(1, Math.max(0, progress));
-        fechaDiv.style.opacity = 1 - progress;
-      } else {
-        fechaDiv.style.opacity = 1;
-      }
-    };
-
-    video.addEventListener('timeupdate', updateFade);
-    // Limpiar al terminar
-    video.addEventListener('ended', () => {
-      if (fadeInterval) clearInterval(fadeInterval);
-      fechaDiv.style.opacity = 0;
+function nextImage() {
+  const img1 = document.getElementById('img1');
+  const img2 = document.getElementById('img2');
+  if (currentImage === 1) {
+    img1.classList.remove('active');
+    img2.classList.add('active');
+    currentImage = 2;
+    timeoutId = setTimeout(() => {
       showMainContent();
-    });
-  });
-}
-
-// Iniciar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-  const video = document.getElementById('intro-video');
-  if (video) {
-    // Si el video ya terminó (muy corto) mostramos contenido directamente
-    if (video.readyState >= 1 && video.duration > 0 && video.currentTime >= video.duration) {
-      showMainContent();
-    } else {
-      initVideoFade();
-    }
+    }, 3000);
+  } else {
+    // ya terminó la secuencia, mostramos contenido
+    showMainContent();
   }
-  // Ocultar contenido principal hasta que termine el video
-  document.getElementById('main-content').style.display = 'none';
-});
+}
+// Iniciar la secuencia: primera imagen visible, luego de 3 segundos cambiar a la segunda, luego de otros 3 mostrar contenido
+setTimeout(() => {
+  nextImage();
+}, 3000);
+// Botón para saltar la secuencia
+document.getElementById('enterBtn').addEventListener('click', showMainContent);
+// Ocultar contenido principal hasta que se muestre
+document.getElementById('main-content').style.display = 'none';
 
-// ======================== PARTÍCULAS ========================
+// ======================== PARTÍCULAS, COUNTDOWN, ETC. (código completo de versiones anteriores) ========================
 (function() {
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
@@ -1033,7 +1205,6 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 
-// ======================== REVEAL CARDS ========================
 const revealTypes = ['up', 'left', 'right', 'scale'];
 document.querySelectorAll('.card').forEach((card, i) => {
   if (!card.dataset.reveal) card.dataset.reveal = revealTypes[i % revealTypes.length];
@@ -1060,7 +1231,6 @@ const timelineObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.timeline').forEach(t => timelineObserver.observe(t));
 
-// ======================== PARALLAX ========================
 function updateParallax() {
   document.querySelectorAll('.parallax-divider').forEach(div => {
     const rect = div.getBoundingClientRect();
@@ -1073,7 +1243,6 @@ function updateParallax() {
 window.addEventListener('scroll', updateParallax, { passive: true });
 updateParallax();
 
-// ======================== COUNTDOWN ========================
 function updateCD() {
   const diff = weddingDate - new Date();
   if (diff <= 0) {
@@ -1100,7 +1269,6 @@ function updateCD() {
 updateCD();
 setInterval(updateCD, 1000);
 
-// ======================== CALENDAR LINKS ========================
 (function() {
   const e = calEvento;
   const gcal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(e.titulo)}&dates=${e.inicio}/${e.fin}&location=${encodeURIComponent(e.ubicacion)}&details=${encodeURIComponent(e.descripcion)}`;
@@ -1109,13 +1277,11 @@ setInterval(updateCD, 1000);
   document.getElementById('btn-ical').href = 'data:text/calendar;charset=utf8,' + encodeURIComponent(ics);
 })();
 
-// ======================== MÚSICA ========================
 let playing = false;
 const audio = document.getElementById('bg-audio');
 const musicBtn = document.getElementById('music-btn');
 const disc = document.getElementById('disc');
 const eq = document.getElementById('equalizer');
-
 function toggleMusic() {
   if (!playing) {
     audio.play()
@@ -1134,7 +1300,6 @@ function toggleMusic() {
     eq.classList.remove('active');
   }
 }
-
 function showToast(msg, duration = 3000) {
   const t = document.getElementById('toast');
   t.textContent = msg;
@@ -1142,7 +1307,6 @@ function showToast(msg, duration = 3000) {
   setTimeout(() => t.classList.remove('show'), duration);
 }
 
-// ======================== CARRUSEL ========================
 let cCurrent = 0, cTotal = 6, touchStartX = 0, touchDeltaX = 0;
 function buildDots() {
   const container = document.getElementById('c-dots');
@@ -1168,7 +1332,6 @@ function touchMove(e) { touchDeltaX = e.touches[0].clientX - touchStartX; }
 function touchEnd(e) { if (touchDeltaX < -40) carouselNext(); else if (touchDeltaX > 40) carouselPrev(); touchDeltaX = 0; }
 setInterval(carouselNext, 4000);
 
-// ======================== MODALES ========================
 function openModal(id) {
   document.getElementById('modal-' + id).classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1181,7 +1344,6 @@ document.querySelectorAll('.modal-overlay').forEach(el => {
   el.addEventListener('click', e => { if (e.target === el) closeModal(el.id.replace('modal-', '')); });
 });
 
-// ======================== RSVP Y CANCIONES ========================
 let rsvpChoice = '';
 function pickRSVP(v) {
   rsvpChoice = v;
@@ -1196,7 +1358,6 @@ function saveLocal(data) {
 function loadLocal() {
   return JSON.parse(localStorage.getItem('rsvp_list') || '[]');
 }
-
 async function postData(data) {
   saveLocal(data);
   try {
@@ -1210,7 +1371,6 @@ async function postData(data) {
     console.warn('Error enviando a Google Sheets:', e);
   }
 }
-
 async function enviarRSVP() {
   const nombre = document.getElementById('r-nombre').value.trim();
   if (!nombre) { showToast('Por favor ingresá tu nombre'); return; }
@@ -1249,8 +1409,6 @@ async function enviarCancion() {
     btn.disabled = false;
   }
 }
-
-// ======================== ADMIN ========================
 function openAdmin() {
   document.getElementById('admin-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
