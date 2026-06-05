@@ -514,8 +514,12 @@ body {
   line-height: 1.5;
 }
 .music-bar {
-  display: flex; align-items: center; gap: .9rem;
-  padding: 1rem 1.1rem; border-radius: 14px; background: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  background: var(--dark);
   margin-bottom: 1.2rem;
 }
 .music-bar:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,.4); }
@@ -523,21 +527,31 @@ body {
   width: 48px; height: 48px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem; flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
   box-shadow: 0 0 0 4px rgba(201,169,110,.15);
 }
 .music-disc.spin { animation: spin 4s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .equalizer {
-  display: flex; align-items: flex-end; gap: 3px;
-  height: 20px; margin-left: auto; margin-right: .5rem;
-  opacity: 0; transition: opacity .3s;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 20px;
+  margin-left: auto;
+  margin-right: .5rem;
+  opacity: 0;
+  transition: opacity .3s;
 }
 .equalizer.active { opacity: 1; }
 .eq-bar {
-  width: 3px; background: var(--gold);
-  border-radius: 2px; height: 6px;
+  width: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  height: 6px;
   transform-origin: bottom;
 }
 .eq-bar:nth-child(1) { animation: eqBounce .9s ease-in-out infinite; }
@@ -552,7 +566,8 @@ body {
 .music-title { color: var(--cream); font-size: .85rem; font-weight: 600; margin-bottom: .18rem; }
 .music-artist { color: rgba(255,255,255,.5); font-size: .7rem; font-weight: 400; }
 .music-btn {
-  width: 38px; height: 38px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: var(--gold);
   border: none;
@@ -605,7 +620,8 @@ body {
   pointer-events: none;
 }
 .c-btn {
-  width: 38px; height: 38px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   background: rgba(26,19,10,.55);
   backdrop-filter: blur(6px);
@@ -664,7 +680,8 @@ body {
 }
 .gift-item:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(201,169,110,.22); transform: translateY(-3px) translateX(2px); }
 .gift-ico {
-  width: 44px; height: 44px;
+  width: 44px;
+  height: 44px;
   border-radius: 11px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   display: flex;
@@ -920,7 +937,7 @@ footer {
 </head>
 <body>
 
-<!-- PANTALLA DE INTRODUCCIÓN CON UNA SOLA IMAGEN Y TRANSICIÓN -->
+<!-- PANTALLA DE INTRODUCCIÓN CON UNA SOLA IMAGEN -->
 <div id="intro-screen">
   <img id="intro-bg" src="intro.jpg" alt="Bienvenida">
   <button class="enter-btn" id="enterBtn">Descubrir invitación</button>
@@ -1010,7 +1027,7 @@ footer {
       </div>
       <div class="carousel-dots" id="c-dots"></div>
     </div>
-    <!-- Padrinos -->
+    <!-- Padres y padrinos -->
     <div class="card" data-reveal="right">
       <div class="card-header">
         <div class="card-icon">🌟</div>
@@ -1093,18 +1110,42 @@ function showMainContent() {
     if (typeof updateParallax === 'function') updateParallax();
   }, 1000);
 }
-// Al hacer clic en el botón
 document.getElementById('enterBtn').addEventListener('click', showMainContent);
-// Opcional: después de 4 segundos se muestra automáticamente (puedes comentar o eliminar esta línea si no quieres autopase)
 setTimeout(() => {
   if (document.getElementById('intro-screen').style.display !== 'none') {
     showMainContent();
   }
 }, 4000);
-// Ocultar contenido principal hasta que se muestre
 document.getElementById('main-content').style.display = 'none';
 
-// ======================== PARTÍCULAS, COUNTDOWN, ETC. (código completo) ========================
+// ======================== MÚSICA AUTOMÁTICA AL INTERACTUAR ========================
+let musicStarted = false;
+function startMusicOnInteraction() {
+  if (musicStarted) return;
+  const audio = document.getElementById('bg-audio');
+  const btn = document.getElementById('music-btn');
+  const discEl = document.getElementById('disc');
+  const eqEl = document.getElementById('equalizer');
+  if (!audio) return;
+  audio.play().then(() => {
+    musicStarted = true;
+    // Actualizar la variable global 'playing' y la interfaz
+    window.playing = true;
+    if (btn) btn.textContent = '⏸';
+    if (discEl) discEl.classList.add('spin');
+    if (eqEl) eqEl.classList.add('active');
+    // Remover los listeners para que no se ejecuten de nuevo
+    document.removeEventListener('click', startMusicOnInteraction);
+    document.removeEventListener('touchstart', startMusicOnInteraction);
+    document.removeEventListener('keydown', startMusicOnInteraction);
+  }).catch(e => console.log('Autoplay bloqueado por el navegador. El usuario deberá hacer clic en el botón de música.'));
+}
+// Escuchamos los primeros clics / toques / teclas
+document.addEventListener('click', startMusicOnInteraction);
+document.addEventListener('touchstart', startMusicOnInteraction);
+document.addEventListener('keydown', startMusicOnInteraction);
+
+// ======================== PARTÍCULAS, COUNTDOWN, ETC. ========================
 (function() {
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
@@ -1269,6 +1310,13 @@ function toggleMusic() {
     eq.classList.remove('active');
   }
 }
+// Sincronizar la variable global 'playing' con la de la función startMusicOnInteraction
+window.playing = playing;
+Object.defineProperty(window, 'playing', {
+  get: () => playing,
+  set: (val) => { playing = val; }
+});
+
 function showToast(msg, duration = 3000) {
   const t = document.getElementById('toast');
   t.textContent = msg;
