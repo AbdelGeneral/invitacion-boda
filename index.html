@@ -27,7 +27,7 @@ body {
   font-weight: 500;
   line-height: 1.5;
 }
-/* Pantalla de introducción con dos imágenes */
+/* Pantalla de introducción con UNA sola imagen */
 #intro-screen {
   position: fixed;
   top: 0;
@@ -42,14 +42,7 @@ body {
   flex-direction: column;
   transition: opacity 1s ease;
 }
-.intro-images {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-.intro-img {
+#intro-bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,11 +50,7 @@ body {
   height: 100%;
   object-fit: contain;
   background-color: #000;
-  transition: opacity 1.5s ease-in-out;
-  opacity: 0;
-}
-.intro-img.active {
-  opacity: 1;
+  z-index: -1;
 }
 .enter-btn {
   background: rgba(201, 169, 110, 0.9);
@@ -616,8 +605,7 @@ body {
   pointer-events: none;
 }
 .c-btn {
-  width: 38px;
-  height: 38px;
+  width: 38px; height: 38px;
   border-radius: 50%;
   background: rgba(26,19,10,.55);
   backdrop-filter: blur(6px);
@@ -676,8 +664,7 @@ body {
 }
 .gift-item:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(201,169,110,.22); transform: translateY(-3px) translateX(2px); }
 .gift-ico {
-  width: 44px;
-  height: 44px;
+  width: 44px; height: 44px;
   border-radius: 11px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   display: flex;
@@ -933,12 +920,9 @@ footer {
 </head>
 <body>
 
-<!-- PANTALLA DE INTRODUCCIÓN CON DOS IMÁGENES Y TRANSICIÓN -->
+<!-- PANTALLA DE INTRODUCCIÓN CON UNA SOLA IMAGEN Y TRANSICIÓN -->
 <div id="intro-screen">
-  <div class="intro-images">
-    <img id="img1" class="intro-img active" src="intro1.jpg" alt="Bienvenida 1">
-    <img id="img2" class="intro-img" src="intro2.jpg" alt="Bienvenida 2">
-  </div>
+  <img id="intro-bg" src="intro.jpg" alt="Bienvenida">
   <button class="enter-btn" id="enterBtn">Descubrir invitación</button>
 </div>
 
@@ -980,7 +964,7 @@ footer {
     <div class="card" data-reveal="up">
       <div class="card-header"><div class="card-icon">👗</div><h2 class="card-title">Vestimenta</h2></div>
       <div style="text-align: center; padding: 1rem 0 0.8rem;">
-        <p style="font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--gold-dark); letter-spacing: 2px; font-weight: 600;">✨ Temática elegante ✨</p>
+        <p style="font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--gold-dark); letter-spacing: 2px; font-weight: 600;"> Ropa Formal </p>
       </div>
     </div>
     <div class="parallax-divider" data-speed="0.3"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Dos almas que laten como <span>una sola</span>"</p></div></div>
@@ -1030,7 +1014,7 @@ footer {
     <div class="card" data-reveal="right">
       <div class="card-header">
         <div class="card-icon">🌟</div>
-        <h2 class="card-title">Nuestros Padrinos</h2>
+        <h2 class="card-title">Nuestros Padres</h2>
         <p class="card-sub">Gracias por ser parte de este sueño</p>
       </div>
       <div class="dress-grid" style="grid-template-columns: repeat(2,1fr);">
@@ -1047,7 +1031,8 @@ footer {
         </div>
       </div>
       <div class="dress-note" style="text-align: center; margin-top: 0.5rem;">
-        🔑 Padrino de llaves: <strong>Adan Paul Farfán Carreño & Viviana Saravia Ruiz</strong>
+        🔑 Padrinos: <strong>Jesús F. Smaniego Manrique
+ Marga- Margarita E. Samaniego</strong>
       </div>
       <div class="dress-note" style="text-align: center; background: rgba(201,169,110,0.1); margin-top: 0.8rem;">
         💛 "Su ejemplo de amor nos inspira cada día"
@@ -1097,11 +1082,8 @@ const calEvento = {
   descripcion: "¡Nos casamos! Ven a celebrar con nosotros."
 };
 
-// ======================== FUNCIONES PARA INTRO CON DOS IMÁGENES ========================
-let currentImage = 1; // 1 o 2
-let timeoutId = null;
+// ======================== FUNCIÓN PARA INTRO CON UNA SOLA IMAGEN ========================
 function showMainContent() {
-  if (timeoutId) clearTimeout(timeoutId);
   const intro = document.getElementById('intro-screen');
   intro.style.opacity = '0';
   setTimeout(() => {
@@ -1111,31 +1093,18 @@ function showMainContent() {
     if (typeof updateParallax === 'function') updateParallax();
   }, 1000);
 }
-function nextImage() {
-  const img1 = document.getElementById('img1');
-  const img2 = document.getElementById('img2');
-  if (currentImage === 1) {
-    img1.classList.remove('active');
-    img2.classList.add('active');
-    currentImage = 2;
-    timeoutId = setTimeout(() => {
-      showMainContent();
-    }, 3000);
-  } else {
-    // ya terminó la secuencia, mostramos contenido
+// Al hacer clic en el botón
+document.getElementById('enterBtn').addEventListener('click', showMainContent);
+// Opcional: después de 4 segundos se muestra automáticamente (puedes comentar o eliminar esta línea si no quieres autopase)
+setTimeout(() => {
+  if (document.getElementById('intro-screen').style.display !== 'none') {
     showMainContent();
   }
-}
-// Iniciar la secuencia: primera imagen visible, luego de 3 segundos cambiar a la segunda, luego de otros 3 mostrar contenido
-setTimeout(() => {
-  nextImage();
-}, 3000);
-// Botón para saltar la secuencia
-document.getElementById('enterBtn').addEventListener('click', showMainContent);
+}, 4000);
 // Ocultar contenido principal hasta que se muestre
 document.getElementById('main-content').style.display = 'none';
 
-// ======================== PARTÍCULAS, COUNTDOWN, ETC. (código completo de versiones anteriores) ========================
+// ======================== PARTÍCULAS, COUNTDOWN, ETC. (código completo) ========================
 (function() {
   const canvas = document.getElementById('particles-canvas');
   const ctx = canvas.getContext('2d');
