@@ -687,8 +687,7 @@ body {
 }
 .gift-item:hover { border-color: var(--gold); box-shadow: 0 8px 24px rgba(201,169,110,.22); transform: translateY(-3px) translateX(2px); }
 .gift-ico {
-  width: 44px;
-  height: 44px;
+  width: 44px; height: 44px;
   border-radius: 11px;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   display: flex;
@@ -966,6 +965,8 @@ footer {
       <p class="hero-sub">Te elijo hoy y por el resto de mi vida</p>
       <a href="#countdown" class="hero-scroll"><div class="scroll-bar"></div><span>Ver más</span></a>
     </section>
+    
+    <!-- COUNTDOWN -->
     <div class="card" id="countdown" data-reveal="scale">
       <div class="card-header"><div class="card-icon">📅</div><h2 class="card-title">Faltan para el gran día</h2></div>
       <div class="cd-grid">
@@ -977,64 +978,8 @@ footer {
       <p class="cd-date">Domingo, 28 de Junio de 2026</p>
       <div class="cal-row"><a class="btn-cal" id="btn-gcal" href="#" target="_blank">📅 Google Cal</a><a class="btn-cal" id="btn-ical" href="#" download="boda.ics">🍎 Apple Cal</a></div>
     </div>
-    <div class="parallax-divider" data-speed="0.4"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"El amor no se ve con los ojos, sino con el <span>corazón</span>"</p></div></div>
-    <div class="card" data-reveal="left">
-      <div class="card-header"><div class="card-icon">✉️</div><h2 class="card-title">Detalles del Evento</h2></div>
-      <div class="detail-item"><div class="detail-icon">🥂</div><div><div class="detail-lbl">Recepción & Fiesta</div><div class="detail-val">15:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7 - Jatun mama hotel - Mini palpa</div></div></div>
-      <div class="detail-item"><div class="detail-icon">📅</div><div><div class="detail-lbl">Fecha</div><div class="detail-val">Domingo, 28 de Junio de 2026</div></div></div>
-      <div class="detail-item"><div class="detail-icon">📍</div><div><div class="detail-lbl">Ubicación</div><div class="detail-val"><a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a></div></div></div>
-      <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!4v1780711047745!6m8!1m7!1sX_8XvC7ZnntixlacF_svJg!2m2!1d-11.87213944005434!2d-77.14262830469018!3f192.35096747702693!4f-0.4544508247198138!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    </div>
-    <div class="card" data-reveal="up">
-      <div class="card-header"><div class="card-icon">👗</div><h2 class="card-title">Vestimenta</h2></div>
-      <div style="text-align: center; padding: 1rem 0 0.8rem;">
-        <p style="font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--gold-dark); letter-spacing: 2px; font-weight: 600;"> Ropa Formal </p>
-      </div>
-    </div>
-    <div class="parallax-divider" data-speed="0.3"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Dos almas que laten como <span>una sola</span>"</p></div></div>
-    <div class="card" data-reveal="left">
-      <div class="card-header"><div class="card-icon">🗓️</div><h2 class="card-title">Agenda del Día</h2></div>
-      <div class="timeline">
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">15:00 hs</div><div class="tl-title">Recepción de invitados</div><div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">19:30 hs</div><div class="tl-title">Sesión de fotos</div><div class="tl-desc">Fotos con los novios y familiares en los jardines</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">20:30 hs</div><div class="tl-title">Cena</div><div class="tl-desc">Ingreso al salón principal y cena</div></div>
-        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">00:30 hs</div><div class="tl-title">Torta & Brindis</div><div class="tl-desc">El corte de la torta y el brindis con todos</div></div>
-      </div>
-    </div>
-    <div class="card" data-reveal="right">
-      <div class="card-header"><div class="card-icon">🎵</div><h2 class="card-title">Música</h2></div>
-      <div class="music-bar">
-        <div class="music-disc" id="disc">🎵</div>
-        <div class="music-info">
-          <div class="music-title">Canción especial</div>
-          <div class="music-artist">Para vos</div>
-        </div>
-        <div class="equalizer" id="equalizer"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
-        <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
-      </div>
-      <audio id="bg-audio" loop preload="auto">
-        <source src="musica.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-      </audio>
-      <button class="btn btn-outline" style="margin-top:.6rem;" onclick="openModal('song')">🎶 Sugerir una canción</button>
-    </div>
-    <div class="card" data-reveal="scale">
-      <div class="card-header"><div class="card-icon">📸</div><h2 class="card-title">Nuestra Historia</h2><p class="card-sub">Un recorrido de amor en imágenes</p></div>
-      <div class="carousel-wrap" id="carousel" ontouchstart="touchStart(event)" ontouchmove="touchMove(event)" ontouchend="touchEnd(event)">
-        <div class="carousel-track" id="ctrack">
-          <div class="carousel-slide"><img src="foto1.jpeg" alt="Foto 1" loading="lazy"><div class="slide-overlay"></div></div>
-          <div class="carousel-slide"><img src="foto2.jpeg" alt="Foto 2" loading="lazy"><div class="slide-overlay"></div></div>
-          <div class="carousel-slide"><img src="foto3.jpeg" alt="Foto 3" loading="lazy"><div class="slide-overlay"></div></div>
-          <div class="carousel-slide"><img src="foto4.jpeg" alt="Foto 4" loading="lazy"><div class="slide-overlay"></div></div>
-          <div class="carousel-slide"><img src="foto5.jpeg" alt="Foto 5" loading="lazy"><div class="slide-overlay"></div></div>
-          <div class="carousel-slide"><img src="foto6.jpeg" alt="Foto 6" loading="lazy"><div class="slide-overlay"></div></div>
-        </div>
-        <div class="carousel-nav"><button class="c-btn" onclick="carouselPrev()">‹</button><button class="c-btn" onclick="carouselNext()">›</button></div>
-        <div class="carousel-counter" id="c-counter">1 / 6</div>
-      </div>
-      <div class="carousel-dots" id="c-dots"></div>
-    </div>
-    <!-- Padres y padrinos -->
+
+    <!-- Nuestros Padres (movido aquí después de la cuenta regresiva) -->
     <div class="card" data-reveal="right">
       <div class="card-header">
         <div class="card-icon">🌟</div>
@@ -1055,27 +1000,113 @@ footer {
         </div>
       </div>
       <div class="dress-note" style="text-align: center; margin-top: 0.5rem;">
-        🔑 Padrinos: <strong>Jesús F. Smaniego Manrique
- Marga- Margarita E. Samaniego</strong>
+        🔑 Padrinos: <strong>Jesús F. Samaniego Manrique y Margarita E. Samaniego</strong>
       </div>
       <div class="dress-note" style="text-align: center; background: rgba(201,169,110,0.1); margin-top: 0.8rem;">
         💛 "Su ejemplo de amor nos inspira cada día"
       </div>
     </div>
-    <div class="parallax-divider" data-speed="0.5"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Y en ese instante supe que era <span>para siempre</span>"</p></div></div>
+
+    <div class="parallax-divider" data-speed="0.4"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"El amor no se ve con los ojos, sino con el <span>corazón</span>"</p></div></div>
+    
+    <div class="card" data-reveal="left">
+      <div class="card-header"><div class="card-icon">✉️</div><h2 class="card-title">Detalles del Evento</h2></div>
+      <div class="detail-item"><div class="detail-icon">🥂</div><div><div class="detail-lbl">Recepción & Fiesta</div><div class="detail-val">15:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7 - Jatun mama hotel - Mini palpa</div></div></div>
+      <div class="detail-item"><div class="detail-icon">📅</div><div><div class="detail-lbl">Fecha</div><div class="detail-val">Domingo, 28 de Junio de 2026</div></div></div>
+      <div class="detail-item"><div class="detail-icon">📍</div><div><div class="detail-lbl">Ubicación</div><div class="detail-val"><a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a></div></div></div>
+      <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!4v1780711047745!6m8!1m7!1sX_8XvC7ZnntixlacF_svJg!2m2!1d-11.87213944005434!2d-77.14262830469018!3f192.35096747702693!4f-0.4544508247198138!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
+    
     <div class="card" data-reveal="up">
-      <div class="card-header"><div class="card-icon">🎁</div><h2 class="card-title">Regalos</h2><p class="card-sub">Tu presencia es el mejor regalo.</p></div>
+      <div class="card-header"><div class="card-icon">👗</div><h2 class="card-title">Vestimenta</h2></div>
+      <div style="text-align: center; padding: 1rem 0 0.8rem;">
+        <p style="font-size: 1.2rem; font-family: 'Cormorant Garamond', serif; color: var(--gold-dark); letter-spacing: 2px; font-weight: 600;"> Ropa Formal </p>
+      </div>
+    </div>
+    
+    <div class="parallax-divider" data-speed="0.3"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Dos almas que laten como <span>una sola</span>"</p></div></div>
+    
+    <div class="card" data-reveal="left">
+      <div class="card-header"><div class="card-icon">🗓️</div><h2 class="card-title">Agenda del Día</h2></div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">15:00 hs</div><div class="tl-title">Recepción de invitados</div><div class="tl-desc">Bienvenida con cóctel y canapés en el salón exterior</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">16:00 hs</div><div class="tl-title">Ceremonia Religiosa</div><div class="tl-desc">Ceremonia en la capilla del hotel</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">17:30 hs</div><div class="tl-title">Sesión de fotos</div><div class="tl-desc">Fotos con los novios y familiares en los jardines</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">20:30 hs</div><div class="tl-title">Cena</div><div class="tl-desc">Ingreso al salón principal y cena</div></div>
+        <div class="tl-item"><div class="tl-dot"></div><div class="tl-time">22:00 hs</div><div class="tl-title">Torta & Brindis</div><div class="tl-desc">El corte de la torta y el brindis con todos</div></div>
+      </div>
+    </div>
+    
+    <div class="card" data-reveal="right">
+      <div class="card-header"><div class="card-icon">🎵</div><h2 class="card-title">Música</h2></div>
+      <div class="music-bar">
+        <div class="music-disc" id="disc">🎵</div>
+        <div class="music-info">
+          <div class="music-title">Canción especial</div>
+          <div class="music-artist">Para vos</div>
+        </div>
+        <div class="equalizer" id="equalizer"><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div><div class="eq-bar"></div></div>
+        <button class="music-btn" id="music-btn" onclick="toggleMusic()">▶</button>
+      </div>
+      <audio id="bg-audio" loop preload="auto">
+        <source src="musica.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+      </audio>
+      <button class="btn btn-outline" style="margin-top:.6rem;" onclick="openModal('song')">🎶 Sugerir una canción</button>
+    </div>
+    
+    <div class="card" data-reveal="scale">
+      <div class="card-header"><div class="card-icon">📸</div><h2 class="card-title">Nuestros Momentos Especiales</h2><p class="card-sub">Un recorrido de amor en imágenes</p></div>
+      <div class="carousel-wrap" id="carousel" ontouchstart="touchStart(event)" ontouchmove="touchMove(event)" ontouchend="touchEnd(event)">
+        <div class="carousel-track" id="ctrack">
+          <div class="carousel-slide"><img src="foto1.jpeg" alt="Foto 1" loading="lazy"><div class="slide-overlay"></div></div>
+          <div class="carousel-slide"><img src="foto2.jpeg" alt="Foto 2" loading="lazy"><div class="slide-overlay"></div></div>
+          <div class="carousel-slide"><img src="foto3.jpeg" alt="Foto 3" loading="lazy"><div class="slide-overlay"></div></div>
+          <div class="carousel-slide"><img src="foto4.jpeg" alt="Foto 4" loading="lazy"><div class="slide-overlay"></div></div>
+          <div class="carousel-slide"><img src="foto5.jpeg" alt="Foto 5" loading="lazy"><div class="slide-overlay"></div></div>
+          <div class="carousel-slide"><img src="foto6.jpeg" alt="Foto 6" loading="lazy"><div class="slide-overlay"></div></div>
+        </div>
+        <div class="carousel-nav"><button class="c-btn" onclick="carouselPrev()">‹</button><button class="c-btn" onclick="carouselNext()">›</button></div>
+        <div class="carousel-counter" id="c-counter">1 / 6</div>
+      </div>
+      <div class="carousel-dots" id="c-dots"></div>
+    </div>
+    
+    <div class="parallax-divider" data-speed="0.5"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"Y en ese instante supe que era <span>para siempre</span>"</p></div></div>
+    
+    <div class="card" data-reveal="up">
+      <div class="card-header"><div class="card-icon">🎁</div><h2 class="card-title">Regalos</h2><p class="card-sub">Tu presencia es el mejor regalo, pero si deseas donarnos algo.</p></div>
       <div class="gift-list">
         <div class="gift-item" style="cursor: default; justify-content: center;">
           <div class="gift-ico" style="background: linear-gradient(135deg, var(--gold-light), var(--gold));">🎁</div>
-          <div class="gift-val" style="text-align: center;">Jatun mama -Hotel y bumgalos</div>
+          <div class="gift-val" style="text-align: center;">Jatun mama - Hotel y bungalos</div>
         </div>
       </div>
+      <!-- Código QR -->
+      <div style="text-align: center; margin-top: 1.5rem; border-top: 1px solid rgba(201,169,110,.2); padding-top: 1.2rem;">
+        <p style="font-size: .7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .8rem;">📲 Escanea el código QR</p>
+        <div style="display: inline-block; padding: 8px; background: white; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          <img src="qr.png" alt="Código QR" style="width: 140px; height: 140px; display: block; border-radius: 12px;">
+        </div>
+        <p style="font-size: .7rem; color: #777; margin-top: .8rem;"></p>
+      </div>
+      <!-- Números de cuenta -->
+      <div style="text-align: center; margin-top: 1.5rem; border-top: 1px solid rgba(201,169,110,.2); padding-top: 1.2rem;">
+        <p style="font-size: .7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: .8rem;">💰 Transferencia bancaria</p>
+        <div style="margin-bottom: 0.8rem;">
+          <p style="font-size: .65rem; font-weight: 600; color: var(--gold-dark);">Interbank (Soles)</p>
+          <p style="font-size: .8rem; font-weight: 600;">200 3086546081</p>
+          <p style="font-size: .65rem;">CCI: 00320001308654608135</p>
+        </div>
+        <p style="font-size: .65rem; color: #777; margin-top: .6rem;">-</p>
+      </div>
     </div>
+    
     <div class="card" data-reveal="scale">
       <div class="card-header"><div class="card-icon">💌</div><h2 class="card-title">¿Nos acompañas?</h2><p class="card-sub">Confirmá antes del <strong style="color:var(--gold-dark)">25 de Junio 2026</strong></p></div>
       <div class="btn-row"><button class="btn btn-gold" onclick="openModal('rsvp')">✓ Confirmar</button><button class="btn btn-outline" onclick="openModal('song')">🎵 Canción</button></div>
     </div>
+    
     <div class="card" data-reveal="up">
       <div class="card-header"><div class="card-icon">📋</div><h2 class="card-title">Tips y Notas</h2></div>
       <div class="tip"><div class="tip-dot"></div><div>¡Por favor ser <strong>puntuales</strong>!</div></div>
@@ -1086,6 +1117,7 @@ footer {
     </div>
   </div>
   <footer><div class="footer-names">Charles &amp; Clarisa</div><div class="footer-date">28 · 06 · 2026</div><button class="footer-admin" onclick="openAdmin()">⚙</button></footer>
+  
   <!-- MODALES (RSVP y CANCIÓN) -->
   <div class="modal-overlay" id="modal-rsvp"><div class="modal"><button class="modal-close" onclick="closeModal('rsvp')">✕</button><div class="modal-badge">💌</div><h2>Confirmar Asistencia</h2><div id="rsvp-form"><div class="field"><label>Nombre completo *</label><input type="text" id="r-nombre" placeholder="Tu nombre y apellido"></div><div class="field"><label>¿Asistirás? *</label><div class="radio-row"><div class="radio-chip" id="chip-si" onclick="pickRSVP('si')">✓ Sí, voy</div><div class="radio-chip" id="chip-no" onclick="pickRSVP('no')">✗ No puedo</div><div class="radio-chip" id="chip-talvez" onclick="pickRSVP('talvez')">? Tal vez</div></div></div><div class="field" id="field-pax" style="display:none;"><label>¿Cuántas personas? *</label><select id="r-pax"><option value="">Seleccionar...</option><option value="1">Solo yo (1)</option><option value="2">Somos 2</option><option value="3">Somos 3</option><option value="4">Somos 4</option><option value="5+">5 o más</option></select></div><div class="field"><label>Restricción alimentaria</label><input type="text" id="r-comida" placeholder="Vegano, celíaco... (opcional)"></div><div class="field"><label>Mensaje para los novios 💬</label><textarea id="r-mensaje" placeholder="Un deseo, palabras bonitas..."></textarea></div><button class="btn btn-gold" id="btn-rsvp" onclick="enviarRSVP()" style="margin-top:.4rem;">Confirmar asistencia</button></div><div class="success-screen" id="rsvp-ok"><div class="success-icon">🎉</div><h3>¡Gracias!</h3><p>Tu confirmación fue registrada.<br>¡Nos vemos en la fiesta! 🥂</p></div></div></div>
   <div class="modal-overlay" id="modal-song"><div class="modal"><button class="modal-close" onclick="closeModal('song')">✕</button><div class="modal-badge">🎵</div><h2>Sugerir Canción</h2><div id="song-form"><div class="field"><label>Tu nombre *</label><input type="text" id="s-nombre" placeholder="Ingresá tu nombre"></div><div class="field"><label>Canción y artista *</label><input type="text" id="s-cancion" placeholder="Nombre de la canción y autor"></div><div class="field"><label>Link de YouTube (opcional)</label><input type="url" id="s-link" placeholder="https://youtube.com/..."></div><button class="btn btn-gold" id="btn-song" onclick="enviarCancion()" style="margin-top:.4rem;">Sugerir Canción</button></div><div class="success-screen" id="song-ok"><div class="success-icon">🎶</div><h3>¡Genial!</h3><p>Tu sugerencia fue enviada.<br>¡La sumamos a la playlist! 🎉</p></div></div></div>
