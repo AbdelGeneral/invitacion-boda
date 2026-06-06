@@ -432,9 +432,16 @@ body {
 .detail-val a { color: var(--gold-dark); text-decoration: none; font-weight: 600; }
 .map-wrap {
   border-radius: 14px; overflow: hidden;
-  border: 1px solid rgba(201,169,110,.2); height: 200px; margin-top: 1.2rem;
+  border: 1px solid rgba(201,169,110,.2);
+  height: 200px;
+  margin-top: 1.2rem;
 }
-.map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
 .dress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; margin-bottom: 1.2rem; }
 .dress-card {
   border-radius: 14px; border: 1px solid rgba(201,169,110,.2);
@@ -973,10 +980,11 @@ footer {
     <div class="parallax-divider" data-speed="0.4"><div class="para-bg"></div><div class="para-overlay"><p class="para-quote">"El amor no se ve con los ojos, sino con el <span>corazón</span>"</p></div></div>
     <div class="card" data-reveal="left">
       <div class="card-header"><div class="card-icon">✉️</div><h2 class="card-title">Detalles del Evento</h2></div>
-      <div class="detail-item"><div class="detail-icon">🥂</div><div><div class="detail-lbl">Recepción & Fiesta</div><div class="detail-val">15:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7 -Jatun mama hotel - Mini palpa</div></div></div>
+      <div class="detail-item"><div class="detail-icon">🥂</div><div><div class="detail-lbl">Recepción & Fiesta</div><div class="detail-val">15:00 hs <br>Ventanilla-Callao, Camino a la playa Costa Azul, Av. la Playa MZ. D LT.7 - Jatun mama hotel - Mini palpa</div></div></div>
       <div class="detail-item"><div class="detail-icon">📅</div><div><div class="detail-lbl">Fecha</div><div class="detail-val">Domingo, 28 de Junio de 2026</div></div></div>
       <div class="detail-item"><div class="detail-icon">📍</div><div><div class="detail-lbl">Ubicación</div><div class="detail-val"><a href="https://www.google.com/maps/@-11.8721394,-77.1426283,3a,75y,172.98h,76.16t/data=!3m7!1e1!3m5!1sX_8XvC7ZnntixlacF_svJg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D13.84490117095865%26panoid%3DX_8XvC7ZnntixlacF_svJg%26yaw%3D172.9811814880424!7i16384!8i8192?entry=ttu&g_ep=EgoyMDI2MDUzMS4wIKXMDSoASAFQAw%3D%3D" target="_blank">Ver en Google Maps ↗</a></div></div></div>
-      <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!4v1780711047745!6m8!1m7!1sX_8XvC7ZnntixlacF_svJg!2m2!1d-11.87213944005434!2d-77.14262830469018!3f192.35096747702693!4f-0.4544508247198138!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="map-wrap"><iframe src="https://www.google.com/maps/embed?pb=!4v1780711047745!6m8!1m7!1sX_8XvC7ZnntixlacF_svJg!2m2!1d-11.87213944005434!2d-77.14262830469018!3f192.35096747702693!4f-0.4544508247198138!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    </div>
     <div class="card" data-reveal="up">
       <div class="card-header"><div class="card-icon">👗</div><h2 class="card-title">Vestimenta</h2></div>
       <div style="text-align: center; padding: 1rem 0 0.8rem;">
@@ -1128,18 +1136,15 @@ function startMusicOnInteraction() {
   if (!audio) return;
   audio.play().then(() => {
     musicStarted = true;
-    // Actualizar la variable global 'playing' y la interfaz
     window.playing = true;
     if (btn) btn.textContent = '⏸';
     if (discEl) discEl.classList.add('spin');
     if (eqEl) eqEl.classList.add('active');
-    // Remover los listeners para que no se ejecuten de nuevo
     document.removeEventListener('click', startMusicOnInteraction);
     document.removeEventListener('touchstart', startMusicOnInteraction);
     document.removeEventListener('keydown', startMusicOnInteraction);
   }).catch(e => console.log('Autoplay bloqueado por el navegador. El usuario deberá hacer clic en el botón de música.'));
 }
-// Escuchamos los primeros clics / toques / teclas
 document.addEventListener('click', startMusicOnInteraction);
 document.addEventListener('touchstart', startMusicOnInteraction);
 document.addEventListener('keydown', startMusicOnInteraction);
@@ -1309,7 +1314,6 @@ function toggleMusic() {
     eq.classList.remove('active');
   }
 }
-// Sincronizar la variable global 'playing' con la de la función startMusicOnInteraction
 window.playing = playing;
 Object.defineProperty(window, 'playing', {
   get: () => playing,
